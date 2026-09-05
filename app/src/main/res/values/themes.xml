@@ -78,6 +78,7 @@
 
     <!-- 年级切换芯片 -->
     <style name="GradeChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
@@ -86,10 +87,13 @@
         <item name="android:textSize">15sp</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingBottom">10dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">?attr/kgBrand</item>
     </style>
 
     <!-- 练习界面难度芯片 -->
     <style name="PracticeDiffChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
@@ -98,6 +102,8 @@
         <item name="android:textSize">14sp</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">?attr/kgBrand</item>
     </style>
 
     <!-- 全屏答题锁：固定用海洋蓝配色，避免孩子通过换主题影响拦截界面 -->
@@ -145,35 +151,6 @@
         <item name="backgroundTint">@android:color/white</item>
         <item name="android:textColor">?attr/kgBrandDark</item>
         <item name="elevation">3dp</item>
-    </style>
-
-    <!-- 年级 / 难度芯片：圆角化 -->
-    <style name="GradeChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_marginStart">4dp</item>
-        <item name="android:layout_marginEnd">4dp</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingBottom">10dp</item>
-        <item name="strokeWidth">2dp</item>
-        <item name="strokeColor">?attr/kgBrand</item>
-    </style>
-
-    <style name="PracticeDiffChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_marginStart">4dp</item>
-        <item name="android:layout_marginEnd">4dp</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-        <item name="strokeWidth">2dp</item>
-        <item name="strokeColor">?attr/kgBrand</item>
     </style>
 
 </resources>
