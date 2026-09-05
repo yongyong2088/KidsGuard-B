@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ============ 基础色（不随主题变化） ============ -->
+    <color name="text_main">#2C2C2A</color>
+    <color name="text_sub">#5F5E5A</color>
+    <color name="text_hint">#888780</color>
+    <color name="divider">#E6E4DE</color>
+    <color name="bg_page">#FAFAF8</color>
+    <color name="bg_card">#FFFFFF</color>
+
+    <color name="learning">#0F6E56</color>
+    <color name="learning_light">#E1F5EE</color>
+    <color name="restricted">#854F0B</color>
+    <color name="restricted_light">#FAEEDA</color>
+    <color name="unknown">#5F5E5A</color>
+    <color name="unknown_light">#F1EFE8</color>
+    <color name="danger">#A32D2D</color>
+    <color name="danger_light">#FBEEEE</color>
+    <color name="success_light">#EDF8F4</color>
+
+    <!-- 默认主色（海洋蓝），其它主题在 themes.xml 里覆盖 -->
+    <color name="brand">#185FA5</color>
+    <color name="brand_dark">#0C447C</color>
+    <color name="brand_light">#E6F1FB</color>
+
+    <!-- ============ 三套主题色板 ============ -->
+    <!-- 海洋蓝 -->
+    <color name="ocean_brand">#185FA5</color>
+    <color name="ocean_brand_dark">#0C447C</color>
+    <color name="ocean_brand_light">#E6F1FB</color>
+    <color name="ocean_page">#F4F8FC</color>
+
+    <!-- 森林绿 -->
+    <color name="forest_brand">#2E7D5B</color>
+    <color name="forest_brand_dark">#1B5039</color>
+    <color name="forest_brand_light">#E4F3EB</color>
+    <color name="forest_page">#F3F9F5</color>
+
+    <!-- 暖阳橙 -->
+    <color name="sunset_brand">#C2611F</color>
+    <color name="sunset_brand_dark">#8A4212</color>
+    <color name="sunset_brand_light">#FBEDE0</color>
+    <color name="sunset_page">#FDF6F0</color>
+
+    <!-- 糖果马卡龙 -->
+    <color name="candy_brand">#FF5C9E</color>
+    <color name="candy_brand_dark">#C23A75</color>
+    <color name="candy_brand_light">#FFE6F2</color>
+    <color name="candy_page">#FFF6FB</color>
+
+    <!-- ============ 六个学习模块的配色（固定，不随主题变化） ============ -->
+    <!-- 六个模块颜色差异要明显，换任何主题都能一眼分清 -->
+    <color name="subj_chinese">#D9534F</color>
+    <color name="subj_chinese_bg">#FDECEC</color>
+
+    <color name="subj_math">#3A7BD5</color>
+    <color name="subj_math_bg">#EBF3FD</color>
+
+    <color name="subj_english">#8B5CF6</color>
+    <color name="subj_english_bg">#F3EDFD</color>
+
+    <color name="subj_music">#EC4899</color>
+    <color name="subj_music_bg">#FDECF5</color>
+
+    <color name="subj_sport">#16A34A</color>
+    <color name="subj_sport_bg">#E9F8EE</color>
+
+    <color name="subj_riddle">#F59E0B</color>
+    <color name="subj_riddle_bg">#FEF6E7</color>
+
+</resources>

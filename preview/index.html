@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>学习守护 KidsGuard · 界面预览</title>
+<style>
+  :root{
+    --brand:#185FA5; --brandDark:#0C447C; --brandLight:#E6F1FB; --page:#F4F8FC;
+    --textMain:#2C2C2A; --textSub:#5F5E5A; --textHint:#888780; --card:#FFFFFF; --divider:#E6E4DE;
+    /* 模块固定色 */
+    --c-chinese:#D9534F; --c-math:#3A7BD5; --c-english:#8B5CF6; --c-music:#EC4899; --c-sport:#16A34A; --c-riddle:#F59E0B;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  body{margin:0; font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; background:#e9edf2; display:flex; justify-content:center; padding:18px;}
+  /* 手机外框 */
+  .phone{width:390px; min-height:760px; background:var(--page); border-radius:38px; box-shadow:0 18px 50px rgba(0,0,0,.25); overflow:hidden; position:relative; display:flex; flex-direction:column; border:8px solid #11141a;}
+  .statusbar{height:30px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; font-size:13px; color:var(--brandDark); font-weight:700;}
+  .statusbar .right span{margin-left:8px;}
+  /* 顶部标题 + 主题圆点 */
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:6px 18px 10px;}
+  .topbar .title{font-size:15px; font-weight:800; color:var(--brandDark);}
+  .dots{display:flex; gap:8px;}
+  .dot{width:22px; height:22px; border-radius:50%; cursor:pointer; border:2px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.2);}
+  .dot.ocean{background:#185FA5;} .dot.forest{background:#2E7D5B;} .dot.sunset{background:#C2611F;} .dot.candy{background:#FF5C9E;}
+  .dot.active{outline:3px solid var(--textMain); outline-offset:1px;}
+  .screen{flex:1; overflow-y:auto; padding:14px 16px 90px;}
+  /* 卡通按钮 */
+  .btn{border:none; border-radius:18px; background:var(--brand); color:#fff; font-size:16px; font-weight:800; padding:13px 18px; box-shadow:0 6px 14px rgba(0,0,0,.18); cursor:pointer; transition:transform .08s, filter .1s; width:100%;}
+  .btn:active{transform:translateY(2px) scale(.99); filter:brightness(.95);}
+  .btn.opt{background:#fff; color:var(--brandDark); border:2px solid var(--brand); box-shadow:0 3px 8px rgba(0,0,0,.08); padding:14px; text-align:left;}
+  .btn.opt:active{background:var(--brandLight);}
+  .btn.ghost{background:var(--brandLight); color:var(--brandDark); border:none; box-shadow:none;}
+  .btn.small{width:auto; padding:9px 16px; font-size:14px; border-radius:14px;}
+  /* 卡片 */
+  .card{background:var(--card); border-radius:20px; padding:16px; margin-bottom:14px; box-shadow:0 4px 14px rgba(0,0,0,.06);}
+  .greet{font-size:22px; font-weight:800; color:var(--textMain); margin:4px 0 2px;}
+  .greet .em{font-size:26px;}
+  .sub{font-size:13px; color:var(--textSub);}
+  /* 守护卡 */
+  .guard{background:linear-gradient(135deg,var(--brand),var(--brandDark)); color:#fff; border-radius:20px; padding:16px; margin-bottom:14px;}
+  .guard .lab{font-size:13px; opacity:.9;}
+  .guard .big{font-size:30px; font-weight:800; margin:2px 0;}
+  .guard .stage{font-size:13px; background:rgba(255,255,255,.18); display:inline-block; padding:3px 10px; border-radius:20px; margin-top:6px;}
+  .bar{height:10px; background:rgba(255,255,255,.25); border-radius:10px; margin-top:10px; overflow:hidden;}
+  .bar > i{display:block; height:100%; background:#fff; border-radius:10px;}
+  /* 星星横幅 */
+  .stars{display:flex; align-items:center; justify-content:space-between; background:#FFF7E0; border:2px dashed #F0C040; border-radius:18px; padding:12px 16px; margin-bottom:14px; cursor:pointer;}
+  .stars .l{font-size:16px; font-weight:800; color:#9A6B00;}
+  .stars .r{font-size:22px; font-weight:900; color:#E0A500;}
+  /* 年级芯片 */
+  .chips{display:flex; gap:8px; margin-bottom:14px;}
+  .chip{flex:1; text-align:center; padding:10px 0; border-radius:16px; border:2px solid var(--brand); color:var(--brandDark); font-weight:800; font-size:15px; background:#fff; cursor:pointer;}
+  .chip.active{background:var(--brand); color:#fff;}
+  .sec-t{font-size:15px; font-weight:800; color:var(--textMain); margin:6px 2px 10px;}
+  /* 模块网格 */
+  .mods{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .mod{background:#fff; border-radius:20px; padding:14px; box-shadow:0 4px 12px rgba(0,0,0,.06); position:relative; cursor:pointer;}
+  .mod .ic{font-size:30px;}
+  .mod .nm{font-weight:800; margin-top:4px; color:var(--textMain);}
+  .mod .pg{font-size:12px; color:var(--textSub); margin-top:2px;}
+  .mod .pbar{height:6px; background:var(--divider); border-radius:6px; margin-top:8px; overflow:hidden;}
+  .mod .pbar > i{display:block; height:100%;}
+  .mod .tag{position:absolute; top:10px; right:10px; font-size:11px; padding:2px 8px; border-radius:10px; color:#fff; font-weight:700;}
+  /* 奖励小屋 */
+  .reward-hero{text-align:center; padding:10px 0 4px;}
+  .reward-hero .star{font-size:54px;}
+  .reward-hero .num{font-size:34px; font-weight:900; color:#E0A500;}
+  .reward-hero .cap{font-size:13px; color:var(--textSub);}
+  .item{display:flex; align-items:center; gap:12px; background:#fff; border-radius:18px; padding:14px; margin-bottom:12px; box-shadow:0 4px 12px rgba(0,0,0,.06);}
+  .item .emo{font-size:32px; width:42px; text-align:center;}
+  .item .body{flex:1;}
+  .item .nm{font-weight:800; color:var(--textMain);}
+  .item .ds{font-size:12px; color:var(--textSub); margin-top:2px;}
+  .item .cost{font-size:13px; font-weight:800; color:#E0A500; margin-top:3px;}
+  /* 答题锁（全屏） */
+  .lockwrap{position:absolute; inset:0; background:#fff; z-index:5; display:none; flex-direction:column; padding:22px 18px;}
+  .lockwrap.on{display:flex;}
+  .lockhead{text-align:center; color:var(--brandDark); font-weight:800; font-size:18px;}
+  .lockhead .badge{display:inline-block; background:var(--brandLight); color:var(--brandDark); font-size:12px; padding:3px 10px; border-radius:14px; margin-top:6px;}
+  .lockq{margin:22px 0 8px; font-size:26px; font-weight:900; text-align:center; color:var(--textMain);}
+  .opts{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;}
+  .lockfoot{margin-top:auto; text-align:center; font-size:12px; color:var(--textHint); padding-top:16px;}
+  /* 练习 */
+  .diff{display:flex; gap:8px; margin:12px 0;}
+  .diff .chip{font-size:14px; padding:8px 0;}
+  .fb{padding:10px 14px; border-radius:14px; font-weight:700; margin-top:12px; display:none;}
+  .fb.ok{display:block; background:var(--brandLight); color:var(--brandDark);}
+  .fb.no{display:block; background:#FBEEEE; color:#A32D2D;}
+  /* 底部导航 */
+  .nav{position:absolute; left:0; right:0; bottom:0; height:74px; background:#fff; display:flex; border-top:1px solid var(--divider);}
+  .nav button{flex:1; border:none; background:none; font-size:11px; color:var(--textSub); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; cursor:pointer; padding-top:8px;}
+  .nav button .ico{font-size:22px;}
+  .nav button.active{color:var(--brand); font-weight:800;}
+  .back{display:inline-flex; align-items:center; gap:4px; color:var(--brandDark); font-weight:700; cursor:pointer; font-size:14px; margin-bottom:6px;}
+  .hidden{display:none !important;}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="statusbar">
+    <span id="clock">16:06</span>
+    <span class="right"><span>📶</span><span>🔋</span></span>
+  </div>
+  <div class="topbar">
+    <span class="title" id="screenTitle">学习中心</span>
+    <span class="dots">
+      <span class="dot ocean active" onclick="setTheme('ocean')"></span>
+      <span class="dot forest" onclick="setTheme('forest')"></span>
+      <span class="dot sunset" onclick="setTheme('sunset')"></span>
+      <span class="dot candy" onclick="setTheme('candy')"></span>
+    </span>
+  </div>
+
+  <!-- ===== 学习中心 ===== -->
+  <div class="screen" id="home">
+    <div class="greet"><span class="em">👋</span> 下午好，小朋友！</div>
+    <div class="sub">今天也要元气满满地学习哦～</div>
+
+    <div class="guard">
+      <div class="lab">今日娱乐额度（游戏 / 短视频）</div>
+      <div class="big">52 分钟</div>
+      <div class="stage">阶段一 · 超额后每 10 分钟弹窗答题</div>
+      <div class="bar"><i style="width:87%"></i></div>
+    </div>
+
+    <div class="stars" onclick="go('reward')">
+      <span class="l">⭐ 我的星星</span>
+      <span class="r">28 颗 ›</span>
+    </div>
+
+    <div class="chips">
+      <div class="chip active" onclick="pickGrade(this)">一年级</div>
+      <div class="chip" onclick="pickGrade(this)">二年级</div>
+      <div class="chip" onclick="pickGrade(this)">三年级</div>
+    </div>
+
+    <div class="sec-t">📚 学习模块（点开练习）</div>
+    <div class="mods">
+      <div class="mod" onclick="go('practice')"><span class="tag" style="background:var(--c-chinese)">600题</span><div class="ic">📚</div><div class="nm">语文</div><div class="pg">已学 120 题</div><div class="pbar"><i style="width:20%;background:var(--c-chinese)"></i></div></div>
+      <div class="mod" onclick="go('practice')"><span class="tag" style="background:var(--c-math)">600题</span><div class="ic">➗</div><div class="nm">数学</div><div class="pg">已学 88 题</div><div class="pbar"><i style="width:15%;background:var(--c-math)"></i></div></div>
+      <div class="mod" onclick="go('practice')"><span class="tag" style="background:var(--c-english)">600题</span><div class="ic">🔤</div><div class="nm">英语</div><div class="pg">已学 56 题</div><div class="pbar"><i style="width:9%;background:var(--c-english)"></i></div></div>
+      <div class="mod" onclick="go('practice')"><span class="tag" style="background:var(--c-music)">🎵</span><div class="ic">🎵</div><div class="nm">音乐</div><div class="pg">听听唱唱</div><div class="pbar"><i style="width:30%;background:var(--c-music)"></i></div></div>
+      <div class="mod" onclick="go('practice')"><span class="tag" style="background:var(--c-sport)">打卡</span><div class="ic">🏃</div><div class="nm">运动</div><div class="pg">今日打卡 2 次</div><div class="pbar"><i style="width:40%;background:var(--c-sport)"></i></div></div>
+      <div class="mod" onclick="go('practice')"><span class="tag" style="background:var(--c-riddle)">💡</span><div class="ic">🧠</div><div class="nm">脑筋急转弯</div><div class="pg">开动小脑筋</div><div class="pbar"><i style="width:25%;background:var(--c-riddle)"></i></div></div>
+    </div>
+    <button class="btn" style="margin-top:6px" onclick="alert('进入家长模式，需输入密码（默认1234）')">👨‍👩‍👦 家长模式</button>
+  </div>
+
+  <!-- ===== 练习 ===== -->
+  <div class="screen hidden" id="practice">
+    <div class="back" onclick="go('home')">‹ 返回</div>
+    <div class="greet" style="font-size:20px">数学 · 一年级</div>
+    <div class="diff">
+      <div class="chip active" onclick="pickDiff(this)">简单</div>
+      <div class="chip" onclick="pickDiff(this)">中等</div>
+      <div class="chip" onclick="pickDiff(this)">困难</div>
+    </div>
+    <div class="card">
+      <div class="sub">第 121 题 · 答对得 ⭐ 1 颗</div>
+      <div class="lockq" style="margin-top:10px">3 + 5 = ?</div>
+      <div class="opts">
+        <button class="btn opt" onclick="answer(this,false)">A. 7</button>
+        <button class="btn opt" onclick="answer(this,true)">B. 8</button>
+        <button class="btn opt" onclick="answer(this,false)">C. 9</button>
+        <button class="btn opt" onclick="answer(this,false)">D. 15</button>
+      </div>
+      <div class="fb" id="fb"></div>
+    </div>
+    <button class="btn" onclick="alert('很好！已记录进度 ⭐ +1')">下一题 ›</button>
+  </div>
+
+  <!-- ===== 奖励小屋 ===== -->
+  <div class="screen hidden" id="reward">
+    <div class="back" onclick="go('home')">‹ 返回</div>
+    <div class="reward-hero">
+      <div class="star">⭐</div>
+      <div class="num">28</div>
+      <div class="cap">用学习赚来的星星，兑换小奖励吧！</div>
+    </div>
+    <div class="sec-t">可兑换奖励</div>
+    <div class="item">
+      <div class="emo">⏰</div>
+      <div class="body"><div class="nm">+10 分钟娱乐时间</div><div class="ds">兑换后今天多看 10 分钟</div><div class="cost">需 10 ⭐</div></div>
+      <button class="btn small" onclick="alert('兑换成功！娱乐时间 +10 分钟 ⏰')">兑换</button>
+    </div>
+    <div class="item">
+      <div class="emo">🛡️</div>
+      <div class="body"><div class="nm">免一次弹窗</div><div class="ds">下次被拦自动放行 1 次</div><div class="cost">需 15 ⭐</div></div>
+      <button class="btn small" onclick="alert('兑换成功！获得免弹窗卡 🛡️')">兑换</button>
+    </div>
+    <div class="item">
+      <div class="emo">🎁</div>
+      <div class="body"><div class="nm">实物小奖励找家长</div><div class="ds">需家长密码确认，找爸妈领小礼物</div><div class="cost">需 30 ⭐</div></div>
+      <button class="btn small" onclick="alert('请家长输入密码确认 🎁')">兑换</button>
+    </div>
+    <div class="sub" style="text-align:center;margin-top:8px">星星跨天不清零，是长期的成长记录 ✨</div>
+  </div>
+
+  <!-- ===== 答题锁（全屏覆盖） ===== -->
+  <div class="lockwrap" id="lock">
+    <div class="lockhead">学习一下再玩哦～
+      <div class="badge">🔒 全屏答题 · 答对才能关闭</div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <div class="sub" id="lockcounter">第 1 / 3 题 · 答对得 ⭐ 1 颗</div>
+      <div class="lockq" id="lockq">7 + 6 = ?</div>
+      <div class="opts" id="lockopts"></div>
+      <div class="fb" id="lockfb"></div>
+    </div>
+    <div class="lockfoot">连续答对 3 题即可继续玩 10 分钟 · 此界面无法关闭</div>
+    <div id="lockpass" class="hidden" style="margin-top:auto;text-align:center">
+      <div style="font-size:46px">🎉</div>
+      <div style="font-weight:800;color:var(--brandDark);font-size:18px">通过啦！可以玩 10 分钟</div>
+      <button class="btn" style="margin-top:12px" onclick="closeLock()">继续玩 ›</button>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <div class="nav">
+    <button class="active" onclick="go('home',this)"><span class="ico">🏠</span>学习中心</button>
+    <button onclick="go('practice',this)"><span class="ico">✏️</span>练习</button>
+    <button onclick="go('reward',this)"><span class="ico">⭐</span>奖励小屋</button>
+    <button onclick="openLock()"><span class="ico">🔒</span>答题锁</button>
+  </div>
+</div>
+
+<script>
+  const THEMES = {
+    ocean:{brand:'#185FA5',brandDark:'#0C447C',brandLight:'#E6F1FB',page:'#F4F8FC'},
+    forest:{brand:'#2E7D5B',brandDark:'#1B5039',brandLight:'#E4F3EB',page:'#F3F9F5'},
+    sunset:{brand:'#C2611F',brandDark:'#8A4212',brandLight:'#FBEDE0',page:'#FDF6F0'},
+    candy:{brand:'#FF5C9E',brandDark:'#C23A75',brandLight:'#FFE6F2',page:'#FFF6FB'}
+  };
+  function setTheme(t){
+    const v=THEMES[t]; const r=document.documentElement.style;
+    r.setProperty('--brand',v.brand); r.setProperty('--brandDark',v.brandDark);
+    r.setProperty('--brandLight',v.brandLight); r.setProperty('--page',v.page);
+    document.querySelectorAll('.dot').forEach(d=>d.classList.remove('active'));
+    document.querySelector('.dot.'+t).classList.add('active');
+  }
+  const TITLES={home:'学习中心',practice:'练习',reward:'奖励小屋'};
+  function go(screen,btn){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.add('hidden'));
+    document.getElementById(screen).classList.remove('hidden');
+    if(TITLES[screen]) document.getElementById('screenTitle').textContent=TITLES[screen];
+    if(btn){document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active');}
+  }
+  const LOCK_BANK=[
+    {q:'7 + 6 = ?', o:['12','13','14','11'], a:1},
+    {q:'9 - 4 = ?', o:['4','6','5','3'], a:2},
+    {q:'2 × 3 = ?', o:['5','6','9','8'], a:1},
+    {q:'15 - 8 = ?', o:['6','7','9','8'], a:1},
+    {q:'4 + 4 + 4 = ?', o:['10','12','16','8'], a:1}
+  ];
+  let lockIdx=0, lockStreak=0;
+  function renderLock(){
+    const q=LOCK_BANK[lockIdx];
+    document.getElementById('lockcounter').textContent='第 '+(lockIdx+1)+' / 3 题 · 答对得 ⭐ 1 颗';
+    document.getElementById('lockq').textContent=q.q;
+    const box=document.getElementById('lockopts'); box.innerHTML='';
+    const letters=['A','B','C','D'];
+    q.o.forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.className='btn opt'; b.textContent=letters[i]+'. '+t;
+      b.onclick=()=>lockAnswer(b, i===q.a);
+      box.appendChild(b);
+    });
+    document.getElementById('lockfb').className='fb';
+  }
+  function openLock(){
+    lockIdx=0; lockStreak=0;
+    document.getElementById('lock').classList.add('on');
+    document.querySelector('#lock .card').style.display='';
+    document.querySelector('#lock .lockfoot').style.display='';
+    document.getElementById('lockpass').classList.add('hidden');
+    renderLock();
+  }
+  function closeLock(){
+    document.getElementById('lock').classList.remove('on');
+    lockIdx=0; lockStreak=0;
+  }
+  function pickGrade(el){document.querySelectorAll('#home .chip').forEach(c=>c.classList.remove('active')); el.classList.add('active');}
+  function pickDiff(el){el.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); el.classList.add('active');}
+  function answer(el,ok){
+    document.querySelectorAll('#practice .btn.opt').forEach(b=>b.disabled=true);
+    el.style.background=ok?'#16A34A':'#A32D2D'; el.style.color='#fff'; el.style.borderColor='transparent';
+    const fb=document.getElementById('fb');
+    fb.textContent=ok?'✅ 答对啦！⭐ +1':'❌ 再想想，答案是 8';
+    fb.className='fb '+(ok?'ok':'no');
+  }
+  function lockAnswer(el,ok){
+    document.querySelectorAll('#lock .btn.opt').forEach(b=>b.disabled=true);
+    el.style.background=ok?'#16A34A':'#A32D2D'; el.style.color='#fff'; el.style.borderColor='transparent';
+    const fb=document.getElementById('lockfb');
+    if(ok){
+      lockStreak++;
+      fb.textContent='✅ 答对啦！⭐ +1（'+lockStreak+'/3）';
+      fb.className='fb ok';
+      setTimeout(()=>{
+        if(lockStreak>=3){
+          document.querySelector('#lock .card').style.display='none';
+          document.querySelector('#lock .lockfoot').style.display='none';
+          document.getElementById('lockpass').classList.remove('hidden');
+        } else { lockIdx++; renderLock(); }
+      },800);
+    } else {
+      lockStreak=0;
+      fb.textContent='❌ 不对哦，连对重新开始（回到第 1 题）';
+      fb.className='fb no';
+      setTimeout(()=>{ lockIdx=0; renderLock(); },1100);
+    }
+  }
+</script>
+</body>
+</html>

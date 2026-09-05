@@ -1,0 +1,7601 @@
+{
+ "subject": "english",
+ "grade": 1,
+ "levels": {
+  "1": 200,
+  "2": 200,
+  "3": 200
+ },
+ "total": 600,
+ "questions": [
+  {
+   "id": "english-g1-0001",
+   "type": "choice",
+   "level": 1,
+   "q": "「学校」的英文是？",
+   "options": [
+    "tangerine",
+    "bed",
+    "cat",
+    "school"
+   ],
+   "answer": "school",
+   "tip": "学校 = school"
+  },
+  {
+   "id": "english-g1-0002",
+   "type": "choice",
+   "level": 1,
+   "q": "「爸爸」的英文是？",
+   "options": [
+    "star",
+    "father",
+    "dog",
+    "friend"
+   ],
+   "answer": "father",
+   "tip": "爸爸 = father"
+  },
+  {
+   "id": "english-g1-0003",
+   "type": "choice",
+   "level": 1,
+   "q": "「朋友」的英文是？",
+   "options": [
+    "water",
+    "three",
+    "friend",
+    "mother"
+   ],
+   "answer": "friend",
+   "tip": "朋友 = friend"
+  },
+  {
+   "id": "english-g1-0004",
+   "type": "choice",
+   "level": 1,
+   "q": "「门」的英文是？",
+   "options": [
+    "name",
+    "door",
+    "pig",
+    "nine"
+   ],
+   "answer": "door",
+   "tip": "门 = door"
+  },
+  {
+   "id": "english-g1-0005",
+   "type": "choice",
+   "level": 1,
+   "q": "「香蕉」的英文是？",
+   "options": [
+    "orange",
+    "banana",
+    "girl",
+    "bed"
+   ],
+   "answer": "banana",
+   "tip": "香蕉 = banana"
+  },
+  {
+   "id": "english-g1-0006",
+   "type": "choice",
+   "level": 1,
+   "q": "「耳朵」的英文是？",
+   "options": [
+    "ear",
+    "yellow",
+    "car",
+    "bus"
+   ],
+   "answer": "ear",
+   "tip": "耳朵 = ear"
+  },
+  {
+   "id": "english-g1-0007",
+   "type": "choice",
+   "level": 1,
+   "q": "「猪」的英文是？",
+   "options": [
+    "pig",
+    "window",
+    "white",
+    "bag"
+   ],
+   "answer": "pig",
+   "tip": "猪 = pig"
+  },
+  {
+   "id": "english-g1-0008",
+   "type": "choice",
+   "level": 1,
+   "q": "「猫」的英文是？",
+   "options": [
+    "teacher",
+    "cat",
+    "friend",
+    "mother"
+   ],
+   "answer": "cat",
+   "tip": "猫 = cat"
+  },
+  {
+   "id": "english-g1-0009",
+   "type": "choice",
+   "level": 1,
+   "q": "「九」的英文是？",
+   "options": [
+    "orange",
+    "green",
+    "nine",
+    "friend"
+   ],
+   "answer": "nine",
+   "tip": "九 = nine"
+  },
+  {
+   "id": "english-g1-0010",
+   "type": "choice",
+   "level": 1,
+   "q": "「窗户」的英文是？",
+   "options": [
+    "father",
+    "black",
+    "hand",
+    "window"
+   ],
+   "answer": "window",
+   "tip": "窗户 = window"
+  },
+  {
+   "id": "english-g1-0011",
+   "type": "choice",
+   "level": 1,
+   "q": "「椅子」的英文是？",
+   "options": [
+    "ruler",
+    "chair",
+    "blue",
+    "moon"
+   ],
+   "answer": "chair",
+   "tip": "椅子 = chair"
+  },
+  {
+   "id": "english-g1-0012",
+   "type": "choice",
+   "level": 1,
+   "q": "「鸭子」的英文是？",
+   "options": [
+    "head",
+    "cake",
+    "duck",
+    "bag"
+   ],
+   "answer": "duck",
+   "tip": "鸭子 = duck"
+  },
+  {
+   "id": "english-g1-0013",
+   "type": "choice",
+   "level": 1,
+   "q": "「床」的英文是？",
+   "options": [
+    "bed",
+    "yellow",
+    "face",
+    "eye"
+   ],
+   "answer": "bed",
+   "tip": "床 = bed"
+  },
+  {
+   "id": "english-g1-0014",
+   "type": "choice",
+   "level": 1,
+   "q": "「橡皮」的英文是？",
+   "options": [
+    "pear",
+    "eraser",
+    "ten",
+    "four"
+   ],
+   "answer": "eraser",
+   "tip": "橡皮 = eraser"
+  },
+  {
+   "id": "english-g1-0015",
+   "type": "choice",
+   "level": 1,
+   "q": "「女孩」的英文是？",
+   "options": [
+    "rabbit",
+    "girl",
+    "mother",
+    "three"
+   ],
+   "answer": "girl",
+   "tip": "女孩 = girl"
+  },
+  {
+   "id": "english-g1-0016",
+   "type": "choice",
+   "level": 1,
+   "q": "「男孩」的英文是？",
+   "options": [
+    "boy",
+    "three",
+    "face",
+    "head"
+   ],
+   "answer": "boy",
+   "tip": "男孩 = boy"
+  },
+  {
+   "id": "english-g1-0017",
+   "type": "choice",
+   "level": 1,
+   "q": "「八」的英文是？",
+   "options": [
+    "pen",
+    "teacher",
+    "eight",
+    "cake"
+   ],
+   "answer": "eight",
+   "tip": "八 = eight"
+  },
+  {
+   "id": "english-g1-0018",
+   "type": "choice",
+   "level": 1,
+   "q": "「尺子」的英文是？",
+   "options": [
+    "bike",
+    "face",
+    "ear",
+    "ruler"
+   ],
+   "answer": "ruler",
+   "tip": "尺子 = ruler"
+  },
+  {
+   "id": "english-g1-0019",
+   "type": "choice",
+   "level": 1,
+   "q": "「五」的英文是？",
+   "options": [
+    "eraser",
+    "teacher",
+    "desk",
+    "five"
+   ],
+   "answer": "five",
+   "tip": "五 = five"
+  },
+  {
+   "id": "english-g1-0020",
+   "type": "choice",
+   "level": 1,
+   "q": "「铅笔」的英文是？",
+   "options": [
+    "foot",
+    "ruler",
+    "school",
+    "pencil"
+   ],
+   "answer": "pencil",
+   "tip": "铅笔 = pencil"
+  },
+  {
+   "id": "english-g1-0021",
+   "type": "choice",
+   "level": 1,
+   "q": "「黄色」的英文是？",
+   "options": [
+    "boy",
+    "ten",
+    "ball",
+    "yellow"
+   ],
+   "answer": "yellow",
+   "tip": "黄色 = yellow"
+  },
+  {
+   "id": "english-g1-0022",
+   "type": "choice",
+   "level": 1,
+   "q": "「自行车」的英文是？",
+   "options": [
+    "bike",
+    "green",
+    "moon",
+    "bird"
+   ],
+   "answer": "bike",
+   "tip": "自行车 = bike"
+  },
+  {
+   "id": "english-g1-0023",
+   "type": "choice",
+   "level": 1,
+   "q": "「七」的英文是？",
+   "options": [
+    "bird",
+    "blue",
+    "pencil",
+    "seven"
+   ],
+   "answer": "seven",
+   "tip": "七 = seven"
+  },
+  {
+   "id": "english-g1-0024",
+   "type": "choice",
+   "level": 1,
+   "q": "「鸡蛋」的英文是？",
+   "options": [
+    "egg",
+    "ruler",
+    "dog",
+    "red"
+   ],
+   "answer": "egg",
+   "tip": "鸡蛋 = egg"
+  },
+  {
+   "id": "english-g1-0025",
+   "type": "choice",
+   "level": 1,
+   "q": "「蓝色」的英文是？",
+   "options": [
+    "banana",
+    "white",
+    "tiger",
+    "blue"
+   ],
+   "answer": "blue",
+   "tip": "蓝色 = blue"
+  },
+  {
+   "id": "english-g1-0026",
+   "type": "choice",
+   "level": 1,
+   "q": "「兔子」的英文是？",
+   "options": [
+    "bed",
+    "chair",
+    "rabbit",
+    "cat"
+   ],
+   "answer": "rabbit",
+   "tip": "兔子 = rabbit"
+  },
+  {
+   "id": "english-g1-0027",
+   "type": "choice",
+   "level": 1,
+   "q": "「红色」的英文是？",
+   "options": [
+    "pink",
+    "green",
+    "water",
+    "red"
+   ],
+   "answer": "red",
+   "tip": "红色 = red"
+  },
+  {
+   "id": "english-g1-0028",
+   "type": "choice",
+   "level": 1,
+   "q": "「猴子」的英文是？",
+   "options": [
+    "girl",
+    "friend",
+    "monkey",
+    "tree"
+   ],
+   "answer": "monkey",
+   "tip": "猴子 = monkey"
+  },
+  {
+   "id": "english-g1-0029",
+   "type": "choice",
+   "level": 1,
+   "q": "「钢笔」的英文是？",
+   "options": [
+    "pen",
+    "fish",
+    "boy",
+    "bus"
+   ],
+   "answer": "pen",
+   "tip": "钢笔 = pen"
+  },
+  {
+   "id": "english-g1-0030",
+   "type": "choice",
+   "level": 1,
+   "q": "「树」的英文是？",
+   "options": [
+    "five",
+    "father",
+    "tree",
+    "tangerine"
+   ],
+   "answer": "tree",
+   "tip": "树 = tree"
+  },
+  {
+   "id": "english-g1-0031",
+   "type": "choice",
+   "level": 1,
+   "q": "「球」的英文是？",
+   "options": [
+    "tree",
+    "apple",
+    "ball",
+    "head"
+   ],
+   "answer": "ball",
+   "tip": "球 = ball"
+  },
+  {
+   "id": "english-g1-0032",
+   "type": "choice",
+   "level": 1,
+   "q": "「六」的英文是？",
+   "options": [
+    "monkey",
+    "tiger",
+    "six",
+    "boy"
+   ],
+   "answer": "six",
+   "tip": "六 = six"
+  },
+  {
+   "id": "english-g1-0033",
+   "type": "choice",
+   "level": 1,
+   "q": "「嘴巴」的英文是？",
+   "options": [
+    "moon",
+    "tree",
+    "friend",
+    "mouth"
+   ],
+   "answer": "mouth",
+   "tip": "嘴巴 = mouth"
+  },
+  {
+   "id": "english-g1-0034",
+   "type": "choice",
+   "level": 1,
+   "q": "「鱼」的英文是？",
+   "options": [
+    "cake",
+    "head",
+    "mother",
+    "fish"
+   ],
+   "answer": "fish",
+   "tip": "鱼 = fish"
+  },
+  {
+   "id": "english-g1-0035",
+   "type": "choice",
+   "level": 1,
+   "q": "「公共汽车」的英文是？",
+   "options": [
+    "car",
+    "pencil",
+    "bus",
+    "orange"
+   ],
+   "answer": "bus",
+   "tip": "公共汽车 = bus"
+  },
+  {
+   "id": "english-g1-0036",
+   "type": "choice",
+   "level": 1,
+   "q": "「粉色」的英文是？",
+   "options": [
+    "egg",
+    "pink",
+    "apple",
+    "red"
+   ],
+   "answer": "pink",
+   "tip": "粉色 = pink"
+  },
+  {
+   "id": "english-g1-0037",
+   "type": "choice",
+   "level": 1,
+   "q": "「眼睛」的英文是？",
+   "options": [
+    "eye",
+    "friend",
+    "face",
+    "bird"
+   ],
+   "answer": "eye",
+   "tip": "眼睛 = eye"
+  },
+  {
+   "id": "english-g1-0038",
+   "type": "choice",
+   "level": 1,
+   "q": "「狗」的英文是？",
+   "options": [
+    "dog",
+    "tangerine",
+    "blue",
+    "bag"
+   ],
+   "answer": "dog",
+   "tip": "狗 = dog"
+  },
+  {
+   "id": "english-g1-0039",
+   "type": "choice",
+   "level": 1,
+   "q": "「二」的英文是？",
+   "options": [
+    "two",
+    "monkey",
+    "white",
+    "dog"
+   ],
+   "answer": "two",
+   "tip": "二 = two"
+  },
+  {
+   "id": "english-g1-0040",
+   "type": "choice",
+   "level": 1,
+   "q": "「老虎」的英文是？",
+   "options": [
+    "tangerine",
+    "star",
+    "door",
+    "tiger"
+   ],
+   "answer": "tiger",
+   "tip": "老虎 = tiger"
+  },
+  {
+   "id": "english-g1-0041",
+   "type": "choice",
+   "level": 1,
+   "q": "「手」的英文是？",
+   "options": [
+    "pencil",
+    "teacher",
+    "nine",
+    "hand"
+   ],
+   "answer": "hand",
+   "tip": "手 = hand"
+  },
+  {
+   "id": "english-g1-0042",
+   "type": "choice",
+   "level": 1,
+   "q": "「脸」的英文是？",
+   "options": [
+    "banana",
+    "face",
+    "father",
+    "six"
+   ],
+   "answer": "face",
+   "tip": "脸 = face"
+  },
+  {
+   "id": "english-g1-0043",
+   "type": "choice",
+   "level": 1,
+   "q": "「梨」的英文是？",
+   "options": [
+    "bike",
+    "desk",
+    "pear",
+    "ball"
+   ],
+   "answer": "pear",
+   "tip": "梨 = pear"
+  },
+  {
+   "id": "english-g1-0044",
+   "type": "choice",
+   "level": 1,
+   "q": "「名字」的英文是？",
+   "options": [
+    "name",
+    "bed",
+    "pen",
+    "door"
+   ],
+   "answer": "name",
+   "tip": "名字 = name"
+  },
+  {
+   "id": "english-g1-0045",
+   "type": "choice",
+   "level": 1,
+   "q": "「水」的英文是？",
+   "options": [
+    "chair",
+    "six",
+    "water",
+    "eraser"
+   ],
+   "answer": "water",
+   "tip": "水 = water"
+  },
+  {
+   "id": "english-g1-0046",
+   "type": "choice",
+   "level": 1,
+   "q": "「绿色」的英文是？",
+   "options": [
+    "monkey",
+    "cake",
+    "green",
+    "window"
+   ],
+   "answer": "green",
+   "tip": "绿色 = green"
+  },
+  {
+   "id": "english-g1-0047",
+   "type": "choice",
+   "level": 1,
+   "q": "「星星」的英文是？",
+   "options": [
+    "eight",
+    "four",
+    "star",
+    "yellow"
+   ],
+   "answer": "star",
+   "tip": "星星 = star"
+  },
+  {
+   "id": "english-g1-0048",
+   "type": "choice",
+   "level": 1,
+   "q": "「书」的英文是？",
+   "options": [
+    "bike",
+    "clock",
+    "bag",
+    "book"
+   ],
+   "answer": "book",
+   "tip": "书 = book"
+  },
+  {
+   "id": "english-g1-0049",
+   "type": "choice",
+   "level": 1,
+   "q": "「脚」的英文是？",
+   "options": [
+    "foot",
+    "dog",
+    "pig",
+    "monkey"
+   ],
+   "answer": "foot",
+   "tip": "脚 = foot"
+  },
+  {
+   "id": "english-g1-0050",
+   "type": "choice",
+   "level": 1,
+   "q": "「鸟」的英文是？",
+   "options": [
+    "monkey",
+    "bird",
+    "friend",
+    "tangerine"
+   ],
+   "answer": "bird",
+   "tip": "鸟 = bird"
+  },
+  {
+   "id": "english-g1-0051",
+   "type": "choice",
+   "level": 1,
+   "q": "「三」的英文是？",
+   "options": [
+    "ruler",
+    "three",
+    "one",
+    "water"
+   ],
+   "answer": "three",
+   "tip": "三 = three"
+  },
+  {
+   "id": "english-g1-0052",
+   "type": "choice",
+   "level": 1,
+   "q": "「牛奶」的英文是？",
+   "options": [
+    "cake",
+    "red",
+    "three",
+    "milk"
+   ],
+   "answer": "milk",
+   "tip": "牛奶 = milk"
+  },
+  {
+   "id": "english-g1-0053",
+   "type": "choice",
+   "level": 1,
+   "q": "「蛋糕」的英文是？",
+   "options": [
+    "hand",
+    "eight",
+    "cake",
+    "car"
+   ],
+   "answer": "cake",
+   "tip": "蛋糕 = cake"
+  },
+  {
+   "id": "english-g1-0054",
+   "type": "choice",
+   "level": 1,
+   "q": "「橙色」的英文是？",
+   "options": [
+    "face",
+    "nose",
+    "chair",
+    "orange"
+   ],
+   "answer": "orange",
+   "tip": "橙色 = orange"
+  },
+  {
+   "id": "english-g1-0055",
+   "type": "choice",
+   "level": 1,
+   "q": "「老师」的英文是？",
+   "options": [
+    "egg",
+    "apple",
+    "teacher",
+    "bag"
+   ],
+   "answer": "teacher",
+   "tip": "老师 = teacher"
+  },
+  {
+   "id": "english-g1-0056",
+   "type": "choice",
+   "level": 1,
+   "q": "tree 的中文意思是？",
+   "options": [
+    "树",
+    "六",
+    "八",
+    "钢笔"
+   ],
+   "answer": "树",
+   "tip": "tree = 树"
+  },
+  {
+   "id": "english-g1-0057",
+   "type": "choice",
+   "level": 1,
+   "q": "orange 的中文意思是？",
+   "options": [
+    "橙色",
+    "一",
+    "猫",
+    "猴子"
+   ],
+   "answer": "橙色",
+   "tip": "orange = 橙色"
+  },
+  {
+   "id": "english-g1-0058",
+   "type": "choice",
+   "level": 1,
+   "q": "duck 的中文意思是？",
+   "options": [
+    "钢笔",
+    "猴子",
+    "鸭子",
+    "六"
+   ],
+   "answer": "鸭子",
+   "tip": "duck = 鸭子"
+  },
+  {
+   "id": "english-g1-0059",
+   "type": "choice",
+   "level": 1,
+   "q": "teacher 的中文意思是？",
+   "options": [
+    "学校",
+    "窗户",
+    "老师",
+    "猴子"
+   ],
+   "answer": "老师",
+   "tip": "teacher = 老师"
+  },
+  {
+   "id": "english-g1-0060",
+   "type": "choice",
+   "level": 1,
+   "q": "window 的中文意思是？",
+   "options": [
+    "窗户",
+    "鸭子",
+    "眼睛",
+    "橙色"
+   ],
+   "answer": "窗户",
+   "tip": "window = 窗户"
+  },
+  {
+   "id": "english-g1-0061",
+   "type": "choice",
+   "level": 1,
+   "q": "blue 的中文意思是？",
+   "options": [
+    "兔子",
+    "蓝色",
+    "七",
+    "课桌"
+   ],
+   "answer": "蓝色",
+   "tip": "blue = 蓝色"
+  },
+  {
+   "id": "english-g1-0062",
+   "type": "choice",
+   "level": 1,
+   "q": "mouth 的中文意思是？",
+   "options": [
+    "兔子",
+    "鼻子",
+    "牛奶",
+    "嘴巴"
+   ],
+   "answer": "嘴巴",
+   "tip": "mouth = 嘴巴"
+  },
+  {
+   "id": "english-g1-0063",
+   "type": "choice",
+   "level": 1,
+   "q": "pig 的中文意思是？",
+   "options": [
+    "太阳",
+    "窗户",
+    "猪",
+    "课桌"
+   ],
+   "answer": "猪",
+   "tip": "pig = 猪"
+  },
+  {
+   "id": "english-g1-0064",
+   "type": "choice",
+   "level": 1,
+   "q": "pencil 的中文意思是？",
+   "options": [
+    "耳朵",
+    "书",
+    "男孩",
+    "铅笔"
+   ],
+   "answer": "铅笔",
+   "tip": "pencil = 铅笔"
+  },
+  {
+   "id": "english-g1-0065",
+   "type": "choice",
+   "level": 1,
+   "q": "water 的中文意思是？",
+   "options": [
+    "二",
+    "九",
+    "女孩",
+    "水"
+   ],
+   "answer": "水",
+   "tip": "water = 水"
+  },
+  {
+   "id": "english-g1-0066",
+   "type": "choice",
+   "level": 1,
+   "q": "ten 的中文意思是？",
+   "options": [
+    "床",
+    "狗",
+    "兔子",
+    "十"
+   ],
+   "answer": "十",
+   "tip": "ten = 十"
+  },
+  {
+   "id": "english-g1-0067",
+   "type": "choice",
+   "level": 1,
+   "q": "nose 的中文意思是？",
+   "options": [
+    "学校",
+    "红色",
+    "书",
+    "鼻子"
+   ],
+   "answer": "鼻子",
+   "tip": "nose = 鼻子"
+  },
+  {
+   "id": "english-g1-0068",
+   "type": "choice",
+   "level": 1,
+   "q": "mother 的中文意思是？",
+   "options": [
+    "自行车",
+    "妈妈",
+    "钟",
+    "球"
+   ],
+   "answer": "妈妈",
+   "tip": "mother = 妈妈"
+  },
+  {
+   "id": "english-g1-0069",
+   "type": "choice",
+   "level": 1,
+   "q": "school 的中文意思是？",
+   "options": [
+    "学校",
+    "名字",
+    "五",
+    "床"
+   ],
+   "answer": "学校",
+   "tip": "school = 学校"
+  },
+  {
+   "id": "english-g1-0070",
+   "type": "choice",
+   "level": 1,
+   "q": "desk 的中文意思是？",
+   "options": [
+    "头",
+    "课桌",
+    "白色",
+    "二"
+   ],
+   "answer": "课桌",
+   "tip": "desk = 课桌"
+  },
+  {
+   "id": "english-g1-0071",
+   "type": "choice",
+   "level": 1,
+   "q": "seven 的中文意思是？",
+   "options": [
+    "七",
+    "妈妈",
+    "橡皮",
+    "猫"
+   ],
+   "answer": "七",
+   "tip": "seven = 七"
+  },
+  {
+   "id": "english-g1-0072",
+   "type": "choice",
+   "level": 1,
+   "q": "bed 的中文意思是？",
+   "options": [
+    "兔子",
+    "床",
+    "狗",
+    "三"
+   ],
+   "answer": "床",
+   "tip": "bed = 床"
+  },
+  {
+   "id": "english-g1-0073",
+   "type": "choice",
+   "level": 1,
+   "q": "tangerine 的中文意思是？",
+   "options": [
+    "橘子",
+    "门",
+    "爸爸",
+    "学校"
+   ],
+   "answer": "橘子",
+   "tip": "tangerine = 橘子"
+  },
+  {
+   "id": "english-g1-0074",
+   "type": "choice",
+   "level": 1,
+   "q": "apple 的中文意思是？",
+   "options": [
+    "苹果",
+    "牛奶",
+    "窗户",
+    "尺子"
+   ],
+   "answer": "苹果",
+   "tip": "apple = 苹果"
+  },
+  {
+   "id": "english-g1-0075",
+   "type": "choice",
+   "level": 1,
+   "q": "banana 的中文意思是？",
+   "options": [
+    "香蕉",
+    "橙色",
+    "女孩",
+    "三"
+   ],
+   "answer": "香蕉",
+   "tip": "banana = 香蕉"
+  },
+  {
+   "id": "english-g1-0076",
+   "type": "choice",
+   "level": 1,
+   "q": "yellow 的中文意思是？",
+   "options": [
+    "一",
+    "男孩",
+    "门",
+    "黄色"
+   ],
+   "answer": "黄色",
+   "tip": "yellow = 黄色"
+  },
+  {
+   "id": "english-g1-0077",
+   "type": "choice",
+   "level": 1,
+   "q": "eight 的中文意思是？",
+   "options": [
+    "牛奶",
+    "铅笔",
+    "妈妈",
+    "八"
+   ],
+   "answer": "八",
+   "tip": "eight = 八"
+  },
+  {
+   "id": "english-g1-0078",
+   "type": "choice",
+   "level": 1,
+   "q": "monkey 的中文意思是？",
+   "options": [
+    "眼睛",
+    "床",
+    "星星",
+    "猴子"
+   ],
+   "answer": "猴子",
+   "tip": "monkey = 猴子"
+  },
+  {
+   "id": "english-g1-0079",
+   "type": "choice",
+   "level": 1,
+   "q": "green 的中文意思是？",
+   "options": [
+    "月亮",
+    "绿色",
+    "学校",
+    "名字"
+   ],
+   "answer": "绿色",
+   "tip": "green = 绿色"
+  },
+  {
+   "id": "english-g1-0080",
+   "type": "choice",
+   "level": 1,
+   "q": "eraser 的中文意思是？",
+   "options": [
+    "月亮",
+    "一",
+    "窗户",
+    "橡皮"
+   ],
+   "answer": "橡皮",
+   "tip": "eraser = 橡皮"
+  },
+  {
+   "id": "english-g1-0081",
+   "type": "choice",
+   "level": 1,
+   "q": "door 的中文意思是？",
+   "options": [
+    "眼睛",
+    "门",
+    "红色",
+    "女孩"
+   ],
+   "answer": "门",
+   "tip": "door = 门"
+  },
+  {
+   "id": "english-g1-0082",
+   "type": "choice",
+   "level": 1,
+   "q": "two 的中文意思是？",
+   "options": [
+    "老师",
+    "黄色",
+    "苹果",
+    "二"
+   ],
+   "answer": "二",
+   "tip": "two = 二"
+  },
+  {
+   "id": "english-g1-0083",
+   "type": "choice",
+   "level": 1,
+   "q": "book 的中文意思是？",
+   "options": [
+    "鼻子",
+    "书",
+    "橡皮",
+    "球"
+   ],
+   "answer": "书",
+   "tip": "book = 书"
+  },
+  {
+   "id": "english-g1-0084",
+   "type": "choice",
+   "level": 1,
+   "q": "milk 的中文意思是？",
+   "options": [
+    "黄色",
+    "女孩",
+    "牛奶",
+    "男孩"
+   ],
+   "answer": "牛奶",
+   "tip": "milk = 牛奶"
+  },
+  {
+   "id": "english-g1-0085",
+   "type": "choice",
+   "level": 1,
+   "q": "tiger 的中文意思是？",
+   "options": [
+    "老虎",
+    "四",
+    "嘴巴",
+    "黄色"
+   ],
+   "answer": "老虎",
+   "tip": "tiger = 老虎"
+  },
+  {
+   "id": "english-g1-0086",
+   "type": "choice",
+   "level": 1,
+   "q": "clock 的中文意思是？",
+   "options": [
+    "名字",
+    "一",
+    "钟",
+    "女孩"
+   ],
+   "answer": "钟",
+   "tip": "clock = 钟"
+  },
+  {
+   "id": "english-g1-0087",
+   "type": "choice",
+   "level": 1,
+   "q": "star 的中文意思是？",
+   "options": [
+    "鸭子",
+    "苹果",
+    "星星",
+    "爸爸"
+   ],
+   "answer": "星星",
+   "tip": "star = 星星"
+  },
+  {
+   "id": "english-g1-0088",
+   "type": "choice",
+   "level": 1,
+   "q": "chair 的中文意思是？",
+   "options": [
+    "白色",
+    "太阳",
+    "椅子",
+    "黄色"
+   ],
+   "answer": "椅子",
+   "tip": "chair = 椅子"
+  },
+  {
+   "id": "english-g1-0089",
+   "type": "choice",
+   "level": 1,
+   "q": "four 的中文意思是？",
+   "options": [
+    "六",
+    "朋友",
+    "四",
+    "学校"
+   ],
+   "answer": "四",
+   "tip": "four = 四"
+  },
+  {
+   "id": "english-g1-0090",
+   "type": "choice",
+   "level": 1,
+   "q": "dog 的中文意思是？",
+   "options": [
+    "九",
+    "蓝色",
+    "狗",
+    "星星"
+   ],
+   "answer": "狗",
+   "tip": "dog = 狗"
+  },
+  {
+   "id": "english-g1-0091",
+   "type": "choice",
+   "level": 1,
+   "q": "head 的中文意思是？",
+   "options": [
+    "头",
+    "六",
+    "黑色",
+    "粉色"
+   ],
+   "answer": "头",
+   "tip": "head = 头"
+  },
+  {
+   "id": "english-g1-0092",
+   "type": "choice",
+   "level": 1,
+   "q": "moon 的中文意思是？",
+   "options": [
+    "月亮",
+    "尺子",
+    "铅笔",
+    "十"
+   ],
+   "answer": "月亮",
+   "tip": "moon = 月亮"
+  },
+  {
+   "id": "english-g1-0093",
+   "type": "choice",
+   "level": 1,
+   "q": "red 的中文意思是？",
+   "options": [
+    "老虎",
+    "红色",
+    "太阳",
+    "手"
+   ],
+   "answer": "红色",
+   "tip": "red = 红色"
+  },
+  {
+   "id": "english-g1-0094",
+   "type": "choice",
+   "level": 1,
+   "q": "sun 的中文意思是？",
+   "options": [
+    "床",
+    "太阳",
+    "五",
+    "猴子"
+   ],
+   "answer": "太阳",
+   "tip": "sun = 太阳"
+  },
+  {
+   "id": "english-g1-0095",
+   "type": "choice",
+   "level": 1,
+   "q": "ear 的中文意思是？",
+   "options": [
+    "一",
+    "书",
+    "六",
+    "耳朵"
+   ],
+   "answer": "耳朵",
+   "tip": "ear = 耳朵"
+  },
+  {
+   "id": "english-g1-0096",
+   "type": "choice",
+   "level": 1,
+   "q": "pen 的中文意思是？",
+   "options": [
+    "水",
+    "钢笔",
+    "学校",
+    "星星"
+   ],
+   "answer": "钢笔",
+   "tip": "pen = 钢笔"
+  },
+  {
+   "id": "english-g1-0097",
+   "type": "choice",
+   "level": 1,
+   "q": "six 的中文意思是？",
+   "options": [
+    "六",
+    "太阳",
+    "蓝色",
+    "尺子"
+   ],
+   "answer": "六",
+   "tip": "six = 六"
+  },
+  {
+   "id": "english-g1-0098",
+   "type": "choice",
+   "level": 1,
+   "q": "boy 的中文意思是？",
+   "options": [
+    "汽车",
+    "男孩",
+    "头",
+    "鸡蛋"
+   ],
+   "answer": "男孩",
+   "tip": "boy = 男孩"
+  },
+  {
+   "id": "english-g1-0099",
+   "type": "choice",
+   "level": 1,
+   "q": "foot 的中文意思是？",
+   "options": [
+    "狗",
+    "钢笔",
+    "男孩",
+    "脚"
+   ],
+   "answer": "脚",
+   "tip": "foot = 脚"
+  },
+  {
+   "id": "english-g1-0100",
+   "type": "choice",
+   "level": 1,
+   "q": "car 的中文意思是？",
+   "options": [
+    "猴子",
+    "汽车",
+    "自行车",
+    "眼睛"
+   ],
+   "answer": "汽车",
+   "tip": "car = 汽车"
+  },
+  {
+   "id": "english-g1-0101",
+   "type": "choice",
+   "level": 1,
+   "q": "bird 的中文意思是？",
+   "options": [
+    "橘子",
+    "鸟",
+    "爸爸",
+    "眼睛"
+   ],
+   "answer": "鸟",
+   "tip": "bird = 鸟"
+  },
+  {
+   "id": "english-g1-0102",
+   "type": "choice",
+   "level": 1,
+   "q": "pear 的中文意思是？",
+   "options": [
+    "球",
+    "眼睛",
+    "梨",
+    "一"
+   ],
+   "answer": "梨",
+   "tip": "pear = 梨"
+  },
+  {
+   "id": "english-g1-0103",
+   "type": "choice",
+   "level": 1,
+   "q": "hand 的中文意思是？",
+   "options": [
+    "梨",
+    "门",
+    "十",
+    "手"
+   ],
+   "answer": "手",
+   "tip": "hand = 手"
+  },
+  {
+   "id": "english-g1-0104",
+   "type": "choice",
+   "level": 1,
+   "q": "bike 的中文意思是？",
+   "options": [
+    "妈妈",
+    "自行车",
+    "书包",
+    "钟"
+   ],
+   "answer": "自行车",
+   "tip": "bike = 自行车"
+  },
+  {
+   "id": "english-g1-0105",
+   "type": "choice",
+   "level": 1,
+   "q": "father 的中文意思是？",
+   "options": [
+    "爸爸",
+    "汽车",
+    "铅笔",
+    "鸭子"
+   ],
+   "answer": "爸爸",
+   "tip": "father = 爸爸"
+  },
+  {
+   "id": "english-g1-0106",
+   "type": "choice",
+   "level": 1,
+   "q": "rabbit 的中文意思是？",
+   "options": [
+    "爸爸",
+    "窗户",
+    "猫",
+    "兔子"
+   ],
+   "answer": "兔子",
+   "tip": "rabbit = 兔子"
+  },
+  {
+   "id": "english-g1-0107",
+   "type": "choice",
+   "level": 1,
+   "q": "eye 的中文意思是？",
+   "options": [
+    "眼睛",
+    "床",
+    "四",
+    "鼻子"
+   ],
+   "answer": "眼睛",
+   "tip": "eye = 眼睛"
+  },
+  {
+   "id": "english-g1-0108",
+   "type": "choice",
+   "level": 1,
+   "q": "cake 的中文意思是？",
+   "options": [
+    "手",
+    "蛋糕",
+    "名字",
+    "苹果"
+   ],
+   "answer": "蛋糕",
+   "tip": "cake = 蛋糕"
+  },
+  {
+   "id": "english-g1-0109",
+   "type": "choice",
+   "level": 1,
+   "q": "face 的中文意思是？",
+   "options": [
+    "公共汽车",
+    "脸",
+    "眼睛",
+    "九"
+   ],
+   "answer": "脸",
+   "tip": "face = 脸"
+  },
+  {
+   "id": "english-g1-0110",
+   "type": "choice",
+   "level": 1,
+   "q": "friend 的中文意思是？",
+   "options": [
+    "朋友",
+    "书包",
+    "猫",
+    "尺子"
+   ],
+   "answer": "朋友",
+   "tip": "friend = 朋友"
+  },
+  {
+   "id": "english-g1-0111",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，W 后面是？",
+   "options": [
+    "Y",
+    "X",
+    "Z",
+    "W"
+   ],
+   "answer": "X",
+   "tip": "字母表顺序：W → X"
+  },
+  {
+   "id": "english-g1-0112",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，N 前面是？",
+   "options": [
+    "P",
+    "N",
+    "M",
+    "O"
+   ],
+   "answer": "M",
+   "tip": "字母表顺序：M → N"
+  },
+  {
+   "id": "english-g1-0113",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 F 的小写是？",
+   "options": [
+    "ff",
+    "f",
+    "d",
+    "F"
+   ],
+   "answer": "f",
+   "tip": "F 的小写是 f"
+  },
+  {
+   "id": "english-g1-0114",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，B 后面是？",
+   "options": [
+    "D",
+    "B",
+    "E",
+    "C"
+   ],
+   "answer": "C",
+   "tip": "字母表顺序：B → C"
+  },
+  {
+   "id": "english-g1-0115",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，A 后面是？",
+   "options": [
+    "A",
+    "C",
+    "B",
+    "D"
+   ],
+   "answer": "B",
+   "tip": "字母表顺序：A → B"
+  },
+  {
+   "id": "english-g1-0116",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 I 的小写是？",
+   "options": [
+    "I",
+    "ii",
+    "i",
+    "o"
+   ],
+   "answer": "i",
+   "tip": "I 的小写是 i"
+  },
+  {
+   "id": "english-g1-0117",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 E 的小写是？",
+   "options": [
+    "ee",
+    "e",
+    "s",
+    "E"
+   ],
+   "answer": "e",
+   "tip": "E 的小写是 e"
+  },
+  {
+   "id": "english-g1-0118",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，U 前面是？",
+   "options": [
+    "T",
+    "U",
+    "W",
+    "V"
+   ],
+   "answer": "T",
+   "tip": "字母表顺序：T → U"
+  },
+  {
+   "id": "english-g1-0119",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，G 后面是？",
+   "options": [
+    "I",
+    "H",
+    "G",
+    "J"
+   ],
+   "answer": "H",
+   "tip": "字母表顺序：G → H"
+  },
+  {
+   "id": "english-g1-0120",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，U 后面是？",
+   "options": [
+    "W",
+    "U",
+    "X",
+    "V"
+   ],
+   "answer": "V",
+   "tip": "字母表顺序：U → V"
+  },
+  {
+   "id": "english-g1-0121",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，Q 后面是？",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "T"
+   ],
+   "answer": "R",
+   "tip": "字母表顺序：Q → R"
+  },
+  {
+   "id": "english-g1-0122",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，O 前面是？",
+   "options": [
+    "O",
+    "N",
+    "P",
+    "Q"
+   ],
+   "answer": "N",
+   "tip": "字母表顺序：N → O"
+  },
+  {
+   "id": "english-g1-0123",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，Z 前面是？",
+   "options": [
+    "Y",
+    "Z",
+    "A",
+    "B"
+   ],
+   "answer": "Y",
+   "tip": "字母表顺序：Y → Z"
+  },
+  {
+   "id": "english-g1-0124",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，J 后面是？",
+   "options": [
+    "M",
+    "J",
+    "K",
+    "L"
+   ],
+   "answer": "K",
+   "tip": "字母表顺序：J → K"
+  },
+  {
+   "id": "english-g1-0125",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，J 前面是？",
+   "options": [
+    "J",
+    "I",
+    "K",
+    "L"
+   ],
+   "answer": "I",
+   "tip": "字母表顺序：I → J"
+  },
+  {
+   "id": "english-g1-0126",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，P 前面是？",
+   "options": [
+    "Q",
+    "R",
+    "P",
+    "O"
+   ],
+   "answer": "O",
+   "tip": "字母表顺序：O → P"
+  },
+  {
+   "id": "english-g1-0127",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，M 后面是？",
+   "options": [
+    "P",
+    "O",
+    "N",
+    "M"
+   ],
+   "answer": "N",
+   "tip": "字母表顺序：M → N"
+  },
+  {
+   "id": "english-g1-0128",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 S 的小写是？",
+   "options": [
+    "S",
+    "ss",
+    "s",
+    "u"
+   ],
+   "answer": "s",
+   "tip": "S 的小写是 s"
+  },
+  {
+   "id": "english-g1-0129",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，V 后面是？",
+   "options": [
+    "V",
+    "W",
+    "X",
+    "Y"
+   ],
+   "answer": "W",
+   "tip": "字母表顺序：V → W"
+  },
+  {
+   "id": "english-g1-0130",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，X 后面是？",
+   "options": [
+    "A",
+    "Y",
+    "X",
+    "Z"
+   ],
+   "answer": "Y",
+   "tip": "字母表顺序：X → Y"
+  },
+  {
+   "id": "english-g1-0131",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 A 的小写是？",
+   "options": [
+    "A",
+    "aa",
+    "a",
+    "u"
+   ],
+   "answer": "a",
+   "tip": "A 的小写是 a"
+  },
+  {
+   "id": "english-g1-0132",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，T 后面是？",
+   "options": [
+    "T",
+    "V",
+    "U",
+    "W"
+   ],
+   "answer": "U",
+   "tip": "字母表顺序：T → U"
+  },
+  {
+   "id": "english-g1-0133",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，K 前面是？",
+   "options": [
+    "L",
+    "K",
+    "M",
+    "J"
+   ],
+   "answer": "J",
+   "tip": "字母表顺序：J → K"
+  },
+  {
+   "id": "english-g1-0134",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，L 前面是？",
+   "options": [
+    "L",
+    "K",
+    "N",
+    "M"
+   ],
+   "answer": "K",
+   "tip": "字母表顺序：K → L"
+  },
+  {
+   "id": "english-g1-0135",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 J 的小写是？",
+   "options": [
+    "j",
+    "J",
+    "b",
+    "jj"
+   ],
+   "answer": "j",
+   "tip": "J 的小写是 j"
+  },
+  {
+   "id": "english-g1-0136",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，M 前面是？",
+   "options": [
+    "L",
+    "N",
+    "O",
+    "M"
+   ],
+   "answer": "L",
+   "tip": "字母表顺序：L → M"
+  },
+  {
+   "id": "english-g1-0137",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，F 前面是？",
+   "options": [
+    "F",
+    "E",
+    "H",
+    "G"
+   ],
+   "answer": "E",
+   "tip": "字母表顺序：E → F"
+  },
+  {
+   "id": "english-g1-0138",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，H 后面是？",
+   "options": [
+    "H",
+    "J",
+    "K",
+    "I"
+   ],
+   "answer": "I",
+   "tip": "字母表顺序：H → I"
+  },
+  {
+   "id": "english-g1-0139",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，Q 前面是？",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "answer": "P",
+   "tip": "字母表顺序：P → Q"
+  },
+  {
+   "id": "english-g1-0140",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 M 的小写是？",
+   "options": [
+    "mm",
+    "m",
+    "M",
+    "h"
+   ],
+   "answer": "m",
+   "tip": "M 的小写是 m"
+  },
+  {
+   "id": "english-g1-0141",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，Y 前面是？",
+   "options": [
+    "Z",
+    "Y",
+    "X",
+    "A"
+   ],
+   "answer": "X",
+   "tip": "字母表顺序：X → Y"
+  },
+  {
+   "id": "english-g1-0142",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，R 后面是？",
+   "options": [
+    "S",
+    "T",
+    "U",
+    "R"
+   ],
+   "answer": "S",
+   "tip": "字母表顺序：R → S"
+  },
+  {
+   "id": "english-g1-0143",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 N 的小写是？",
+   "options": [
+    "o",
+    "nn",
+    "n",
+    "N"
+   ],
+   "answer": "n",
+   "tip": "N 的小写是 n"
+  },
+  {
+   "id": "english-g1-0144",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，I 后面是？",
+   "options": [
+    "J",
+    "I",
+    "K",
+    "L"
+   ],
+   "answer": "J",
+   "tip": "字母表顺序：I → J"
+  },
+  {
+   "id": "english-g1-0145",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，N 后面是？",
+   "options": [
+    "Q",
+    "N",
+    "O",
+    "P"
+   ],
+   "answer": "O",
+   "tip": "字母表顺序：N → O"
+  },
+  {
+   "id": "english-g1-0146",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，E 后面是？",
+   "options": [
+    "G",
+    "H",
+    "E",
+    "F"
+   ],
+   "answer": "F",
+   "tip": "字母表顺序：E → F"
+  },
+  {
+   "id": "english-g1-0147",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，B 前面是？",
+   "options": [
+    "C",
+    "D",
+    "B",
+    "A"
+   ],
+   "answer": "A",
+   "tip": "字母表顺序：A → B"
+  },
+  {
+   "id": "english-g1-0148",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 W 的小写是？",
+   "options": [
+    "i",
+    "ww",
+    "W",
+    "w"
+   ],
+   "answer": "w",
+   "tip": "W 的小写是 w"
+  },
+  {
+   "id": "english-g1-0149",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，C 后面是？",
+   "options": [
+    "E",
+    "D",
+    "C",
+    "F"
+   ],
+   "answer": "D",
+   "tip": "字母表顺序：C → D"
+  },
+  {
+   "id": "english-g1-0150",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 Y 的小写是？",
+   "options": [
+    "Y",
+    "y",
+    "yy",
+    "e"
+   ],
+   "answer": "y",
+   "tip": "Y 的小写是 y"
+  },
+  {
+   "id": "english-g1-0151",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 Z 的小写是？",
+   "options": [
+    "zz",
+    "k",
+    "z",
+    "Z"
+   ],
+   "answer": "z",
+   "tip": "Z 的小写是 z"
+  },
+  {
+   "id": "english-g1-0152",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，L 后面是？",
+   "options": [
+    "L",
+    "O",
+    "N",
+    "M"
+   ],
+   "answer": "M",
+   "tip": "字母表顺序：L → M"
+  },
+  {
+   "id": "english-g1-0153",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，S 前面是？",
+   "options": [
+    "U",
+    "R",
+    "T",
+    "S"
+   ],
+   "answer": "R",
+   "tip": "字母表顺序：R → S"
+  },
+  {
+   "id": "english-g1-0154",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，D 前面是？",
+   "options": [
+    "C",
+    "F",
+    "E",
+    "D"
+   ],
+   "answer": "C",
+   "tip": "字母表顺序：C → D"
+  },
+  {
+   "id": "english-g1-0155",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 R 的小写是？",
+   "options": [
+    "R",
+    "j",
+    "r",
+    "rr"
+   ],
+   "answer": "r",
+   "tip": "R 的小写是 r"
+  },
+  {
+   "id": "english-g1-0156",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 D 的小写是？",
+   "options": [
+    "d",
+    "D",
+    "a",
+    "dd"
+   ],
+   "answer": "d",
+   "tip": "D 的小写是 d"
+  },
+  {
+   "id": "english-g1-0157",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，S 后面是？",
+   "options": [
+    "U",
+    "V",
+    "S",
+    "T"
+   ],
+   "answer": "T",
+   "tip": "字母表顺序：S → T"
+  },
+  {
+   "id": "english-g1-0158",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，P 后面是？",
+   "options": [
+    "P",
+    "Q",
+    "S",
+    "R"
+   ],
+   "answer": "Q",
+   "tip": "字母表顺序：P → Q"
+  },
+  {
+   "id": "english-g1-0159",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，F 后面是？",
+   "options": [
+    "H",
+    "G",
+    "I",
+    "F"
+   ],
+   "answer": "G",
+   "tip": "字母表顺序：F → G"
+  },
+  {
+   "id": "english-g1-0160",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，R 前面是？",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "T"
+   ],
+   "answer": "Q",
+   "tip": "字母表顺序：Q → R"
+  },
+  {
+   "id": "english-g1-0161",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，V 前面是？",
+   "options": [
+    "V",
+    "X",
+    "W",
+    "U"
+   ],
+   "answer": "U",
+   "tip": "字母表顺序：U → V"
+  },
+  {
+   "id": "english-g1-0162",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，O 后面是？",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "O"
+   ],
+   "answer": "P",
+   "tip": "字母表顺序：O → P"
+  },
+  {
+   "id": "english-g1-0163",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 Q 的小写是？",
+   "options": [
+    "l",
+    "qq",
+    "Q",
+    "q"
+   ],
+   "answer": "q",
+   "tip": "Q 的小写是 q"
+  },
+  {
+   "id": "english-g1-0164",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，K 后面是？",
+   "options": [
+    "N",
+    "M",
+    "L",
+    "K"
+   ],
+   "answer": "L",
+   "tip": "字母表顺序：K → L"
+  },
+  {
+   "id": "english-g1-0165",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 T 的小写是？",
+   "options": [
+    "tt",
+    "t",
+    "b",
+    "T"
+   ],
+   "answer": "t",
+   "tip": "T 的小写是 t"
+  },
+  {
+   "id": "english-g1-0166",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 G 的小写是？",
+   "options": [
+    "g",
+    "gg",
+    "G"
+   ],
+   "answer": "g",
+   "tip": "G 的小写是 g"
+  },
+  {
+   "id": "english-g1-0167",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 H 的小写是？",
+   "options": [
+    "H",
+    "n",
+    "hh",
+    "h"
+   ],
+   "answer": "h",
+   "tip": "H 的小写是 h"
+  },
+  {
+   "id": "english-g1-0168",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 X 的小写是？",
+   "options": [
+    "X",
+    "x",
+    "m",
+    "xx"
+   ],
+   "answer": "x",
+   "tip": "X 的小写是 x"
+  },
+  {
+   "id": "english-g1-0169",
+   "type": "choice",
+   "level": 1,
+   "q": "按字母表顺序，H 前面是？",
+   "options": [
+    "J",
+    "H",
+    "G",
+    "I"
+   ],
+   "answer": "G",
+   "tip": "字母表顺序：G → H"
+  },
+  {
+   "id": "english-g1-0170",
+   "type": "choice",
+   "level": 1,
+   "q": "字母 P 的小写是？",
+   "options": [
+    "p",
+    "pp",
+    "i",
+    "P"
+   ],
+   "answer": "p",
+   "tip": "P 的小写是 p"
+  },
+  {
+   "id": "english-g1-0171",
+   "type": "choice",
+   "level": 1,
+   "q": "「女孩」的英文单词以哪个字母开头？",
+   "options": [
+    "L",
+    "O",
+    "G",
+    "W"
+   ],
+   "answer": "G",
+   "tip": "女孩 = girl，首字母是 G"
+  },
+  {
+   "id": "english-g1-0172",
+   "type": "choice",
+   "level": 1,
+   "q": "「红色」的英文单词以哪个字母开头？",
+   "options": [
+    "R",
+    "P",
+    "Z",
+    "B"
+   ],
+   "answer": "R",
+   "tip": "红色 = red，首字母是 R"
+  },
+  {
+   "id": "english-g1-0173",
+   "type": "choice",
+   "level": 1,
+   "q": "「一」的英文单词以哪个字母开头？",
+   "options": [
+    "R",
+    "O",
+    "F",
+    "J"
+   ],
+   "answer": "O",
+   "tip": "一 = one，首字母是 O"
+  },
+  {
+   "id": "english-g1-0174",
+   "type": "choice",
+   "level": 1,
+   "q": "「朋友」的英文单词以哪个字母开头？",
+   "options": [
+    "O",
+    "F",
+    "E",
+    "I"
+   ],
+   "answer": "F",
+   "tip": "朋友 = friend，首字母是 F"
+  },
+  {
+   "id": "english-g1-0175",
+   "type": "choice",
+   "level": 1,
+   "q": "「妈妈」的英文单词以哪个字母开头？",
+   "options": [
+    "M",
+    "B",
+    "O",
+    "A"
+   ],
+   "answer": "M",
+   "tip": "妈妈 = mother，首字母是 M"
+  },
+  {
+   "id": "english-g1-0176",
+   "type": "choice",
+   "level": 1,
+   "q": "「嘴巴」的英文单词以哪个字母开头？",
+   "options": [
+    "I",
+    "O",
+    "D",
+    "M"
+   ],
+   "answer": "M",
+   "tip": "嘴巴 = mouth，首字母是 M"
+  },
+  {
+   "id": "english-g1-0177",
+   "type": "choice",
+   "level": 1,
+   "q": "「九」的英文单词以哪个字母开头？",
+   "options": [
+    "N",
+    "W",
+    "K",
+    "F"
+   ],
+   "answer": "N",
+   "tip": "九 = nine，首字母是 N"
+  },
+  {
+   "id": "english-g1-0178",
+   "type": "choice",
+   "level": 1,
+   "q": "「蛋糕」的英文单词以哪个字母开头？",
+   "options": [
+    "K",
+    "D",
+    "M",
+    "C"
+   ],
+   "answer": "C",
+   "tip": "蛋糕 = cake，首字母是 C"
+  },
+  {
+   "id": "english-g1-0179",
+   "type": "choice",
+   "level": 1,
+   "q": "「十」的英文单词以哪个字母开头？",
+   "options": [
+    "J",
+    "D",
+    "T",
+    "Z"
+   ],
+   "answer": "T",
+   "tip": "十 = ten，首字母是 T"
+  },
+  {
+   "id": "english-g1-0180",
+   "type": "choice",
+   "level": 1,
+   "q": "「猫」的英文单词以哪个字母开头？",
+   "options": [
+    "V",
+    "R",
+    "C",
+    "U"
+   ],
+   "answer": "C",
+   "tip": "猫 = cat，首字母是 C"
+  },
+  {
+   "id": "english-g1-0181",
+   "type": "choice",
+   "level": 1,
+   "q": "「名字」的英文单词以哪个字母开头？",
+   "options": [
+    "G",
+    "N",
+    "X",
+    "P"
+   ],
+   "answer": "N",
+   "tip": "名字 = name，首字母是 N"
+  },
+  {
+   "id": "english-g1-0182",
+   "type": "choice",
+   "level": 1,
+   "q": "「蓝色」的英文单词以哪个字母开头？",
+   "options": [
+    "L",
+    "B",
+    "C",
+    "P"
+   ],
+   "answer": "B",
+   "tip": "蓝色 = blue，首字母是 B"
+  },
+  {
+   "id": "english-g1-0183",
+   "type": "choice",
+   "level": 1,
+   "q": "「窗户」的英文单词以哪个字母开头？",
+   "options": [
+    "R",
+    "Y",
+    "P",
+    "W"
+   ],
+   "answer": "W",
+   "tip": "窗户 = window，首字母是 W"
+  },
+  {
+   "id": "english-g1-0184",
+   "type": "choice",
+   "level": 1,
+   "q": "「脚」的英文单词以哪个字母开头？",
+   "options": [
+    "W",
+    "A",
+    "H",
+    "F"
+   ],
+   "answer": "F",
+   "tip": "脚 = foot，首字母是 F"
+  },
+  {
+   "id": "english-g1-0185",
+   "type": "choice",
+   "level": 1,
+   "q": "「球」的英文单词以哪个字母开头？",
+   "options": [
+    "D",
+    "S",
+    "B",
+    "J"
+   ],
+   "answer": "B",
+   "tip": "球 = ball，首字母是 B"
+  },
+  {
+   "id": "english-g1-0186",
+   "type": "choice",
+   "level": 1,
+   "q": "「二」的英文单词以哪个字母开头？",
+   "options": [
+    "U",
+    "P",
+    "T",
+    "K"
+   ],
+   "answer": "T",
+   "tip": "二 = two，首字母是 T"
+  },
+  {
+   "id": "english-g1-0187",
+   "type": "choice",
+   "level": 1,
+   "q": "「白色」的英文单词以哪个字母开头？",
+   "options": [
+    "J",
+    "P",
+    "F",
+    "W"
+   ],
+   "answer": "W",
+   "tip": "白色 = white，首字母是 W"
+  },
+  {
+   "id": "english-g1-0188",
+   "type": "choice",
+   "level": 1,
+   "q": "「猪」的英文单词以哪个字母开头？",
+   "options": [
+    "L",
+    "R",
+    "D",
+    "P"
+   ],
+   "answer": "P",
+   "tip": "猪 = pig，首字母是 P"
+  },
+  {
+   "id": "english-g1-0189",
+   "type": "choice",
+   "level": 1,
+   "q": "「床」的英文单词以哪个字母开头？",
+   "options": [
+    "U",
+    "B",
+    "A",
+    "M"
+   ],
+   "answer": "B",
+   "tip": "床 = bed，首字母是 B"
+  },
+  {
+   "id": "english-g1-0190",
+   "type": "choice",
+   "level": 1,
+   "q": "「狗」的英文单词以哪个字母开头？",
+   "options": [
+    "N",
+    "D",
+    "Q",
+    "E"
+   ],
+   "answer": "D",
+   "tip": "狗 = dog，首字母是 D"
+  },
+  {
+   "id": "english-g1-0191",
+   "type": "choice",
+   "level": 1,
+   "q": "「五」的英文单词以哪个字母开头？",
+   "options": [
+    "F",
+    "J",
+    "G",
+    "S"
+   ],
+   "answer": "F",
+   "tip": "五 = five，首字母是 F"
+  },
+  {
+   "id": "english-g1-0192",
+   "type": "choice",
+   "level": 1,
+   "q": "「八」的英文单词以哪个字母开头？",
+   "options": [
+    "H",
+    "U",
+    "E",
+    "A"
+   ],
+   "answer": "E",
+   "tip": "八 = eight，首字母是 E"
+  },
+  {
+   "id": "english-g1-0193",
+   "type": "choice",
+   "level": 1,
+   "q": "「梨」的英文单词以哪个字母开头？",
+   "options": [
+    "X",
+    "P",
+    "A",
+    "B"
+   ],
+   "answer": "P",
+   "tip": "梨 = pear，首字母是 P"
+  },
+  {
+   "id": "english-g1-0194",
+   "type": "choice",
+   "level": 1,
+   "q": "「牛奶」的英文单词以哪个字母开头？",
+   "options": [
+    "V",
+    "H",
+    "M",
+    "O"
+   ],
+   "answer": "M",
+   "tip": "牛奶 = milk，首字母是 M"
+  },
+  {
+   "id": "english-g1-0195",
+   "type": "choice",
+   "level": 1,
+   "q": "「鸭子」的英文单词以哪个字母开头？",
+   "options": [
+    "Q",
+    "D",
+    "U",
+    "J"
+   ],
+   "answer": "D",
+   "tip": "鸭子 = duck，首字母是 D"
+  },
+  {
+   "id": "english-g1-0196",
+   "type": "choice",
+   "level": 1,
+   "q": "「爸爸」的英文单词以哪个字母开头？",
+   "options": [
+    "X",
+    "F",
+    "C",
+    "D"
+   ],
+   "answer": "F",
+   "tip": "爸爸 = father，首字母是 F"
+  },
+  {
+   "id": "english-g1-0197",
+   "type": "choice",
+   "level": 1,
+   "q": "「星星」的英文单词以哪个字母开头？",
+   "options": [
+    "X",
+    "S",
+    "Q",
+    "N"
+   ],
+   "answer": "S",
+   "tip": "星星 = star，首字母是 S"
+  },
+  {
+   "id": "english-g1-0198",
+   "type": "choice",
+   "level": 1,
+   "q": "「月亮」的英文单词以哪个字母开头？",
+   "options": [
+    "Z",
+    "F",
+    "M",
+    "L"
+   ],
+   "answer": "M",
+   "tip": "月亮 = moon，首字母是 M"
+  },
+  {
+   "id": "english-g1-0199",
+   "type": "choice",
+   "level": 1,
+   "q": "「椅子」的英文单词以哪个字母开头？",
+   "options": [
+    "W",
+    "C",
+    "D",
+    "V"
+   ],
+   "answer": "C",
+   "tip": "椅子 = chair，首字母是 C"
+  },
+  {
+   "id": "english-g1-0200",
+   "type": "choice",
+   "level": 1,
+   "q": "「香蕉」的英文单词以哪个字母开头？",
+   "options": [
+    "B",
+    "Y",
+    "T",
+    "M"
+   ],
+   "answer": "B",
+   "tip": "香蕉 = banana，首字母是 B"
+  },
+  {
+   "id": "english-g1-0201",
+   "type": "choice",
+   "level": 2,
+   "q": "「四」的英文是？",
+   "options": [
+    "four",
+    "foot",
+    "bus",
+    "mouth"
+   ],
+   "answer": "four",
+   "tip": "四 = four"
+  },
+  {
+   "id": "english-g1-0202",
+   "type": "choice",
+   "level": 2,
+   "q": "「汽车」的英文是？",
+   "options": [
+    "tiger",
+    "desk",
+    "car",
+    "orange"
+   ],
+   "answer": "car",
+   "tip": "汽车 = car"
+  },
+  {
+   "id": "english-g1-0203",
+   "type": "choice",
+   "level": 2,
+   "q": "「课桌」的英文是？",
+   "options": [
+    "desk",
+    "nine",
+    "ear",
+    "cat"
+   ],
+   "answer": "desk",
+   "tip": "课桌 = desk"
+  },
+  {
+   "id": "english-g1-0204",
+   "type": "choice",
+   "level": 2,
+   "q": "「苹果」的英文是？",
+   "options": [
+    "orange",
+    "head",
+    "apple",
+    "rabbit"
+   ],
+   "answer": "apple",
+   "tip": "苹果 = apple"
+  },
+  {
+   "id": "english-g1-0205",
+   "type": "choice",
+   "level": 2,
+   "q": "「头」的英文是？",
+   "options": [
+    "head",
+    "girl",
+    "name",
+    "orange"
+   ],
+   "answer": "head",
+   "tip": "头 = head"
+  },
+  {
+   "id": "english-g1-0206",
+   "type": "choice",
+   "level": 2,
+   "q": "「十」的英文是？",
+   "options": [
+    "two",
+    "ten",
+    "seven",
+    "book"
+   ],
+   "answer": "ten",
+   "tip": "十 = ten"
+  },
+  {
+   "id": "english-g1-0207",
+   "type": "choice",
+   "level": 2,
+   "q": "「书包」的英文是？",
+   "options": [
+    "school",
+    "bag",
+    "pear",
+    "friend"
+   ],
+   "answer": "bag",
+   "tip": "书包 = bag"
+  },
+  {
+   "id": "english-g1-0208",
+   "type": "choice",
+   "level": 2,
+   "q": "「鼻子」的英文是？",
+   "options": [
+    "girl",
+    "green",
+    "nose",
+    "mother"
+   ],
+   "answer": "nose",
+   "tip": "鼻子 = nose"
+  },
+  {
+   "id": "english-g1-0209",
+   "type": "choice",
+   "level": 2,
+   "q": "「黑色」的英文是？",
+   "options": [
+    "cat",
+    "black",
+    "hand",
+    "bike"
+   ],
+   "answer": "black",
+   "tip": "黑色 = black"
+  },
+  {
+   "id": "english-g1-0210",
+   "type": "choice",
+   "level": 2,
+   "q": "「月亮」的英文是？",
+   "options": [
+    "banana",
+    "moon",
+    "eraser",
+    "bike"
+   ],
+   "answer": "moon",
+   "tip": "月亮 = moon"
+  },
+  {
+   "id": "english-g1-0211",
+   "type": "choice",
+   "level": 2,
+   "q": "「钟」的英文是？",
+   "options": [
+    "water",
+    "clock",
+    "milk",
+    "eraser"
+   ],
+   "answer": "clock",
+   "tip": "钟 = clock"
+  },
+  {
+   "id": "english-g1-0212",
+   "type": "choice",
+   "level": 2,
+   "q": "「橘子」的英文是？",
+   "options": [
+    "ear",
+    "apple",
+    "tangerine",
+    "one"
+   ],
+   "answer": "tangerine",
+   "tip": "橘子 = tangerine"
+  },
+  {
+   "id": "english-g1-0213",
+   "type": "choice",
+   "level": 2,
+   "q": "「一」的英文是？",
+   "options": [
+    "one",
+    "ear",
+    "rabbit",
+    "teacher"
+   ],
+   "answer": "one",
+   "tip": "一 = one"
+  },
+  {
+   "id": "english-g1-0214",
+   "type": "choice",
+   "level": 2,
+   "q": "「太阳」的英文是？",
+   "options": [
+    "apple",
+    "head",
+    "yellow",
+    "sun"
+   ],
+   "answer": "sun",
+   "tip": "太阳 = sun"
+  },
+  {
+   "id": "english-g1-0215",
+   "type": "choice",
+   "level": 2,
+   "q": "「妈妈」的英文是？",
+   "options": [
+    "mother",
+    "bird",
+    "clock",
+    "mouth"
+   ],
+   "answer": "mother",
+   "tip": "妈妈 = mother"
+  },
+  {
+   "id": "english-g1-0216",
+   "type": "choice",
+   "level": 2,
+   "q": "「白色」的英文是？",
+   "options": [
+    "yellow",
+    "three",
+    "girl",
+    "white"
+   ],
+   "answer": "white",
+   "tip": "白色 = white"
+  },
+  {
+   "id": "english-g1-0217",
+   "type": "choice",
+   "level": 2,
+   "q": "white 的中文意思是？",
+   "options": [
+    "脸",
+    "妈妈",
+    "尺子",
+    "白色"
+   ],
+   "answer": "白色",
+   "tip": "white = 白色"
+  },
+  {
+   "id": "english-g1-0218",
+   "type": "choice",
+   "level": 2,
+   "q": "nine 的中文意思是？",
+   "options": [
+    "球",
+    "老师",
+    "十",
+    "九"
+   ],
+   "answer": "九",
+   "tip": "nine = 九"
+  },
+  {
+   "id": "english-g1-0219",
+   "type": "choice",
+   "level": 2,
+   "q": "one 的中文意思是？",
+   "options": [
+    "蛋糕",
+    "一",
+    "女孩",
+    "绿色"
+   ],
+   "answer": "一",
+   "tip": "one = 一"
+  },
+  {
+   "id": "english-g1-0220",
+   "type": "choice",
+   "level": 2,
+   "q": "egg 的中文意思是？",
+   "options": [
+    "书",
+    "鸡蛋",
+    "朋友",
+    "眼睛"
+   ],
+   "answer": "鸡蛋",
+   "tip": "egg = 鸡蛋"
+  },
+  {
+   "id": "english-g1-0221",
+   "type": "choice",
+   "level": 2,
+   "q": "ball 的中文意思是？",
+   "options": [
+    "黄色",
+    "月亮",
+    "球",
+    "十"
+   ],
+   "answer": "球",
+   "tip": "ball = 球"
+  },
+  {
+   "id": "english-g1-0222",
+   "type": "choice",
+   "level": 2,
+   "q": "bus 的中文意思是？",
+   "options": [
+    "七",
+    "鱼",
+    "橙色",
+    "公共汽车"
+   ],
+   "answer": "公共汽车",
+   "tip": "bus = 公共汽车"
+  },
+  {
+   "id": "english-g1-0223",
+   "type": "choice",
+   "level": 2,
+   "q": "ruler 的中文意思是？",
+   "options": [
+    "猪",
+    "太阳",
+    "尺子",
+    "课桌"
+   ],
+   "answer": "尺子",
+   "tip": "ruler = 尺子"
+  },
+  {
+   "id": "english-g1-0224",
+   "type": "choice",
+   "level": 2,
+   "q": "pink 的中文意思是？",
+   "options": [
+    "粉色",
+    "白色",
+    "黑色",
+    "橙色"
+   ],
+   "answer": "粉色",
+   "tip": "pink = 粉色"
+  },
+  {
+   "id": "english-g1-0225",
+   "type": "choice",
+   "level": 2,
+   "q": "girl 的中文意思是？",
+   "options": [
+    "女孩",
+    "球",
+    "铅笔",
+    "八"
+   ],
+   "answer": "女孩",
+   "tip": "girl = 女孩"
+  },
+  {
+   "id": "english-g1-0226",
+   "type": "choice",
+   "level": 2,
+   "q": "three 的中文意思是？",
+   "options": [
+    "月亮",
+    "牛奶",
+    "绿色",
+    "三"
+   ],
+   "answer": "三",
+   "tip": "three = 三"
+  },
+  {
+   "id": "english-g1-0227",
+   "type": "choice",
+   "level": 2,
+   "q": "bag 的中文意思是？",
+   "options": [
+    "二",
+    "窗户",
+    "书包",
+    "脸"
+   ],
+   "answer": "书包",
+   "tip": "bag = 书包"
+  },
+  {
+   "id": "english-g1-0228",
+   "type": "choice",
+   "level": 2,
+   "q": "five 的中文意思是？",
+   "options": [
+    "五",
+    "树",
+    "爸爸",
+    "鱼"
+   ],
+   "answer": "五",
+   "tip": "five = 五"
+  },
+  {
+   "id": "english-g1-0229",
+   "type": "choice",
+   "level": 2,
+   "q": "cat 的中文意思是？",
+   "options": [
+    "红色",
+    "猫",
+    "苹果",
+    "铅笔"
+   ],
+   "answer": "猫",
+   "tip": "cat = 猫"
+  },
+  {
+   "id": "english-g1-0230",
+   "type": "choice",
+   "level": 2,
+   "q": "fish 的中文意思是？",
+   "options": [
+    "鱼",
+    "猫",
+    "香蕉",
+    "红色"
+   ],
+   "answer": "鱼",
+   "tip": "fish = 鱼"
+  },
+  {
+   "id": "english-g1-0231",
+   "type": "choice",
+   "level": 2,
+   "q": "name 的中文意思是？",
+   "options": [
+    "名字",
+    "猪",
+    "一",
+    "粉色"
+   ],
+   "answer": "名字",
+   "tip": "name = 名字"
+  },
+  {
+   "id": "english-g1-0232",
+   "type": "choice",
+   "level": 2,
+   "q": "black 的中文意思是？",
+   "options": [
+    "黑色",
+    "鼻子",
+    "脚",
+    "苹果"
+   ],
+   "answer": "黑色",
+   "tip": "black = 黑色"
+  },
+  {
+   "id": "english-g1-0233",
+   "type": "choice",
+   "level": 2,
+   "q": "This is a cat. 的意思是？",
+   "options": [
+    "这是一只猫。",
+    "这是一辆车。",
+    "这是一本书。",
+    "这是一只狗。"
+   ],
+   "answer": "这是一只猫。",
+   "tip": "This is a cat. 意思是「这是一只猫。」"
+  },
+  {
+   "id": "english-g1-0234",
+   "type": "choice",
+   "level": 2,
+   "q": "Good morning! 的意思是？",
+   "options": [
+    "谢谢！",
+    "再见！",
+    "早上好！",
+    "晚上好！"
+   ],
+   "answer": "早上好！",
+   "tip": "Good morning! 意思是「早上好！」"
+  },
+  {
+   "id": "english-g1-0235",
+   "type": "choice",
+   "level": 2,
+   "q": "Hello! 的意思是？",
+   "options": [
+    "对不起！",
+    "再见！",
+    "你好！",
+    "谢谢！"
+   ],
+   "answer": "你好！",
+   "tip": "Hello! 意思是「你好！」"
+  },
+  {
+   "id": "english-g1-0236",
+   "type": "choice",
+   "level": 2,
+   "q": "Goodbye! 的意思是？",
+   "options": [
+    "你好！",
+    "再见！",
+    "谢谢！",
+    "对不起！"
+   ],
+   "answer": "再见！",
+   "tip": "Goodbye! 意思是「再见！」"
+  },
+  {
+   "id": "english-g1-0237",
+   "type": "choice",
+   "level": 2,
+   "q": "How are you? 的意思是？",
+   "options": [
+    "你在哪？",
+    "你好吗？",
+    "你是谁？",
+    "你几岁？"
+   ],
+   "answer": "你好吗？",
+   "tip": "How are you? 意思是「你好吗？」"
+  },
+  {
+   "id": "english-g1-0238",
+   "type": "choice",
+   "level": 2,
+   "q": "Thank you! 的意思是？",
+   "options": [
+    "你好！",
+    "对不起！",
+    "谢谢你！",
+    "再见！"
+   ],
+   "answer": "谢谢你！",
+   "tip": "Thank you! 意思是「谢谢你！」"
+  },
+  {
+   "id": "english-g1-0239",
+   "type": "choice",
+   "level": 2,
+   "q": "What's your name? 的意思是？",
+   "options": [
+    "你几岁了？",
+    "你叫什么名字？",
+    "你在哪里？",
+    "这是什么？"
+   ],
+   "answer": "你叫什么名字？",
+   "tip": "What's your name? 意思是「你叫什么名字？」"
+  },
+  {
+   "id": "english-g1-0240",
+   "type": "choice",
+   "level": 2,
+   "q": "I'm sorry. 的意思是？",
+   "options": [
+    "谢谢你。",
+    "没关系。",
+    "对不起。",
+    "早上好。"
+   ],
+   "answer": "对不起。",
+   "tip": "I'm sorry. 意思是「对不起。」"
+  },
+  {
+   "id": "english-g1-0241",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（铅笔）：pe_cil",
+   "answer": "pencil",
+   "tip": "铅笔 拼写为 pencil"
+  },
+  {
+   "id": "english-g1-0242",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（橡皮）：eras_r",
+   "answer": "eraser",
+   "tip": "橡皮 拼写为 eraser"
+  },
+  {
+   "id": "english-g1-0243",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（粉色）：pin_",
+   "answer": "pink",
+   "tip": "粉色 拼写为 pink"
+  },
+  {
+   "id": "english-g1-0244",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（老虎）：tig_r",
+   "answer": "tiger",
+   "tip": "老虎 拼写为 tiger"
+  },
+  {
+   "id": "english-g1-0245",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（鱼）：fis_",
+   "answer": "fish",
+   "tip": "鱼 拼写为 fish"
+  },
+  {
+   "id": "english-g1-0246",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（钢笔）：p_n",
+   "answer": "pen",
+   "tip": "钢笔 拼写为 pen"
+  },
+  {
+   "id": "english-g1-0247",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（男孩）：bo_",
+   "answer": "boy",
+   "tip": "男孩 拼写为 boy"
+  },
+  {
+   "id": "english-g1-0248",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（五）：fiv_",
+   "answer": "five",
+   "tip": "五 拼写为 five"
+  },
+  {
+   "id": "english-g1-0249",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（星星）：st_r",
+   "answer": "star",
+   "tip": "星星 拼写为 star"
+  },
+  {
+   "id": "english-g1-0250",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（脸）：f_ce",
+   "answer": "face",
+   "tip": "脸 拼写为 face"
+  },
+  {
+   "id": "english-g1-0251",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（一）：o_e",
+   "answer": "one",
+   "tip": "一 拼写为 one"
+  },
+  {
+   "id": "english-g1-0252",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（狗）：d_g",
+   "answer": "dog",
+   "tip": "狗 拼写为 dog"
+  },
+  {
+   "id": "english-g1-0253",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（椅子）：ch_ir",
+   "answer": "chair",
+   "tip": "椅子 拼写为 chair"
+  },
+  {
+   "id": "english-g1-0254",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（头）：hea_",
+   "answer": "head",
+   "tip": "头 拼写为 head"
+  },
+  {
+   "id": "english-g1-0255",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（橘子）：tangeri_e",
+   "answer": "tangerine",
+   "tip": "橘子 拼写为 tangerine"
+  },
+  {
+   "id": "english-g1-0256",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（四）：fo_r",
+   "answer": "four",
+   "tip": "四 拼写为 four"
+  },
+  {
+   "id": "english-g1-0257",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（学校）：sc_ool",
+   "answer": "school",
+   "tip": "学校 拼写为 school"
+  },
+  {
+   "id": "english-g1-0258",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（六）：s_x",
+   "answer": "six",
+   "tip": "六 拼写为 six"
+  },
+  {
+   "id": "english-g1-0259",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（窗户）：win_ow",
+   "answer": "window",
+   "tip": "窗户 拼写为 window"
+  },
+  {
+   "id": "english-g1-0260",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（鱼）：fi_h",
+   "answer": "fish",
+   "tip": "鱼 拼写为 fish"
+  },
+  {
+   "id": "english-g1-0261",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（八）：eigh_",
+   "answer": "eight",
+   "tip": "八 拼写为 eight"
+  },
+  {
+   "id": "english-g1-0262",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（钟）：clo_k",
+   "answer": "clock",
+   "tip": "钟 拼写为 clock"
+  },
+  {
+   "id": "english-g1-0263",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（鸟）：bi_d",
+   "answer": "bird",
+   "tip": "鸟 拼写为 bird"
+  },
+  {
+   "id": "english-g1-0264",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（铅笔）：pen_il",
+   "answer": "pencil",
+   "tip": "铅笔 拼写为 pencil"
+  },
+  {
+   "id": "english-g1-0265",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（头）：h_ad",
+   "answer": "head",
+   "tip": "头 拼写为 head"
+  },
+  {
+   "id": "english-g1-0266",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（太阳）：su_",
+   "answer": "sun",
+   "tip": "太阳 拼写为 sun"
+  },
+  {
+   "id": "english-g1-0267",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（脚）：fo_t",
+   "answer": "foot",
+   "tip": "脚 拼写为 foot"
+  },
+  {
+   "id": "english-g1-0268",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（耳朵）：ea_",
+   "answer": "ear",
+   "tip": "耳朵 拼写为 ear"
+  },
+  {
+   "id": "english-g1-0269",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（书包）：b_g",
+   "answer": "bag",
+   "tip": "书包 拼写为 bag"
+  },
+  {
+   "id": "english-g1-0270",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（苹果）：appl_",
+   "answer": "apple",
+   "tip": "苹果 拼写为 apple"
+  },
+  {
+   "id": "english-g1-0271",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（公共汽车）：bu_",
+   "answer": "bus",
+   "tip": "公共汽车 拼写为 bus"
+  },
+  {
+   "id": "english-g1-0272",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（手）：h_nd",
+   "answer": "hand",
+   "tip": "手 拼写为 hand"
+  },
+  {
+   "id": "english-g1-0273",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（橘子）：tang_rine",
+   "answer": "tangerine",
+   "tip": "橘子 拼写为 tangerine"
+  },
+  {
+   "id": "english-g1-0274",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（六）：si_",
+   "answer": "six",
+   "tip": "六 拼写为 six"
+  },
+  {
+   "id": "english-g1-0275",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（苹果）：ap_le",
+   "answer": "apple",
+   "tip": "苹果 拼写为 apple"
+  },
+  {
+   "id": "english-g1-0276",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（鸡蛋）：eg_",
+   "answer": "egg",
+   "tip": "鸡蛋 拼写为 egg"
+  },
+  {
+   "id": "english-g1-0277",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（橡皮）：erase_",
+   "answer": "eraser",
+   "tip": "橡皮 拼写为 eraser"
+  },
+  {
+   "id": "english-g1-0278",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（二）：tw_",
+   "answer": "two",
+   "tip": "二 拼写为 two"
+  },
+  {
+   "id": "english-g1-0279",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（蛋糕）：cak_",
+   "answer": "cake",
+   "tip": "蛋糕 拼写为 cake"
+  },
+  {
+   "id": "english-g1-0280",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（香蕉）：ba_ana",
+   "answer": "banana",
+   "tip": "香蕉 拼写为 banana"
+  },
+  {
+   "id": "english-g1-0281",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（梨）：p_ar",
+   "answer": "pear",
+   "tip": "梨 拼写为 pear"
+  },
+  {
+   "id": "english-g1-0282",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（水）：wa_er",
+   "answer": "water",
+   "tip": "水 拼写为 water"
+  },
+  {
+   "id": "english-g1-0283",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（猫）：c_t",
+   "answer": "cat",
+   "tip": "猫 拼写为 cat"
+  },
+  {
+   "id": "english-g1-0284",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（二）：t_o",
+   "answer": "two",
+   "tip": "二 拼写为 two"
+  },
+  {
+   "id": "english-g1-0285",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（橘子）：tanger_ne",
+   "answer": "tangerine",
+   "tip": "橘子 拼写为 tangerine"
+  },
+  {
+   "id": "english-g1-0286",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（自行车）：b_ke",
+   "answer": "bike",
+   "tip": "自行车 拼写为 bike"
+  },
+  {
+   "id": "english-g1-0287",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（蛋糕）：c_ke",
+   "answer": "cake",
+   "tip": "蛋糕 拼写为 cake"
+  },
+  {
+   "id": "english-g1-0288",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（男孩）：b_y",
+   "answer": "boy",
+   "tip": "男孩 拼写为 boy"
+  },
+  {
+   "id": "english-g1-0289",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（嘴巴）：mout_",
+   "answer": "mouth",
+   "tip": "嘴巴 拼写为 mouth"
+  },
+  {
+   "id": "english-g1-0290",
+   "type": "fill",
+   "level": 2,
+   "q": "补全单词（兔子）：rabb_t",
+   "answer": "rabbit",
+   "tip": "兔子 拼写为 rabbit"
+  },
+  {
+   "id": "english-g1-0291",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— How are you?",
+   "options": [
+    "I'm nine.",
+    "I'm fine, thank you.",
+    "It's a cat.",
+    "My name is Tom."
+   ],
+   "answer": "I'm fine, thank you.",
+   "tip": "— How are you? → I'm fine, thank you."
+  },
+  {
+   "id": "english-g1-0292",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：We ___ in Class One.",
+   "options": [
+    "be",
+    "is",
+    "are",
+    "am"
+   ],
+   "answer": "are",
+   "tip": "正确答案是 are"
+  },
+  {
+   "id": "english-g1-0293",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的代词：Tom is a boy. ___ is nine.",
+   "options": [
+    "They",
+    "It",
+    "He",
+    "She"
+   ],
+   "answer": "He",
+   "tip": "正确答案是 He"
+  },
+  {
+   "id": "english-g1-0294",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的介词：The shoes are ___ the bed.",
+   "options": [
+    "in",
+    "on",
+    "under",
+    "at"
+   ],
+   "answer": "under",
+   "tip": "正确答案是 under"
+  },
+  {
+   "id": "english-g1-0295",
+   "type": "choice",
+   "level": 2,
+   "q": "early（早的）的反义词是？",
+   "options": [
+    "small",
+    "strong",
+    "big",
+    "late"
+   ],
+   "answer": "late",
+   "tip": "early 的反义词是 late"
+  },
+  {
+   "id": "english-g1-0296",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "bike",
+    "taxi",
+    "museum",
+    "train"
+   ],
+   "answer": "museum",
+   "tip": "博物馆 属于「场所」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0297",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Happy birthday!",
+   "options": [
+    "You're welcome.",
+    "I'm nine.",
+    "Thank you!",
+    "Goodbye!"
+   ],
+   "answer": "Thank you!",
+   "tip": "— Happy birthday! → Thank you!"
+  },
+  {
+   "id": "english-g1-0298",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：I ___ a student.",
+   "options": [
+    "is",
+    "are",
+    "be",
+    "am"
+   ],
+   "answer": "am",
+   "tip": "正确答案是 am"
+  },
+  {
+   "id": "english-g1-0299",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的代词：Look at the birds. ___ are flying.",
+   "options": [
+    "She",
+    "They",
+    "It",
+    "He"
+   ],
+   "answer": "They",
+   "tip": "正确答案是 They"
+  },
+  {
+   "id": "english-g1-0300",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的介词：There is a picture ___ the wall.",
+   "options": [
+    "in",
+    "at",
+    "on",
+    "under"
+   ],
+   "answer": "on",
+   "tip": "正确答案是 on"
+  },
+  {
+   "id": "english-g1-0301",
+   "type": "choice",
+   "level": 2,
+   "q": "hot（热的）的反义词是？",
+   "options": [
+    "sad",
+    "old",
+    "weak",
+    "cold"
+   ],
+   "answer": "cold",
+   "tip": "hot 的反义词是 cold"
+  },
+  {
+   "id": "english-g1-0302",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "Sunday",
+    "Friday",
+    "Thursday",
+    "hat"
+   ],
+   "answer": "hat",
+   "tip": "帽子 属于「衣物」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0303",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— I'm sorry.",
+   "options": [
+    "Good morning!",
+    "That's OK.",
+    "You're welcome.",
+    "Nice to meet you."
+   ],
+   "answer": "That's OK.",
+   "tip": "— I'm sorry. → That's OK."
+  },
+  {
+   "id": "english-g1-0304",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：He ___ my father.",
+   "options": [
+    "are",
+    "am",
+    "be",
+    "is"
+   ],
+   "answer": "is",
+   "tip": "正确答案是 is"
+  },
+  {
+   "id": "english-g1-0305",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的代词：This is my mother. ___ is a teacher.",
+   "options": [
+    "They",
+    "She",
+    "It",
+    "He"
+   ],
+   "answer": "She",
+   "tip": "正确答案是 She"
+  },
+  {
+   "id": "english-g1-0306",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的介词：The cat is ___ the box.",
+   "options": [
+    "at",
+    "on",
+    "under",
+    "in"
+   ],
+   "answer": "in",
+   "tip": "正确答案是 in"
+  },
+  {
+   "id": "english-g1-0307",
+   "type": "choice",
+   "level": 2,
+   "q": "small（小的）的反义词是？",
+   "options": [
+    "hot",
+    "big",
+    "long",
+    "sad"
+   ],
+   "answer": "big",
+   "tip": "small 的反义词是 big"
+  },
+  {
+   "id": "english-g1-0308",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "boy",
+    "Monday",
+    "Sunday",
+    "Thursday"
+   ],
+   "answer": "boy",
+   "tip": "男孩 属于「人物」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0309",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Nice to meet you.",
+   "options": [
+    "Goodbye!",
+    "Nice to meet you, too.",
+    "Thank you!",
+    "You're welcome."
+   ],
+   "answer": "Nice to meet you, too.",
+   "tip": "— Nice to meet you. → Nice to meet you, too."
+  },
+  {
+   "id": "english-g1-0310",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：They ___ good friends.",
+   "options": [
+    "is",
+    "am",
+    "are",
+    "be"
+   ],
+   "answer": "are",
+   "tip": "正确答案是 are"
+  },
+  {
+   "id": "english-g1-0311",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的代词：My father is a doctor. ___ works in a hospital.",
+   "options": [
+    "They",
+    "It",
+    "She",
+    "He"
+   ],
+   "answer": "He",
+   "tip": "正确答案是 He"
+  },
+  {
+   "id": "english-g1-0312",
+   "type": "choice",
+   "level": 2,
+   "q": "new（新的）的反义词是？",
+   "options": [
+    "long",
+    "old",
+    "hot",
+    "sad"
+   ],
+   "answer": "old",
+   "tip": "new 的反义词是 old"
+  },
+  {
+   "id": "english-g1-0313",
+   "type": "fill",
+   "level": 2,
+   "q": "seven + three = ?（用英文单词回答）",
+   "answer": "ten",
+   "tip": "7 + 3 = 10，写作 ten"
+  },
+  {
+   "id": "english-g1-0314",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "friend",
+    "rainy",
+    "windy",
+    "sunny"
+   ],
+   "answer": "friend",
+   "tip": "朋友 属于「人物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0315",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— How old are you?",
+   "options": [
+    "I'm nine.",
+    "It's a book.",
+    "My name is Tom.",
+    "I'm fine."
+   ],
+   "answer": "I'm nine.",
+   "tip": "— How old are you? → I'm nine."
+  },
+  {
+   "id": "english-g1-0316",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的代词：I have a cat. ___ is white.",
+   "options": [
+    "It",
+    "He",
+    "She",
+    "They"
+   ],
+   "answer": "It",
+   "tip": "正确答案是 It"
+  },
+  {
+   "id": "english-g1-0317",
+   "type": "choice",
+   "level": 2,
+   "q": "strong（强壮的）的反义词是？",
+   "options": [
+    "weak",
+    "new",
+    "hot",
+    "difficult"
+   ],
+   "answer": "weak",
+   "tip": "strong 的反义词是 weak"
+  },
+  {
+   "id": "english-g1-0318",
+   "type": "fill",
+   "level": 2,
+   "q": "one + eleven = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "1 + 11 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0319",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "history",
+    "art",
+    "music",
+    "Sunday"
+   ],
+   "answer": "Sunday",
+   "tip": "星期日 属于「星期」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0320",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— What colour is it?",
+   "options": [
+    "My name is Tom.",
+    "It's a cat.",
+    "It's red.",
+    "I'm fine."
+   ],
+   "answer": "It's red.",
+   "tip": "— What colour is it? → It's red."
+  },
+  {
+   "id": "english-g1-0321",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：You ___ my teacher.",
+   "options": [
+    "be",
+    "is",
+    "am",
+    "are"
+   ],
+   "answer": "are",
+   "tip": "正确答案是 are"
+  },
+  {
+   "id": "english-g1-0322",
+   "type": "choice",
+   "level": 2,
+   "q": "late（迟的）的反义词是？",
+   "options": [
+    "hot",
+    "early",
+    "happy",
+    "old"
+   ],
+   "answer": "early",
+   "tip": "late 的反义词是 early"
+  },
+  {
+   "id": "english-g1-0323",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "egg",
+    "noodles",
+    "meat",
+    "gloves"
+   ],
+   "answer": "gloves",
+   "tip": "手套 属于「衣物」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0324",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的介词：The book is ___ the desk.",
+   "options": [
+    "in",
+    "under",
+    "at",
+    "on"
+   ],
+   "answer": "on",
+   "tip": "正确答案是 on"
+  },
+  {
+   "id": "english-g1-0325",
+   "type": "choice",
+   "level": 2,
+   "q": "cold（冷的）的反义词是？",
+   "options": [
+    "sad",
+    "happy",
+    "hot",
+    "cold"
+   ],
+   "answer": "hot",
+   "tip": "cold 的反义词是 hot"
+  },
+  {
+   "id": "english-g1-0326",
+   "type": "fill",
+   "level": 2,
+   "q": "nine + four = ?（用英文单词回答）",
+   "answer": "thirteen",
+   "tip": "9 + 4 = 13，写作 thirteen"
+  },
+  {
+   "id": "english-g1-0327",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "girl",
+    "boy",
+    "teacher",
+    "driver"
+   ],
+   "answer": "driver",
+   "tip": "司机 属于「职业」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0328",
+   "type": "choice",
+   "level": 2,
+   "q": "short（短的）的反义词是？",
+   "options": [
+    "big",
+    "cold",
+    "long",
+    "weak"
+   ],
+   "answer": "long",
+   "tip": "short 的反义词是 long"
+  },
+  {
+   "id": "english-g1-0329",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "rabbit",
+    "bird",
+    "mouth",
+    "cat"
+   ],
+   "answer": "mouth",
+   "tip": "嘴巴 属于「身体部位」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0330",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Can you swim?",
+   "options": [
+    "I'm nine.",
+    "Yes, it is.",
+    "It's a fish.",
+    "Yes, I can."
+   ],
+   "answer": "Yes, I can.",
+   "tip": "— Can you swim? → Yes, I can."
+  },
+  {
+   "id": "english-g1-0331",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的介词：The pen is ___ my bag.",
+   "options": [
+    "under",
+    "in",
+    "on",
+    "at"
+   ],
+   "answer": "in",
+   "tip": "正确答案是 in"
+  },
+  {
+   "id": "english-g1-0332",
+   "type": "choice",
+   "level": 2,
+   "q": "long（长的）的反义词是？",
+   "options": [
+    "easy",
+    "weak",
+    "short",
+    "sad"
+   ],
+   "answer": "short",
+   "tip": "long 的反义词是 short"
+  },
+  {
+   "id": "english-g1-0333",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "cook",
+    "worker",
+    "train",
+    "driver"
+   ],
+   "answer": "train",
+   "tip": "火车 属于「交通工具」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0334",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的介词：The ball is ___ the chair.",
+   "options": [
+    "under",
+    "on",
+    "at",
+    "in"
+   ],
+   "answer": "under",
+   "tip": "正确答案是 under"
+  },
+  {
+   "id": "english-g1-0335",
+   "type": "choice",
+   "level": 2,
+   "q": "easy（容易的）的反义词是？",
+   "options": [
+    "early",
+    "hot",
+    "strong",
+    "difficult"
+   ],
+   "answer": "difficult",
+   "tip": "easy 的反义词是 difficult"
+  },
+  {
+   "id": "english-g1-0336",
+   "type": "fill",
+   "level": 2,
+   "q": "three + one = ?（用英文单词回答）",
+   "answer": "four",
+   "tip": "3 + 1 = 4，写作 four"
+  },
+  {
+   "id": "english-g1-0337",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "art",
+    "maths",
+    "science",
+    "rice"
+   ],
+   "answer": "rice",
+   "tip": "米饭 属于「食物饮料」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0338",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Good morning!",
+   "options": [
+    "See you tomorrow!",
+    "Thank you!",
+    "Good night!",
+    "Good morning!"
+   ],
+   "answer": "Good morning!",
+   "tip": "— Good morning! → Good morning!"
+  },
+  {
+   "id": "english-g1-0339",
+   "type": "fill",
+   "level": 2,
+   "q": "one + two = ?（用英文单词回答）",
+   "answer": "three",
+   "tip": "1 + 2 = 3，写作 three"
+  },
+  {
+   "id": "english-g1-0340",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "mother",
+    "father",
+    "friend",
+    "red"
+   ],
+   "answer": "red",
+   "tip": "红色 属于「颜色」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0341",
+   "type": "choice",
+   "level": 2,
+   "q": "happy（开心的）的反义词是？",
+   "options": [
+    "big",
+    "easy",
+    "sad",
+    "early"
+   ],
+   "answer": "sad",
+   "tip": "happy 的反义词是 sad"
+  },
+  {
+   "id": "english-g1-0342",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "history",
+    "Chinese",
+    "art",
+    "hand"
+   ],
+   "answer": "hand",
+   "tip": "手 属于「身体部位」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0343",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的代词：Amy is my friend. ___ likes singing.",
+   "options": [
+    "They",
+    "She",
+    "He",
+    "It"
+   ],
+   "answer": "She",
+   "tip": "正确答案是 She"
+  },
+  {
+   "id": "english-g1-0344",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "school",
+    "rainy",
+    "hospital",
+    "garden"
+   ],
+   "answer": "rainy",
+   "tip": "下雨的 属于「天气」，其余三个属于「场所」"
+  },
+  {
+   "id": "english-g1-0345",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Let's go to school.",
+   "options": [
+    "Good night!",
+    "You're welcome.",
+    "I'm sorry.",
+    "OK, let's go."
+   ],
+   "answer": "OK, let's go.",
+   "tip": "— Let's go to school. → OK, let's go."
+  },
+  {
+   "id": "english-g1-0346",
+   "type": "choice",
+   "level": 2,
+   "q": "big（大的）的反义词是？",
+   "options": [
+    "short",
+    "small",
+    "sad",
+    "weak"
+   ],
+   "answer": "small",
+   "tip": "big 的反义词是 small"
+  },
+  {
+   "id": "english-g1-0347",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "winter",
+    "doctor",
+    "nurse",
+    "cook"
+   ],
+   "answer": "winter",
+   "tip": "冬天 属于「季节」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0348",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— What's your name?",
+   "options": [
+    "My name is Tom.",
+    "It's red.",
+    "I'm nine.",
+    "I'm fine."
+   ],
+   "answer": "My name is Tom.",
+   "tip": "— What's your name? → My name is Tom."
+  },
+  {
+   "id": "english-g1-0349",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：She ___ my sister.",
+   "options": [
+    "be",
+    "is",
+    "are",
+    "am"
+   ],
+   "answer": "is",
+   "tip": "正确答案是 is"
+  },
+  {
+   "id": "english-g1-0350",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "cloudy",
+    "warm",
+    "hot",
+    "cow"
+   ],
+   "answer": "cow",
+   "tip": "奶牛 属于「动物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0351",
+   "type": "choice",
+   "level": 2,
+   "q": "weak（weak）的反义词是？",
+   "options": [
+    "happy",
+    "weak",
+    "strong",
+    "cold"
+   ],
+   "answer": "strong",
+   "tip": "weak 的反义词是 strong"
+  },
+  {
+   "id": "english-g1-0352",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "bag",
+    "chair",
+    "tangerine",
+    "ruler"
+   ],
+   "answer": "tangerine",
+   "tip": "橘子 属于「水果」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0353",
+   "type": "fill",
+   "level": 2,
+   "q": "one + one = ?（用英文单词回答）",
+   "answer": "two",
+   "tip": "1 + 1 = 2，写作 two"
+  },
+  {
+   "id": "english-g1-0354",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "windy",
+    "sunny",
+    "chair",
+    "hot"
+   ],
+   "answer": "chair",
+   "tip": "椅子 属于「学习用品」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0355",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：It ___ a cat.",
+   "options": [
+    "is",
+    "be",
+    "are",
+    "am"
+   ],
+   "answer": "is",
+   "tip": "正确答案是 is"
+  },
+  {
+   "id": "english-g1-0356",
+   "type": "fill",
+   "level": 2,
+   "q": "three + five = ?（用英文单词回答）",
+   "answer": "eight",
+   "tip": "3 + 5 = 8，写作 eight"
+  },
+  {
+   "id": "english-g1-0357",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "ruler",
+    "noodles",
+    "meat",
+    "soup"
+   ],
+   "answer": "ruler",
+   "tip": "尺子 属于「学习用品」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0358",
+   "type": "fill",
+   "level": 2,
+   "q": "two + nine = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "2 + 9 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0359",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "six",
+    "mother",
+    "father",
+    "boy"
+   ],
+   "answer": "six",
+   "tip": "六 属于「数字」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0360",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "coat",
+    "history",
+    "music",
+    "maths"
+   ],
+   "answer": "coat",
+   "tip": "外套 属于「衣物」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0361",
+   "type": "choice",
+   "level": 2,
+   "q": "选择正确的 be 动词：My name ___ Tom.",
+   "options": [
+    "am",
+    "be",
+    "is",
+    "are"
+   ],
+   "answer": "is",
+   "tip": "正确答案是 is"
+  },
+  {
+   "id": "english-g1-0362",
+   "type": "fill",
+   "level": 2,
+   "q": "six + one = ?（用英文单词回答）",
+   "answer": "seven",
+   "tip": "6 + 1 = 7，写作 seven"
+  },
+  {
+   "id": "english-g1-0363",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "three",
+    "four",
+    "eight",
+    "doctor"
+   ],
+   "answer": "doctor",
+   "tip": "医生 属于「职业」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0364",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "socks",
+    "shoes",
+    "Sunday",
+    "dress"
+   ],
+   "answer": "Sunday",
+   "tip": "星期日 属于「星期」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0365",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "snowy",
+    "sunny",
+    "rainy",
+    "monkey"
+   ],
+   "answer": "monkey",
+   "tip": "猴子 属于「动物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0366",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "art",
+    "Monday",
+    "Tuesday",
+    "Friday"
+   ],
+   "answer": "art",
+   "tip": "美术 属于「学科」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0367",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "juice",
+    "milk",
+    "noodles",
+    "mother"
+   ],
+   "answer": "mother",
+   "tip": "妈妈 属于「人物」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0368",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Goodbye!",
+   "options": [
+    "Thank you!",
+    "How are you?",
+    "Good morning!",
+    "Bye! See you."
+   ],
+   "answer": "Bye! See you.",
+   "tip": "— Goodbye! → Bye! See you."
+  },
+  {
+   "id": "english-g1-0369",
+   "type": "fill",
+   "level": 2,
+   "q": "two + eight = ?（用英文单词回答）",
+   "answer": "ten",
+   "tip": "2 + 8 = 10，写作 ten"
+  },
+  {
+   "id": "english-g1-0370",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "friend",
+    "bread",
+    "father",
+    "teacher"
+   ],
+   "answer": "bread",
+   "tip": "面包 属于「食物饮料」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0371",
+   "type": "fill",
+   "level": 2,
+   "q": "three + twelve = ?（用英文单词回答）",
+   "answer": "fifteen",
+   "tip": "3 + 12 = 15，写作 fifteen"
+  },
+  {
+   "id": "english-g1-0372",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "father",
+    "library",
+    "friend",
+    "mother"
+   ],
+   "answer": "library",
+   "tip": "图书馆 属于「场所」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0373",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "juice",
+    "station",
+    "meat",
+    "cake"
+   ],
+   "answer": "station",
+   "tip": "车站 属于「场所」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0374",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "juice",
+    "hand",
+    "egg",
+    "water"
+   ],
+   "answer": "hand",
+   "tip": "手 属于「身体部位」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0375",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "pants",
+    "shoes",
+    "dress",
+    "four"
+   ],
+   "answer": "four",
+   "tip": "四 属于「数字」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0376",
+   "type": "choice",
+   "level": 2,
+   "q": "选择合适的答语：— Thank you!",
+   "options": [
+    "I'm sorry.",
+    "Good morning!",
+    "Goodbye!",
+    "You're welcome."
+   ],
+   "answer": "You're welcome.",
+   "tip": "— Thank you! → You're welcome."
+  },
+  {
+   "id": "english-g1-0377",
+   "type": "choice",
+   "level": 2,
+   "q": "difficult（困难的）的反义词是？",
+   "options": [
+    "weak",
+    "easy",
+    "happy",
+    "cold"
+   ],
+   "answer": "easy",
+   "tip": "difficult 的反义词是 easy"
+  },
+  {
+   "id": "english-g1-0378",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "garden",
+    "park",
+    "library",
+    "boy"
+   ],
+   "answer": "boy",
+   "tip": "男孩 属于「人物」，其余三个属于「场所」"
+  },
+  {
+   "id": "english-g1-0379",
+   "type": "fill",
+   "level": 2,
+   "q": "eight + two = ?（用英文单词回答）",
+   "answer": "ten",
+   "tip": "8 + 2 = 10，写作 ten"
+  },
+  {
+   "id": "english-g1-0380",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "teacher",
+    "winter",
+    "summer",
+    "spring"
+   ],
+   "answer": "teacher",
+   "tip": "老师 属于「人物」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0381",
+   "type": "fill",
+   "level": 2,
+   "q": "twelve + three = ?（用英文单词回答）",
+   "answer": "fifteen",
+   "tip": "12 + 3 = 15，写作 fifteen"
+  },
+  {
+   "id": "english-g1-0382",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "two",
+    "singer",
+    "farmer",
+    "worker"
+   ],
+   "answer": "two",
+   "tip": "二 属于「数字」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0383",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "black",
+    "one",
+    "seven",
+    "five"
+   ],
+   "answer": "black",
+   "tip": "黑色 属于「颜色」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0384",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "noodles",
+    "meat",
+    "Sunday",
+    "soup"
+   ],
+   "answer": "Sunday",
+   "tip": "星期日 属于「星期」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0385",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "dress",
+    "juice",
+    "socks",
+    "coat"
+   ],
+   "answer": "juice",
+   "tip": "果汁 属于「食物饮料」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0386",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "maths",
+    "school",
+    "science",
+    "art"
+   ],
+   "answer": "school",
+   "tip": "学校 属于「场所」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0387",
+   "type": "choice",
+   "level": 2,
+   "q": "sad（伤心的）的反义词是？",
+   "options": [
+    "small",
+    "happy",
+    "easy",
+    "difficult"
+   ],
+   "answer": "happy",
+   "tip": "sad 的反义词是 happy"
+  },
+  {
+   "id": "english-g1-0388",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "autumn",
+    "spring",
+    "garden",
+    "summer"
+   ],
+   "answer": "garden",
+   "tip": "花园 属于「场所」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0389",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "four",
+    "five",
+    "two",
+    "apple"
+   ],
+   "answer": "apple",
+   "tip": "苹果 属于「水果」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0390",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "head",
+    "face",
+    "ear",
+    "father"
+   ],
+   "answer": "father",
+   "tip": "爸爸 属于「人物」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0391",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "farmer",
+    "nurse",
+    "summer",
+    "singer"
+   ],
+   "answer": "summer",
+   "tip": "夏天 属于「季节」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0392",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "windy",
+    "seven",
+    "three",
+    "nine"
+   ],
+   "answer": "windy",
+   "tip": "有风的 属于「天气」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0393",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "cook",
+    "nurse",
+    "library",
+    "police"
+   ],
+   "answer": "library",
+   "tip": "图书馆 属于「场所」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0394",
+   "type": "choice",
+   "level": 2,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "chicken",
+    "cat",
+    "mother",
+    "cow"
+   ],
+   "answer": "mother",
+   "tip": "妈妈 属于「人物」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0395",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "egg",
+    "eraser",
+    "book",
+    "pen"
+   ],
+   "answer": "egg",
+   "tip": "鸡蛋 属于「食物饮料」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0396",
+   "type": "fill",
+   "level": 2,
+   "q": "ten + one = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "10 + 1 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0397",
+   "type": "choice",
+   "level": 2,
+   "q": "选出不同类的单词",
+   "options": [
+    "pen",
+    "dress",
+    "eraser",
+    "pencil"
+   ],
+   "answer": "dress",
+   "tip": "连衣裙 属于「衣物」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0398",
+   "type": "fill",
+   "level": 2,
+   "q": "nine + one = ?（用英文单词回答）",
+   "answer": "ten",
+   "tip": "9 + 1 = 10，写作 ten"
+  },
+  {
+   "id": "english-g1-0399",
+   "type": "choice",
+   "level": 2,
+   "q": "圈出不同类的单词",
+   "options": [
+    "foot",
+    "green",
+    "nose",
+    "head"
+   ],
+   "answer": "green",
+   "tip": "绿色 属于「颜色」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0400",
+   "type": "choice",
+   "level": 2,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "pencil",
+    "socks",
+    "desk",
+    "ruler"
+   ],
+   "answer": "socks",
+   "tip": "袜子 属于「衣物」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0401",
+   "type": "choice",
+   "level": 3,
+   "q": "「你叫什么名字？」用英语怎么说？",
+   "options": [
+    "Good morning!",
+    "Hello!",
+    "Thank you!",
+    "What's your name?"
+   ],
+   "answer": "What's your name?",
+   "tip": "「你叫什么名字？」= What's your name?"
+  },
+  {
+   "id": "english-g1-0402",
+   "type": "choice",
+   "level": 3,
+   "q": "「早上好！」用英语怎么说？",
+   "options": [
+    "How are you?",
+    "Good morning!",
+    "Hello!",
+    "Thank you!"
+   ],
+   "answer": "Good morning!",
+   "tip": "「早上好！」= Good morning!"
+  },
+  {
+   "id": "english-g1-0403",
+   "type": "choice",
+   "level": 3,
+   "q": "「你好！」用英语怎么说？",
+   "options": [
+    "How are you?",
+    "Good morning!",
+    "Hello!",
+    "Thank you!"
+   ],
+   "answer": "Hello!",
+   "tip": "「你好！」= Hello!"
+  },
+  {
+   "id": "english-g1-0404",
+   "type": "choice",
+   "level": 3,
+   "q": "「你好吗？」用英语怎么说？",
+   "options": [
+    "Thank you!",
+    "How are you?",
+    "Hello!",
+    "Good morning!"
+   ],
+   "answer": "How are you?",
+   "tip": "「你好吗？」= How are you?"
+  },
+  {
+   "id": "english-g1-0405",
+   "type": "choice",
+   "level": 3,
+   "q": "「对不起。」用英语怎么说？",
+   "options": [
+    "Hello!",
+    "I'm sorry.",
+    "Good morning!",
+    "Thank you!"
+   ],
+   "answer": "I'm sorry.",
+   "tip": "「对不起。」= I'm sorry."
+  },
+  {
+   "id": "english-g1-0406",
+   "type": "choice",
+   "level": 3,
+   "q": "「谢谢你！」用英语怎么说？",
+   "options": [
+    "Thank you!",
+    "Hello!",
+    "How are you?",
+    "Good morning!"
+   ],
+   "answer": "Thank you!",
+   "tip": "「谢谢你！」= Thank you!"
+  },
+  {
+   "id": "english-g1-0407",
+   "type": "choice",
+   "level": 3,
+   "q": "「再见！」用英语怎么说？",
+   "options": [
+    "Hello!",
+    "Good morning!",
+    "Thank you!",
+    "Goodbye!"
+   ],
+   "answer": "Goodbye!",
+   "tip": "「再见！」= Goodbye!"
+  },
+  {
+   "id": "english-g1-0408",
+   "type": "choice",
+   "level": 3,
+   "q": "「这是一只猫。」用英语怎么说？",
+   "options": [
+    "Thank you!",
+    "Hello!",
+    "Good morning!",
+    "This is a cat."
+   ],
+   "answer": "This is a cat.",
+   "tip": "「这是一只猫。」= This is a cat."
+  },
+  {
+   "id": "english-g1-0409",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（门）：do_r",
+   "answer": "door",
+   "tip": "门 拼写为 door"
+  },
+  {
+   "id": "english-g1-0410",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（兔子）：rabbi_",
+   "answer": "rabbit",
+   "tip": "兔子 拼写为 rabbit"
+  },
+  {
+   "id": "english-g1-0411",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（红色）：r_d",
+   "answer": "red",
+   "tip": "红色 拼写为 red"
+  },
+  {
+   "id": "english-g1-0412",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（课桌）：de_k",
+   "answer": "desk",
+   "tip": "课桌 拼写为 desk"
+  },
+  {
+   "id": "english-g1-0413",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（星星）：s_ar",
+   "answer": "star",
+   "tip": "星星 拼写为 star"
+  },
+  {
+   "id": "english-g1-0414",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（白色）：wh_te",
+   "answer": "white",
+   "tip": "白色 拼写为 white"
+  },
+  {
+   "id": "english-g1-0415",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（十）：t_n",
+   "answer": "ten",
+   "tip": "十 拼写为 ten"
+  },
+  {
+   "id": "english-g1-0416",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（黄色）：yell_w",
+   "answer": "yellow",
+   "tip": "黄色 拼写为 yellow"
+  },
+  {
+   "id": "english-g1-0417",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（公共汽车）：b_s",
+   "answer": "bus",
+   "tip": "公共汽车 拼写为 bus"
+  },
+  {
+   "id": "english-g1-0418",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（蓝色）：bl_e",
+   "answer": "blue",
+   "tip": "蓝色 拼写为 blue"
+  },
+  {
+   "id": "english-g1-0419",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（九）：ni_e",
+   "answer": "nine",
+   "tip": "九 拼写为 nine"
+  },
+  {
+   "id": "english-g1-0420",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（书）：bo_k",
+   "answer": "book",
+   "tip": "书 拼写为 book"
+  },
+  {
+   "id": "english-g1-0421",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（书包）：ba_",
+   "answer": "bag",
+   "tip": "书包 拼写为 bag"
+  },
+  {
+   "id": "english-g1-0422",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（老师）：teache_",
+   "answer": "teacher",
+   "tip": "老师 拼写为 teacher"
+  },
+  {
+   "id": "english-g1-0423",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（梨）：pea_",
+   "answer": "pear",
+   "tip": "梨 拼写为 pear"
+  },
+  {
+   "id": "english-g1-0424",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（名字）：na_e",
+   "answer": "name",
+   "tip": "名字 拼写为 name"
+  },
+  {
+   "id": "english-g1-0425",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（月亮）：m_on",
+   "answer": "moon",
+   "tip": "月亮 拼写为 moon"
+  },
+  {
+   "id": "english-g1-0426",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（钟）：cloc_",
+   "answer": "clock",
+   "tip": "钟 拼写为 clock"
+  },
+  {
+   "id": "english-g1-0427",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（妈妈）：mot_er",
+   "answer": "mother",
+   "tip": "妈妈 拼写为 mother"
+  },
+  {
+   "id": "english-g1-0428",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（手）：han_",
+   "answer": "hand",
+   "tip": "手 拼写为 hand"
+  },
+  {
+   "id": "english-g1-0429",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（九）：n_ne",
+   "answer": "nine",
+   "tip": "九 拼写为 nine"
+  },
+  {
+   "id": "english-g1-0430",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（球）：bal_",
+   "answer": "ball",
+   "tip": "球 拼写为 ball"
+  },
+  {
+   "id": "english-g1-0431",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（树）：tre_",
+   "answer": "tree",
+   "tip": "树 拼写为 tree"
+  },
+  {
+   "id": "english-g1-0432",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（黑色）：b_ack",
+   "answer": "black",
+   "tip": "黑色 拼写为 black"
+  },
+  {
+   "id": "english-g1-0433",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（橙色）：orang_",
+   "answer": "orange",
+   "tip": "橙色 拼写为 orange"
+  },
+  {
+   "id": "english-g1-0434",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（学校）：schoo_",
+   "answer": "school",
+   "tip": "学校 拼写为 school"
+  },
+  {
+   "id": "english-g1-0435",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（绿色）：gree_",
+   "answer": "green",
+   "tip": "绿色 拼写为 green"
+  },
+  {
+   "id": "english-g1-0436",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（太阳）：s_n",
+   "answer": "sun",
+   "tip": "太阳 拼写为 sun"
+  },
+  {
+   "id": "english-g1-0437",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（猪）：p_g",
+   "answer": "pig",
+   "tip": "猪 拼写为 pig"
+  },
+  {
+   "id": "english-g1-0438",
+   "type": "fill",
+   "level": 3,
+   "q": "补全单词（七）：sev_n",
+   "answer": "seven",
+   "tip": "七 拼写为 seven"
+  },
+  {
+   "id": "english-g1-0439",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "friend",
+    "teacher",
+    "father",
+    "Wednesday"
+   ],
+   "answer": "Wednesday",
+   "tip": "星期三 属于「星期」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0440",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "hand",
+    "head",
+    "library",
+    "foot"
+   ],
+   "answer": "library",
+   "tip": "图书馆 属于「场所」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0441",
+   "type": "fill",
+   "level": 3,
+   "q": "three + ten = ?（用英文单词回答）",
+   "answer": "thirteen",
+   "tip": "3 + 10 = 13，写作 thirteen"
+  },
+  {
+   "id": "english-g1-0442",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "Friday",
+    "face",
+    "Sunday",
+    "Wednesday"
+   ],
+   "answer": "face",
+   "tip": "脸 属于「身体部位」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0443",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "girl",
+    "mother",
+    "chicken",
+    "teacher"
+   ],
+   "answer": "chicken",
+   "tip": "小鸡 属于「动物」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0444",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "pen",
+    "pencil",
+    "banana",
+    "desk"
+   ],
+   "answer": "banana",
+   "tip": "香蕉 属于「水果」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0445",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "art",
+    "Chinese",
+    "music",
+    "rainy"
+   ],
+   "answer": "rainy",
+   "tip": "下雨的 属于「天气」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0446",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "book",
+    "train",
+    "desk",
+    "bag"
+   ],
+   "answer": "train",
+   "tip": "火车 属于「交通工具」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0447",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "four",
+    "seven",
+    "doctor",
+    "two"
+   ],
+   "answer": "doctor",
+   "tip": "医生 属于「职业」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0448",
+   "type": "choice",
+   "level": 3,
+   "q": "old（旧的）的反义词是？",
+   "options": [
+    "small",
+    "new",
+    "weak",
+    "hot"
+   ],
+   "answer": "new",
+   "tip": "old 的反义词是 new"
+  },
+  {
+   "id": "english-g1-0449",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "rainy",
+    "snowy",
+    "eight",
+    "cloudy"
+   ],
+   "answer": "eight",
+   "tip": "八 属于「数字」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0450",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "maths",
+    "doctor",
+    "worker",
+    "driver"
+   ],
+   "answer": "maths",
+   "tip": "数学 属于「学科」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0451",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "orange",
+    "autumn",
+    "spring",
+    "summer"
+   ],
+   "answer": "orange",
+   "tip": "橙色 属于「颜色」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0452",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "Tuesday",
+    "three",
+    "Thursday",
+    "Saturday"
+   ],
+   "answer": "three",
+   "tip": "三 属于「数字」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0453",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "noodles",
+    "milk",
+    "water",
+    "blue"
+   ],
+   "answer": "blue",
+   "tip": "蓝色 属于「颜色」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0454",
+   "type": "fill",
+   "level": 3,
+   "q": "four + eight = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "4 + 8 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0455",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "meat",
+    "pants",
+    "shoes",
+    "gloves"
+   ],
+   "answer": "meat",
+   "tip": "肉 属于「食物饮料」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0456",
+   "type": "fill",
+   "level": 3,
+   "q": "five + eight = ?（用英文单词回答）",
+   "answer": "thirteen",
+   "tip": "5 + 8 = 13，写作 thirteen"
+  },
+  {
+   "id": "english-g1-0457",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "pencil",
+    "eraser",
+    "shirt",
+    "pen"
+   ],
+   "answer": "shirt",
+   "tip": "衬衫 属于「衣物」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0458",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "farmer",
+    "singer",
+    "tangerine",
+    "cook"
+   ],
+   "answer": "tangerine",
+   "tip": "橘子 属于「水果」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0459",
+   "type": "fill",
+   "level": 3,
+   "q": "one + twelve = ?（用英文单词回答）",
+   "answer": "thirteen",
+   "tip": "1 + 12 = 13，写作 thirteen"
+  },
+  {
+   "id": "english-g1-0460",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "cook",
+    "autumn",
+    "winter",
+    "spring"
+   ],
+   "answer": "cook",
+   "tip": "厨师 属于「职业」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0461",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "summer",
+    "spring",
+    "hot",
+    "winter"
+   ],
+   "answer": "hot",
+   "tip": "热的 属于「天气」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0462",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "science",
+    "music",
+    "history",
+    "Saturday"
+   ],
+   "answer": "Saturday",
+   "tip": "星期六 属于「星期」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0463",
+   "type": "fill",
+   "level": 3,
+   "q": "seven + two = ?（用英文单词回答）",
+   "answer": "nine",
+   "tip": "7 + 2 = 9，写作 nine"
+  },
+  {
+   "id": "english-g1-0464",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "mouth",
+    "banana",
+    "foot",
+    "hand"
+   ],
+   "answer": "banana",
+   "tip": "香蕉 属于「水果」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0465",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "white",
+    "market",
+    "red",
+    "black"
+   ],
+   "answer": "market",
+   "tip": "市场 属于「场所」，其余三个属于「颜色」"
+  },
+  {
+   "id": "english-g1-0466",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "autumn",
+    "winter",
+    "train",
+    "summer"
+   ],
+   "answer": "train",
+   "tip": "火车 属于「交通工具」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0467",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "ear",
+    "Tuesday",
+    "foot",
+    "nose"
+   ],
+   "answer": "Tuesday",
+   "tip": "星期二 属于「星期」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0468",
+   "type": "fill",
+   "level": 3,
+   "q": "two + five = ?（用英文单词回答）",
+   "answer": "seven",
+   "tip": "2 + 5 = 7，写作 seven"
+  },
+  {
+   "id": "english-g1-0469",
+   "type": "fill",
+   "level": 3,
+   "q": "twenty + ten = ?（用英文单词回答）",
+   "answer": "thirty",
+   "tip": "20 + 10 = 30，写作 thirty"
+  },
+  {
+   "id": "english-g1-0470",
+   "type": "fill",
+   "level": 3,
+   "q": "twelve + eight = ?（用英文单词回答）",
+   "answer": "twenty",
+   "tip": "12 + 8 = 20，写作 twenty"
+  },
+  {
+   "id": "english-g1-0471",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "noodles",
+    "soup",
+    "singer",
+    "cake"
+   ],
+   "answer": "singer",
+   "tip": "歌手 属于「职业」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0472",
+   "type": "fill",
+   "level": 3,
+   "q": "twenty + thirty = ?（用英文单词回答）",
+   "answer": "fifty",
+   "tip": "20 + 30 = 50，写作 fifty"
+  },
+  {
+   "id": "english-g1-0473",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "cake",
+    "zoo",
+    "egg",
+    "meat"
+   ],
+   "answer": "zoo",
+   "tip": "动物园 属于「场所」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0474",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "summer",
+    "autumn",
+    "pencil",
+    "winter"
+   ],
+   "answer": "pencil",
+   "tip": "铅笔 属于「学习用品」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0475",
+   "type": "fill",
+   "level": 3,
+   "q": "seven + one = ?（用英文单词回答）",
+   "answer": "eight",
+   "tip": "7 + 1 = 8，写作 eight"
+  },
+  {
+   "id": "english-g1-0476",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "mouth",
+    "music",
+    "history",
+    "art"
+   ],
+   "answer": "mouth",
+   "tip": "嘴巴 属于「身体部位」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0477",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "book",
+    "worker",
+    "cook",
+    "driver"
+   ],
+   "answer": "book",
+   "tip": "书 属于「学习用品」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0478",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "pear",
+    "banana",
+    "two",
+    "tangerine"
+   ],
+   "answer": "two",
+   "tip": "二 属于「数字」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0479",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "Friday",
+    "duck",
+    "cat",
+    "rabbit"
+   ],
+   "answer": "Friday",
+   "tip": "星期五 属于「星期」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0480",
+   "type": "fill",
+   "level": 3,
+   "q": "one + nine = ?（用英文单词回答）",
+   "answer": "ten",
+   "tip": "1 + 9 = 10，写作 ten"
+  },
+  {
+   "id": "english-g1-0481",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "book",
+    "pen",
+    "driver",
+    "ruler"
+   ],
+   "answer": "driver",
+   "tip": "司机 属于「职业」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0482",
+   "type": "fill",
+   "level": 3,
+   "q": "ten + two = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "10 + 2 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0483",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "tiger",
+    "cat",
+    "rice",
+    "horse"
+   ],
+   "answer": "rice",
+   "tip": "米饭 属于「食物饮料」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0484",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "dog",
+    "father",
+    "teacher",
+    "boy"
+   ],
+   "answer": "dog",
+   "tip": "狗 属于「动物」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0485",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "father",
+    "summer",
+    "teacher",
+    "mother"
+   ],
+   "answer": "summer",
+   "tip": "夏天 属于「季节」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0486",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "cloudy",
+    "black",
+    "rainy",
+    "snowy"
+   ],
+   "answer": "black",
+   "tip": "黑色 属于「颜色」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0487",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "bag",
+    "museum",
+    "school",
+    "station"
+   ],
+   "answer": "bag",
+   "tip": "书包 属于「学习用品」，其余三个属于「场所」"
+  },
+  {
+   "id": "english-g1-0488",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "six",
+    "banana",
+    "pear",
+    "tangerine"
+   ],
+   "answer": "six",
+   "tip": "六 属于「数字」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0489",
+   "type": "fill",
+   "level": 3,
+   "q": "six + six = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "6 + 6 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0490",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "windy",
+    "hand",
+    "ear",
+    "foot"
+   ],
+   "answer": "windy",
+   "tip": "有风的 属于「天气」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0491",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "water",
+    "noodles",
+    "cake",
+    "science"
+   ],
+   "answer": "science",
+   "tip": "科学 属于「学科」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0492",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "black",
+    "park",
+    "orange",
+    "blue"
+   ],
+   "answer": "park",
+   "tip": "公园 属于「场所」，其余三个属于「颜色」"
+  },
+  {
+   "id": "english-g1-0493",
+   "type": "fill",
+   "level": 3,
+   "q": "five + fifteen = ?（用英文单词回答）",
+   "answer": "twenty",
+   "tip": "5 + 15 = 20，写作 twenty"
+  },
+  {
+   "id": "english-g1-0494",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "spring",
+    "cow",
+    "winter",
+    "autumn"
+   ],
+   "answer": "cow",
+   "tip": "奶牛 属于「动物」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0495",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "train",
+    "car",
+    "eye",
+    "bike"
+   ],
+   "answer": "eye",
+   "tip": "眼睛 属于「身体部位」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0496",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "head",
+    "ship",
+    "taxi",
+    "bus"
+   ],
+   "answer": "head",
+   "tip": "头 属于「身体部位」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0497",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "white",
+    "pink",
+    "egg",
+    "black"
+   ],
+   "answer": "egg",
+   "tip": "鸡蛋 属于「食物饮料」，其余三个属于「颜色」"
+  },
+  {
+   "id": "english-g1-0498",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "ear",
+    "noodles",
+    "cake",
+    "milk"
+   ],
+   "answer": "ear",
+   "tip": "耳朵 属于「身体部位」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0499",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "station",
+    "library",
+    "garden",
+    "doctor"
+   ],
+   "answer": "doctor",
+   "tip": "医生 属于「职业」，其余三个属于「场所」"
+  },
+  {
+   "id": "english-g1-0500",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "ship",
+    "bike",
+    "taxi",
+    "Tuesday"
+   ],
+   "answer": "Tuesday",
+   "tip": "星期二 属于「星期」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0501",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "snowy",
+    "sunny",
+    "cloudy",
+    "hospital"
+   ],
+   "answer": "hospital",
+   "tip": "医院 属于「场所」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0502",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "nose",
+    "head",
+    "mouth",
+    "spring"
+   ],
+   "answer": "spring",
+   "tip": "春天 属于「季节」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0503",
+   "type": "fill",
+   "level": 3,
+   "q": "seven + four = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "7 + 4 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0504",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "taxi",
+    "pear",
+    "apple",
+    "tangerine"
+   ],
+   "answer": "taxi",
+   "tip": "出租车 属于「交通工具」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0505",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "nurse",
+    "art",
+    "science",
+    "maths"
+   ],
+   "answer": "nurse",
+   "tip": "护士 属于「职业」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0506",
+   "type": "fill",
+   "level": 3,
+   "q": "four + nine = ?（用英文单词回答）",
+   "answer": "thirteen",
+   "tip": "4 + 9 = 13，写作 thirteen"
+  },
+  {
+   "id": "english-g1-0507",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "cow",
+    "bird",
+    "rabbit",
+    "teacher"
+   ],
+   "answer": "teacher",
+   "tip": "老师 属于「人物」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0508",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "six",
+    "cloudy",
+    "one",
+    "four"
+   ],
+   "answer": "cloudy",
+   "tip": "多云的 属于「天气」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0509",
+   "type": "fill",
+   "level": 3,
+   "q": "fifteen + fifteen = ?（用英文单词回答）",
+   "answer": "thirty",
+   "tip": "15 + 15 = 30，写作 thirty"
+  },
+  {
+   "id": "english-g1-0510",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "garden",
+    "Thursday",
+    "Wednesday",
+    "Monday"
+   ],
+   "answer": "garden",
+   "tip": "花园 属于「场所」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0511",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "hat",
+    "windy",
+    "cloudy",
+    "snowy"
+   ],
+   "answer": "hat",
+   "tip": "帽子 属于「衣物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0512",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "rabbit",
+    "garden",
+    "school",
+    "airport"
+   ],
+   "answer": "rabbit",
+   "tip": "兔子 属于「动物」，其余三个属于「场所」"
+  },
+  {
+   "id": "english-g1-0513",
+   "type": "fill",
+   "level": 3,
+   "q": "five + one = ?（用英文单词回答）",
+   "answer": "six",
+   "tip": "5 + 1 = 6，写作 six"
+  },
+  {
+   "id": "english-g1-0514",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "chicken",
+    "maths",
+    "fish",
+    "pig"
+   ],
+   "answer": "maths",
+   "tip": "数学 属于「学科」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0515",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "farmer",
+    "tangerine",
+    "banana",
+    "pear"
+   ],
+   "answer": "farmer",
+   "tip": "农民 属于「职业」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0516",
+   "type": "fill",
+   "level": 3,
+   "q": "eight + three = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "8 + 3 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0517",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "winter",
+    "spring",
+    "horse",
+    "summer"
+   ],
+   "answer": "horse",
+   "tip": "马 属于「动物」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0518",
+   "type": "fill",
+   "level": 3,
+   "q": "two + eleven = ?（用英文单词回答）",
+   "answer": "thirteen",
+   "tip": "2 + 11 = 13，写作 thirteen"
+  },
+  {
+   "id": "english-g1-0519",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "doctor",
+    "police",
+    "history",
+    "farmer"
+   ],
+   "answer": "history",
+   "tip": "历史 属于「学科」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0520",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "father",
+    "mother",
+    "friend",
+    "Monday"
+   ],
+   "answer": "Monday",
+   "tip": "星期一 属于「星期」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0521",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "black",
+    "red",
+    "pink",
+    "taxi"
+   ],
+   "answer": "taxi",
+   "tip": "出租车 属于「交通工具」，其余三个属于「颜色」"
+  },
+  {
+   "id": "english-g1-0522",
+   "type": "fill",
+   "level": 3,
+   "q": "four + eleven = ?（用英文单词回答）",
+   "answer": "fifteen",
+   "tip": "4 + 11 = 15，写作 fifteen"
+  },
+  {
+   "id": "english-g1-0523",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "cold",
+    "cloudy",
+    "pants",
+    "hot"
+   ],
+   "answer": "pants",
+   "tip": "裤子 属于「衣物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0524",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "apple",
+    "foot",
+    "pear",
+    "tangerine"
+   ],
+   "answer": "foot",
+   "tip": "脚 属于「身体部位」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0525",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "shoes",
+    "tangerine",
+    "dress",
+    "socks"
+   ],
+   "answer": "tangerine",
+   "tip": "橘子 属于「水果」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0526",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "monkey",
+    "bird",
+    "desk",
+    "horse"
+   ],
+   "answer": "desk",
+   "tip": "课桌 属于「学习用品」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0527",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "teacher",
+    "father",
+    "boy",
+    "cook"
+   ],
+   "answer": "cook",
+   "tip": "厨师 属于「职业」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0528",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "summer",
+    "winter",
+    "spring",
+    "four"
+   ],
+   "answer": "four",
+   "tip": "四 属于「数字」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0529",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "summer",
+    "autumn",
+    "tangerine",
+    "winter"
+   ],
+   "answer": "tangerine",
+   "tip": "橘子 属于「水果」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0530",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "police",
+    "train",
+    "cook",
+    "worker"
+   ],
+   "answer": "train",
+   "tip": "火车 属于「交通工具」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0531",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "rabbit",
+    "monkey",
+    "cat",
+    "windy"
+   ],
+   "answer": "windy",
+   "tip": "有风的 属于「天气」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0532",
+   "type": "fill",
+   "level": 3,
+   "q": "five + six = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "5 + 6 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0533",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "sunny",
+    "tangerine",
+    "apple",
+    "banana"
+   ],
+   "answer": "sunny",
+   "tip": "晴朗的 属于「天气」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0534",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "foot",
+    "face",
+    "nose",
+    "socks"
+   ],
+   "answer": "socks",
+   "tip": "袜子 属于「衣物」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0535",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "winter",
+    "Friday",
+    "Monday",
+    "Thursday"
+   ],
+   "answer": "winter",
+   "tip": "冬天 属于「季节」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0536",
+   "type": "fill",
+   "level": 3,
+   "q": "fifty + fifty = ?（用英文单词回答）",
+   "answer": "hundred",
+   "tip": "50 + 50 = 100，写作 hundred"
+  },
+  {
+   "id": "english-g1-0537",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "pencil",
+    "bus",
+    "pen",
+    "desk"
+   ],
+   "answer": "bus",
+   "tip": "公共汽车 属于「交通工具」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0538",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "singer",
+    "cook",
+    "cold",
+    "doctor"
+   ],
+   "answer": "cold",
+   "tip": "冷的 属于「天气」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0539",
+   "type": "fill",
+   "level": 3,
+   "q": "two + four = ?（用英文单词回答）",
+   "answer": "six",
+   "tip": "2 + 4 = 6，写作 six"
+  },
+  {
+   "id": "english-g1-0540",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "mother",
+    "winter",
+    "autumn",
+    "spring"
+   ],
+   "answer": "mother",
+   "tip": "妈妈 属于「人物」，其余三个属于「季节」"
+  },
+  {
+   "id": "english-g1-0541",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "nose",
+    "ear",
+    "mouth",
+    "duck"
+   ],
+   "answer": "duck",
+   "tip": "鸭子 属于「动物」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0542",
+   "type": "fill",
+   "level": 3,
+   "q": "one + eight = ?（用英文单词回答）",
+   "answer": "nine",
+   "tip": "1 + 8 = 9，写作 nine"
+  },
+  {
+   "id": "english-g1-0543",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "nine",
+    "six",
+    "warm",
+    "ten"
+   ],
+   "answer": "warm",
+   "tip": "温暖的 属于「天气」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0544",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "father",
+    "pants",
+    "hat",
+    "coat"
+   ],
+   "answer": "father",
+   "tip": "爸爸 属于「人物」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0545",
+   "type": "fill",
+   "level": 3,
+   "q": "thirteen + seven = ?（用英文单词回答）",
+   "answer": "twenty",
+   "tip": "13 + 7 = 20，写作 twenty"
+  },
+  {
+   "id": "english-g1-0546",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "library",
+    "school",
+    "shirt",
+    "garden"
+   ],
+   "answer": "shirt",
+   "tip": "衬衫 属于「衣物」，其余三个属于「场所」"
+  },
+  {
+   "id": "english-g1-0547",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "train",
+    "car",
+    "ship",
+    "six"
+   ],
+   "answer": "six",
+   "tip": "六 属于「数字」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0548",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "shoes",
+    "shirt",
+    "windy",
+    "gloves"
+   ],
+   "answer": "windy",
+   "tip": "有风的 属于「天气」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0549",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "pink",
+    "eye",
+    "green",
+    "red"
+   ],
+   "answer": "eye",
+   "tip": "眼睛 属于「身体部位」，其余三个属于「颜色」"
+  },
+  {
+   "id": "english-g1-0550",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "milk",
+    "noodles",
+    "plane",
+    "bread"
+   ],
+   "answer": "plane",
+   "tip": "飞机 属于「交通工具」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0551",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "autumn",
+    "Friday",
+    "Wednesday",
+    "Saturday"
+   ],
+   "answer": "autumn",
+   "tip": "秋天 属于「季节」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0552",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "shoes",
+    "dress",
+    "Chinese",
+    "coat"
+   ],
+   "answer": "Chinese",
+   "tip": "语文 属于「学科」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0553",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "cloudy",
+    "warm",
+    "snowy",
+    "Thursday"
+   ],
+   "answer": "Thursday",
+   "tip": "星期四 属于「星期」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0554",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "singer",
+    "nine",
+    "doctor",
+    "farmer"
+   ],
+   "answer": "nine",
+   "tip": "九 属于「数字」，其余三个属于「职业」"
+  },
+  {
+   "id": "english-g1-0555",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "ten",
+    "three",
+    "nine",
+    "fish"
+   ],
+   "answer": "fish",
+   "tip": "鱼 属于「动物」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0556",
+   "type": "fill",
+   "level": 3,
+   "q": "seven + eight = ?（用英文单词回答）",
+   "answer": "fifteen",
+   "tip": "7 + 8 = 15，写作 fifteen"
+  },
+  {
+   "id": "english-g1-0557",
+   "type": "fill",
+   "level": 3,
+   "q": "eight + four = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "8 + 4 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0558",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "bag",
+    "pencil",
+    "book",
+    "juice"
+   ],
+   "answer": "juice",
+   "tip": "果汁 属于「食物饮料」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0559",
+   "type": "fill",
+   "level": 3,
+   "q": "three + two = ?（用英文单词回答）",
+   "answer": "five",
+   "tip": "3 + 2 = 5，写作 five"
+  },
+  {
+   "id": "english-g1-0560",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "bike",
+    "plane",
+    "art",
+    "train"
+   ],
+   "answer": "art",
+   "tip": "美术 属于「学科」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0561",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "art"
+   ],
+   "answer": "art",
+   "tip": "美术 属于「学科」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0562",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "ship",
+    "bus",
+    "car",
+    "spring"
+   ],
+   "answer": "spring",
+   "tip": "春天 属于「季节」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0563",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "book",
+    "music",
+    "chair",
+    "eraser"
+   ],
+   "answer": "music",
+   "tip": "音乐 属于「学科」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0564",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "cat",
+    "tiger",
+    "winter",
+    "bird"
+   ],
+   "answer": "winter",
+   "tip": "冬天 属于「季节」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0565",
+   "type": "fill",
+   "level": 3,
+   "q": "eight + twelve = ?（用英文单词回答）",
+   "answer": "twenty",
+   "tip": "8 + 12 = 20，写作 twenty"
+  },
+  {
+   "id": "english-g1-0566",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "Tuesday",
+    "bag",
+    "Monday",
+    "Friday"
+   ],
+   "answer": "bag",
+   "tip": "书包 属于「学习用品」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0567",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "Chinese",
+    "worker",
+    "art",
+    "history"
+   ],
+   "answer": "worker",
+   "tip": "工人 属于「职业」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0568",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "pencil",
+    "sheep",
+    "book",
+    "bag"
+   ],
+   "answer": "sheep",
+   "tip": "绵羊 属于「动物」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0569",
+   "type": "fill",
+   "level": 3,
+   "q": "nine + three = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "9 + 3 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0570",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "bag",
+    "airport",
+    "pen",
+    "pencil"
+   ],
+   "answer": "airport",
+   "tip": "机场 属于「场所」，其余三个属于「学习用品」"
+  },
+  {
+   "id": "english-g1-0571",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "train",
+    "plane",
+    "shoes",
+    "bike"
+   ],
+   "answer": "shoes",
+   "tip": "鞋 属于「衣物」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0572",
+   "type": "fill",
+   "level": 3,
+   "q": "two + thirteen = ?（用英文单词回答）",
+   "answer": "fifteen",
+   "tip": "2 + 13 = 15，写作 fifteen"
+  },
+  {
+   "id": "english-g1-0573",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "science",
+    "maths",
+    "Chinese",
+    "bus"
+   ],
+   "answer": "bus",
+   "tip": "公共汽车 属于「交通工具」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0574",
+   "type": "fill",
+   "level": 3,
+   "q": "eleven + four = ?（用英文单词回答）",
+   "answer": "fifteen",
+   "tip": "11 + 4 = 15，写作 fifteen"
+  },
+  {
+   "id": "english-g1-0575",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "face",
+    "car",
+    "train",
+    "taxi"
+   ],
+   "answer": "face",
+   "tip": "脸 属于「身体部位」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0576",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "warm",
+    "bird",
+    "rainy",
+    "hot"
+   ],
+   "answer": "bird",
+   "tip": "鸟 属于「动物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0577",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "snowy",
+    "school",
+    "warm",
+    "hot"
+   ],
+   "answer": "school",
+   "tip": "学校 属于「场所」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0578",
+   "type": "fill",
+   "level": 3,
+   "q": "nine + two = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "9 + 2 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0579",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "mouth",
+    "friend",
+    "girl",
+    "mother"
+   ],
+   "answer": "mouth",
+   "tip": "嘴巴 属于「身体部位」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0580",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "boy",
+    "hot",
+    "cloudy",
+    "warm"
+   ],
+   "answer": "boy",
+   "tip": "男孩 属于「人物」，其余三个属于「天气」"
+  },
+  {
+   "id": "english-g1-0581",
+   "type": "fill",
+   "level": 3,
+   "q": "three + eight = ?（用英文单词回答）",
+   "answer": "eleven",
+   "tip": "3 + 8 = 11，写作 eleven"
+  },
+  {
+   "id": "english-g1-0582",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "cake",
+    "eraser",
+    "noodles",
+    "rice"
+   ],
+   "answer": "eraser",
+   "tip": "橡皮 属于「学习用品」，其余三个属于「食物饮料」"
+  },
+  {
+   "id": "english-g1-0583",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "hand",
+    "eye",
+    "mouth",
+    "blue"
+   ],
+   "answer": "blue",
+   "tip": "蓝色 属于「颜色」，其余三个属于「身体部位」"
+  },
+  {
+   "id": "english-g1-0584",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "Saturday",
+    "pants",
+    "Monday",
+    "Wednesday"
+   ],
+   "answer": "pants",
+   "tip": "裤子 属于「衣物」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0585",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "father",
+    "boy",
+    "teacher",
+    "foot"
+   ],
+   "answer": "foot",
+   "tip": "脚 属于「身体部位」，其余三个属于「人物」"
+  },
+  {
+   "id": "english-g1-0586",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "Saturday",
+    "bird",
+    "rabbit",
+    "duck"
+   ],
+   "answer": "Saturday",
+   "tip": "星期六 属于「星期」，其余三个属于「动物」"
+  },
+  {
+   "id": "english-g1-0587",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "four",
+    "six",
+    "eight",
+    "gloves"
+   ],
+   "answer": "gloves",
+   "tip": "手套 属于「衣物」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0588",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "friend",
+    "socks",
+    "gloves",
+    "dress"
+   ],
+   "answer": "friend",
+   "tip": "朋友 属于「人物」，其余三个属于「衣物」"
+  },
+  {
+   "id": "english-g1-0589",
+   "type": "fill",
+   "level": 3,
+   "q": "ten + ten = ?（用英文单词回答）",
+   "answer": "twenty",
+   "tip": "10 + 10 = 20，写作 twenty"
+  },
+  {
+   "id": "english-g1-0590",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "music",
+    "bus",
+    "train",
+    "ship"
+   ],
+   "answer": "music",
+   "tip": "音乐 属于「学科」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0591",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "friend",
+    "music",
+    "Chinese",
+    "maths"
+   ],
+   "answer": "friend",
+   "tip": "朋友 属于「人物」，其余三个属于「学科」"
+  },
+  {
+   "id": "english-g1-0592",
+   "type": "fill",
+   "level": 3,
+   "q": "six + two = ?（用英文单词回答）",
+   "answer": "eight",
+   "tip": "6 + 2 = 8，写作 eight"
+  },
+  {
+   "id": "english-g1-0593",
+   "type": "fill",
+   "level": 3,
+   "q": "nine + eleven = ?（用英文单词回答）",
+   "answer": "twenty",
+   "tip": "9 + 11 = 20，写作 twenty"
+  },
+  {
+   "id": "english-g1-0594",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "Friday",
+    "Saturday",
+    "Tuesday",
+    "orange"
+   ],
+   "answer": "orange",
+   "tip": "橙色 属于「颜色」，其余三个属于「星期」"
+  },
+  {
+   "id": "english-g1-0595",
+   "type": "choice",
+   "level": 3,
+   "q": "下面哪个单词和其他三个不是一类？",
+   "options": [
+    "three",
+    "four",
+    "seven",
+    "duck"
+   ],
+   "answer": "duck",
+   "tip": "鸭子 属于「动物」，其余三个属于「数字」"
+  },
+  {
+   "id": "english-g1-0596",
+   "type": "choice",
+   "level": 3,
+   "q": "选出不同类的单词",
+   "options": [
+    "apple",
+    "banana",
+    "tangerine",
+    "science"
+   ],
+   "answer": "science",
+   "tip": "科学 属于「学科」，其余三个属于「水果」"
+  },
+  {
+   "id": "english-g1-0597",
+   "type": "fill",
+   "level": 3,
+   "q": "three + seven = ?（用英文单词回答）",
+   "answer": "ten",
+   "tip": "3 + 7 = 10，写作 ten"
+  },
+  {
+   "id": "english-g1-0598",
+   "type": "fill",
+   "level": 3,
+   "q": "seven + five = ?（用英文单词回答）",
+   "answer": "twelve",
+   "tip": "7 + 5 = 12，写作 twelve"
+  },
+  {
+   "id": "english-g1-0599",
+   "type": "choice",
+   "level": 3,
+   "q": "圈出不同类的单词",
+   "options": [
+    "ship",
+    "plane",
+    "bus",
+    "teacher"
+   ],
+   "answer": "teacher",
+   "tip": "老师 属于「人物」，其余三个属于「交通工具」"
+  },
+  {
+   "id": "english-g1-0600",
+   "type": "choice",
+   "level": 3,
+   "q": "找出不属于同一类的那一个",
+   "options": [
+    "bike",
+    "two",
+    "seven",
+    "nine"
+   ],
+   "answer": "bike",
+   "tip": "自行车 属于「交通工具」，其余三个属于「数字」"
+  }
+ ]
+}

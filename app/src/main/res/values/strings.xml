@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">学习守护</string>
+
+    <!-- 主界面问候（代码会按时间替换为早/下/晚好，这里只是默认占位） -->
+    <string name="main_greeting">你好，小朋友</string>
+
+    <!-- 主界面（学习中心） -->
+    <string name="main_greeting_morning">早上好，小朋友</string>
+    <string name="main_greeting_afternoon">下午好，小朋友</string>
+    <string name="main_greeting_evening">晚上好，小朋友</string>
+    <string name="main_greeting_sub">今天也要加油学习哦</string>
+    <string name="main_guardian_title">今日娱乐额度</string>
+    <string name="main_guardian_free">额度内 · 放心玩</string>
+    <string name="main_guardian_normal">已超额 · 每 %1$d 分钟答一题</string>
+    <string name="main_guardian_tight">加密模式 · 每 %1$d 分钟答一题</string>
+    <string name="main_guardian_over">已超额</string>
+    <string name="main_remaining">剩余 %1$d 分钟</string>
+    <string name="main_guardian_explain">每天娱乐 %1$d 分钟；超过后每 %2$d 分钟弹一次答题，答对 %5$d 题可再看 %6$d 分钟；当天总时长达到 %3$d 分钟后，加密为每 %4$d 分钟弹一次。</string>
+    <string name="main_grade_label">选择年级</string>
+    <string name="main_modules_label">学习模块</string>
+    <string name="main_module_progress">已做 %1$d / %2$d</string>
+    <string name="main_btn_parent">家长模式</string>
+
+    <!-- 年级 / 难度 -->
+    <string name="grade_g1">一年级</string>
+    <string name="grade_g2">二年级</string>
+    <string name="grade_g3">三年级</string>
+    <string name="diff_easy">简单</string>
+    <string name="diff_medium">中等</string>
+    <string name="diff_hard">困难</string>
+
+    <!-- 答题锁 -->
+    <string name="lock_title">先完成学习任务</string>
+    <string name="lock_reason">已连续使用 %1$s %2$d 分钟</string>
+    <string name="lock_progress">答对进度 %1$d / %2$d</string>
+    <string name="lock_hint">连续答对 %1$d 题才能继续使用</string>
+    <string name="lock_input_hint">在这里输入答案</string>
+    <string name="lock_btn_submit">提交答案</string>
+    <string name="lock_empty_answer">请先作答</string>
+    <string name="lock_btn_call_parent">找家长</string>
+    <string name="lock_correct">答对了</string>
+    <string name="lock_wrong">再想想，答案是 %1$s</string>
+    <string name="lock_done">完成，可以继续使用了</string>
+
+    <!-- 家长模式 -->
+    <string name="parent_title">家长模式</string>
+    <string name="parent_pin_hint">请输入家长密码</string>
+    <string name="parent_pin_default_tip">初始密码 1234，进入后请立即修改</string>
+    <string name="parent_pin_wrong">密码错误</string>
+    <string name="parent_pin_too_short">密码至少 4 位</string>
+    <string name="parent_btn_unlock">进入</string>
+    <string name="parent_section_rule">守护规则</string>
+    <string name="parent_daily_quota">每日娱乐额度（分钟）</string>
+    <string name="parent_interval_normal">超额后弹窗间隔（分钟）</string>
+    <string name="parent_tight_after">总时长达到多少分钟进入加密（分钟）</string>
+    <string name="parent_interval_tight">加密后弹窗间隔（分钟）</string>
+    <string name="parent_pass_count">解锁需连续答对（题）</string>
+    <string name="parent_earn_minutes">答对后换得的娱乐时长（分钟）</string>
+    <string name="parent_grade">孩子年级</string>
+    <string name="parent_subject">弹窗出题科目</string>
+    <string name="parent_theme">界面主题</string>
+    <string name="parent_section_apps">应用归类</string>
+    <string name="parent_btn_manage_apps">管理应用归类</string>
+    <string name="parent_section_admin">安全防护</string>
+    <string name="parent_btn_device_admin">激活设备管理器（防卸载）</string>
+    <string name="parent_device_admin_on">设备管理器已激活</string>
+    <string name="parent_btn_change_pin">修改家长密码</string>
+    <string name="parent_btn_save">保存设置</string>
+    <string name="parent_saved">已保存</string>
+
+    <!-- 应用归类 -->
+    <string name="apps_title">应用归类</string>
+    <string name="apps_tip">只有「受限」的应用会被弹窗拦截。学习类应用永不弹窗、不计时。</string>
+    <string name="apps_filter_recent">最近使用</string>
+    <string name="apps_filter_all">全部应用</string>
+    <string name="apps_empty">暂无数据，先开启使用情况访问权限</string>
+    <string name="cat_learning">学习</string>
+    <string name="cat_restricted">受限</string>
+    <string name="cat_unknown">未分类</string>
+
+    <!-- 练习 / 运动 -->
+    <string name="practice_back">返回</string>
+    <string name="practice_progress">%1$s 已做 %2$d 题</string>
+    <string name="practice_sport_tip">动作要领：%1$s</string>
+    <string name="practice_sport_done">我完成了</string>
+    <string name="practice_sport_count">今日已完成 %1$d 次运动</string>
+    <string name="practice_sport_cheer">真棒！动一动更聪明</string>
+
+    <!-- 通知 -->
+    <string name="notify_channel_name">监控服务</string>
+    <string name="notify_text">正在守护中 · 今日已用 %1$d 分钟</string>
+
+    <!-- 数组 -->
+    <string-array name="grade_labels">
+        <item>一年级</item>
+        <item>二年级</item>
+        <item>三年级</item>
+    </string-array>
+
+    <string-array name="subject_labels">
+        <item>数学</item>
+        <item>语文</item>
+        <item>英语</item>
+        <item>三科混合</item>
+    </string-array>
+
+    <string-array name="subject_values" translatable="false">
+        <item>math</item>
+        <item>chinese</item>
+        <item>english</item>
+        <item>mixed</item>
+    </string-array>
+
+    <string-array name="theme_labels">
+        <item>海洋蓝</item>
+        <item>森林绿</item>
+        <item>暖阳橙</item>
+        <item>糖果马卡龙</item>
+    </string-array>
+
+    <string-array name="theme_values" translatable="false">
+        <item>ocean</item>
+        <item>forest</item>
+        <item>sunset</item>
+        <item>candy</item>
+    </string-array>
+
+    <!-- 奖励小屋 -->
+    <string name="reward_title">奖励小屋</string>
+    <string name="reward_intro">答对题目就能赚星星 ⭐，星星可以换小奖励哦！</string>
+    <string name="reward_item_time">+10 分钟娱乐时间</string>
+    <string name="reward_item_time_desc">换一段额外的游戏 / 短视频时间</string>
+    <string name="reward_item_pass">免一次弹窗</string>
+    <string name="reward_item_pass_desc">下次被拦时自动放行一次</string>
+    <string name="reward_item_gift">实物小奖励（找家长）</string>
+    <string name="reward_item_gift_desc">攒够星星，找家长要一份小礼物</string>
+    <string name="reward_cost">%1$d 星</string>
+    <string name="reward_not_enough">星星不够，再答几题赚星星吧</string>
+    <string name="reward_exchanged_time">已获得 +10 分钟娱乐时间 🎉</string>
+    <string name="reward_exchanged_pass">已获得一次免弹窗机会 🛡️</string>
+    <string name="reward_gift_ok">奖励已记下，去找家长要吧 🎁</string>
+    <string name="reward_btn_exchange">兑换</string>
+    <string name="reward_gift_pin_title">请家长输入密码</string>
+    <string name="reward_gift_pin_hint">家长密码</string>
+    <string name="reward_star_label">我的星星</string>
+</resources>

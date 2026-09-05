@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 家长模式：先过密码，再配置规则。样式可随意调整 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 密码验证区 -->
+        <LinearLayout
+            android:id="@+id/layoutPin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_card"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parent_title"
+                android:textColor="@color/text_main"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:autofillHints="password"
+                android:hint="@string/parent_pin_hint"
+                android:imeOptions="actionDone"
+                android:inputType="numberPassword"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnUnlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/parent_btn_unlock" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/parent_pin_default_tip"
+                android:textColor="@color/text_hint"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- 规则设置区：密码正确后才显示 -->
+        <LinearLayout
+            android:id="@+id/layoutSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/parent_section_rule"
+                android:textColor="@color/text_main"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/bg_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/parent_daily_quota" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <EditText android:id="@+id/etQuota" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:textSize="16sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_interval_normal" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <EditText android:id="@+id/etIntervalNormal" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:textSize="16sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_tight_after" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <EditText android:id="@+id/etTightAfter" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:textSize="16sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_interval_tight" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <EditText android:id="@+id/etIntervalTight" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:textSize="16sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_pass_count" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <EditText android:id="@+id/etStreak" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:textSize="16sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_earn_minutes" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <EditText android:id="@+id/etEarn" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:textSize="16sp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_grade" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <Spinner android:id="@+id/spinnerGrade" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:entries="@array/grade_labels" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_subject" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <Spinner android:id="@+id/spinnerSubject" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:entries="@array/subject_labels" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" android:text="@string/parent_theme" android:textColor="@color/text_sub" android:textSize="14sp" />
+                <Spinner android:id="@+id/spinnerTheme" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:entries="@array/theme_labels" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/parent_section_apps"
+                android:textColor="@color/text_main"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnManageApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/parent_btn_manage_apps" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/parent_section_admin"
+                android:textColor="@color/text_main"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDeviceAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/parent_btn_device_admin" />
+
+            <TextView
+                android:id="@+id/tvDeviceAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_hint"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnChangePin"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/parent_btn_change_pin"
+                android:textColor="@color/brand" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/parent_btn_save" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

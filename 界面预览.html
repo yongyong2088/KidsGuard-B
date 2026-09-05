@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学习守护 · 界面预览</title>
+<style>
+:root{
+  --brand:#185FA5; --brand-dark:#0C447C; --brand-light:#E6F1FB;
+  --learning:#0F6E56; --learning-light:#E1F5EE;
+  --restricted:#854F0B; --restricted-light:#FAEEDA;
+  --danger:#A32D2D;
+  --text-main:#2C2C2A; --text-sub:#5F5E5A; --text-hint:#888780;
+  --divider:#E6E4DE; --bg-page:#FAFAF8; --card:#FFFFFF;
+  --unknown:#5F5E5A; --unknown-light:#F1EFE8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+  background:#F2F1EE; color:var(--text-main); line-height:1.6; padding:28px 20px 60px;
+}
+.wrap{max-width:1240px;margin:0 auto}
+
+/* ---------- 顶部 ---------- */
+header{margin-bottom:26px}
+h1{font-size:24px;font-weight:700;letter-spacing:-.2px}
+.sub{color:var(--text-sub);font-size:14px;margin-top:6px;max-width:760px}
+.badge{
+  display:inline-block;background:var(--brand-light);color:var(--brand);
+  font-size:12px;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:2px;
+}
+
+/* ---------- 主体分栏 ---------- */
+.main{display:flex;gap:34px;align-items:flex-start}
+@media(max-width:1000px){.main{flex-direction:column;align-items:center}}
+
+/* ---------- 手机 ---------- */
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:18px;flex-shrink:0}
+.phone{
+  width:360px;height:740px;background:#1A1A18;border-radius:40px;padding:11px;
+  box-shadow:0 18px 44px rgba(0,0,0,.22), 0 0 0 1px rgba(0,0,0,.06);
+  position:relative;
+}
+.phone::after{ /* 听筒 */
+  content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  width:86px;height:5px;background:#3A3A36;border-radius:3px;
+}
+.screen{
+  width:100%;height:100%;background:var(--bg-page);border-radius:30px;overflow:hidden;
+  display:flex;flex-direction:column;position:relative;
+}
+.statusbar{
+  height:30px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;font-size:12px;color:var(--text-main);flex-shrink:0;background:transparent;
+}
+.statusbar.hidden{display:none}
+.sb-icons{display:flex;align-items:center;gap:5px}
+.navbar{
+  height:44px;display:flex;align-items:center;justify-content:space-around;
+  border-top:1px solid var(--divider);flex-shrink:0;background:var(--card);
+}
+.navbar.hidden{display:none}
+.navbar i{display:block;width:16px;height:16px;border:1.6px solid var(--text-sub);border-radius:50%}
+.navbar i.tri{border:none;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:13px solid var(--text-sub);border-radius:0}
+.navbar i.sq{border-radius:2px;transform:rotate(45deg);width:13px;height:13px}
+.pagecontent{
+  flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;
+  display:flex;flex-direction:column;
+}
+.pagecontent::-webkit-scrollbar{width:4px}
+.pagecontent::-webkit-scrollbar-thumb{background:#DDDBD4;border-radius:2px}
+
+/* ---------- Tab ---------- */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:360px}
+.tab{
+  border:1px solid #D9D7D0;background:#fff;color:var(--text-sub);
+  padding:7px 13px;border-radius:20px;font-size:13px;cursor:pointer;font-family:inherit;
+  transition:.15s;
+}
+.tab:hover{border-color:var(--brand);color:var(--brand)}
+.tab.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+
+/* ---------- 通用控件 ---------- */
+.btn{
+  background:var(--brand);color:#fff;border:none;border-radius:6px;
+  padding:11px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;
+  letter-spacing:.4px;
+}
+.btn:disabled{background:#C9C7C0;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--brand);padding:9px 14px}
+.card{background:var(--card);padding:18px}
+.p20{padding:20px}
+.hint13{font-size:13px;color:var(--text-hint)}
+.sub14{font-size:14px;color:var(--text-sub)}
+
+/* ---------- 界面1 主界面 ---------- */
+#s-main .title{font-size:24px;font-weight:700;color:var(--text-main)}
+.perm-card{background:var(--restricted-light);padding:18px;margin-top:20px}
+.perm-card .t{font-size:16px;font-weight:700;color:var(--restricted)}
+.perm-card .d{font-size:14px;color:var(--text-sub);margin-top:8px}
+.perm-card .btn{margin-top:14px}
+.stat-row{display:flex;margin-top:16px}
+.stat-cell{flex:1}
+.stat-cell .lbl{font-size:13px;color:var(--text-hint)}
+.stat-cell .val{font-size:22px;font-weight:700;color:var(--text-main);margin-top:4px}
+.stat-cell .val.green{color:var(--learning)}
+.stat-cell .val.red{color:var(--danger)}
+.btn-full{width:100%;margin-top:18px}
+.btn-parent{width:100%;margin-top:20px;background:transparent;color:var(--brand);font-size:14px;border:none;padding:11px;cursor:pointer;font-family:inherit}
+.statebar{
+  display:flex;gap:6px;background:#fff;border:1px solid var(--divider);
+  border-radius:22px;padding:4px;margin-bottom:16px;
+}
+.statebar button{
+  flex:1;border:none;background:transparent;font-size:11.5px;color:var(--text-hint);
+  padding:6px 4px;border-radius:18px;cursor:pointer;font-family:inherit;
+}
+.statebar button.on{background:var(--brand-light);color:var(--brand);font-weight:600}
+
+/* ---------- 界面2 答题锁 ---------- */
+#s-lock{background:#fff;padding:28px;display:flex;flex-direction:column;align-items:center}
+#s-lock .lk-title{font-size:22px;font-weight:700;text-align:center;margin-top:26px}
+#s-lock .lk-reason{font-size:14px;color:var(--text-sub);margin-top:10px;text-align:center}
+#s-lock .lk-hint{font-size:13px;color:var(--text-hint);margin-top:6px;text-align:center;line-height:1.5}
+#s-lock .lk-prog{font-size:15px;font-weight:700;color:var(--brand);margin-top:14px}
+#s-lock .lk-line{width:100%;height:1px;background:var(--divider);margin-top:28px}
+#s-lock .lk-q{font-size:26px;text-align:center;margin-top:40px;line-height:1.5;min-height:78px;display:flex;align-items:center;justify-content:center}
+#s-lock input{
+  width:100%;margin-top:28px;text-align:center;font-size:20px;padding:10px;
+  border:none;border-bottom:2px solid var(--divider);background:transparent;
+  font-family:inherit;color:var(--text-main);outline:none;
+}
+#s-lock input:focus{border-bottom-color:var(--brand)}
+#s-lock .lk-fb{font-size:15px;margin-top:14px;min-height:24px;color:var(--learning);text-align:center}
+#s-lock .lk-actions{display:flex;align-items:center;justify-content:center;margin-top:18px;width:100%}
+#s-lock .lk-actions .btn{min-width:160px}
+#s-lock .lk-count{font-size:16px;color:var(--text-hint);margin-left:18px;min-width:24px}
+#s-lock .spacer{flex:1}
+#s-lock .lk-call{background:transparent;border:none;color:var(--text-hint);font-size:13px;padding:10px;cursor:pointer;font-family:inherit}
+.lk-note{
+  position:absolute;top:8px;right:14px;font-size:10px;color:var(--text-hint);
+  background:var(--unknown-light);padding:3px 8px;border-radius:10px;
+}
+.lk-done{text-align:center;padding-top:60px}
+.lk-done .big{font-size:56px;line-height:1}
+.lk-done .t{font-size:20px;font-weight:700;color:var(--learning);margin-top:18px}
+.lk-done .d{font-size:14px;color:var(--text-sub);margin-top:8px}
+.lk-done .btn{margin-top:26px}
+
+/* ---------- 界面3 家长模式 ---------- */
+#s-parent .pt{font-size:20px;font-weight:700}
+#s-parent .field{margin-top:16px}
+#s-parent .field label{font-size:14px;color:var(--text-sub);display:block}
+#s-parent input,#s-parent select{
+  width:100%;margin-top:6px;font-size:16px;padding:9px 8px;font-family:inherit;
+  border:none;border-bottom:1.5px solid var(--divider);background:transparent;color:var(--text-main);outline:none;
+}
+#s-parent select:focus,#s-parent input:focus{border-bottom-color:var(--brand)}
+#s-parent .sec-title{font-size:17px;font-weight:700;margin-top:24px}
+#s-parent .btn-full{margin-top:12px}
+#s-parent .pinbtn{width:100%;margin-top:14px}
+#s-parent .tip12{font-size:12px;color:var(--text-hint);margin-top:10px}
+#s-parent .err{font-size:13px;color:var(--danger);margin-top:10px;display:none}
+#s-parent .err.show{display:block}
+.admin-note{font-size:12px;color:var(--text-hint);margin-top:8px;display:none}
+
+/* ---------- 界面4 应用归类 ---------- */
+#s-apps{padding:16px;display:flex;flex-direction:column;height:100%}
+#s-apps .at{font-size:20px;font-weight:700}
+#s-apps .ad{font-size:13px;color:var(--text-sub);margin-top:8px}
+.filters{display:flex;margin-top:14px}
+.filters button{
+  background:transparent;border:none;color:var(--text-hint);font-size:13px;
+  padding:6px 10px;cursor:pointer;font-family:inherit;
+}
+.filters button.on{color:var(--brand);font-weight:600}
+.app-item{background:var(--card);padding:14px;margin-bottom:8px}
+.app-item .nm{font-size:16px;font-weight:700}
+.app-item .pk{font-size:11px;color:var(--text-hint);margin-top:2px}
+.app-item .btns{display:flex;gap:8px;margin-top:12px}
+.app-item .btns button{
+  flex:1;border:1px solid var(--divider);background:#fff;color:var(--text-sub);
+  font-size:13px;padding:6px 0;border-radius:5px;cursor:pointer;font-family:inherit;
+}
+.app-item .btns button.on{color:#fff;border-color:transparent;font-weight:600}
+.app-item .btns button.on.c-learning{background:var(--learning)}
+.app-item .btns button.on.c-restricted{background:var(--restricted)}
+.app-item .btns button.on.c-unknown{background:var(--unknown)}
+
+/* ---------- 右侧说明 ---------- */
+.notes{flex:1;min-width:0;max-width:560px}
+.note-card{background:#fff;border:1px solid var(--divider);border-radius:14px;padding:22px;margin-bottom:16px}
+.note-card h2{font-size:17px;font-weight:700;margin-bottom:4px}
+.note-card .role{font-size:13px;color:var(--text-sub);margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+table th{
+  text-align:left;color:var(--text-hint);font-weight:600;font-size:12px;
+  padding:6px 10px 6px 0;border-bottom:1px solid var(--divider);width:96px;vertical-align:top;white-space:nowrap;
+}
+table td{padding:6px 0;border-bottom:1px solid var(--divider);color:var(--text-main)}
+table tr:last-child th,table tr:last-child td{border-bottom:none}
+code{
+  background:#F4F3F0;padding:1px 6px;border-radius:4px;
+  font-family:ui-monospace,Consolas,monospace;font-size:12.5px;color:var(--brand-dark);
+}
+.ul{margin:6px 0 0 18px;font-size:13.5px;color:var(--text-sub)}
+.ul li{margin-bottom:6px}
+.ul b{color:var(--text-main)}
+.warn{
+  background:var(--restricted-light);border-radius:8px;padding:11px 14px;
+  font-size:13px;color:var(--restricted);margin-top:14px;
+}
+.warn b{font-weight:700}
+.try{
+  background:var(--learning-light);border-radius:8px;padding:11px 14px;
+  font-size:13px;color:var(--learning);margin-top:14px;
+}
+.footnote{font-size:12px;color:var(--text-hint);margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>学习守护 · 界面预览<span class="badge">按当前代码 1:1 还原</span></h1>
+    <p class="sub">这是四个界面的可交互预览，配色、文案、控件都取自项目里的 <code>colors.xml</code> 和 <code>strings.xml</code>。
+    因为本机没有 Android SDK 无法编译真机截图，先用这份预览确认布局，你改完意见我再改 XML。<b>答题锁和家长模式可以直接点着试。</b></p>
+  </header>
+
+  <div class="main">
+
+    <!-- ============ 手机 ============ -->
+    <div class="phone-col">
+      <div class="phone">
+        <div class="screen">
+
+          <div class="statusbar" id="statusbar">
+            <span id="clock">16:34</span>
+            <span class="sb-icons">
+              <svg width="15" height="11" viewBox="0 0 15 11"><g fill="#2C2C2A"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="5" width="3" height="6" rx="1"/><rect x="8" y="2.5" width="3" height="8.5" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></g></svg>
+              <svg width="14" height="11" viewBox="0 0 14 11"><path d="M7 9.6 5.2 7.6a2.6 2.6 0 0 1 3.6 0L7 9.6Zm0-4.3a5 5 0 0 0-3.5 1.5L2.1 5.4a7 7 0 0 1 9.8 0l-1.4 1.4A5 5 0 0 0 7 5.3Z" fill="#2C2C2A"/></svg>
+              <svg width="22" height="11" viewBox="0 0 22 11"><rect x="0.5" y="0.5" width="18" height="10" rx="2.5" fill="none" stroke="#2C2C2A"/><rect x="2" y="2" width="12" height="7" rx="1.5" fill="#2C2C2A"/><path d="M20 4v3a1.8 1.8 0 0 0 0-3Z" fill="#2C2C2A"/></svg>
+            </span>
+          </div>
+
+          <!-- ---------- 界面1：主界面 ---------- -->
+          <div class="pagecontent p20" id="s-main">
+            <div class="statebar">
+              <button data-st="nogrant">未授权</button>
+              <button data-st="granted" class="on">已授权未启动</button>
+              <button data-st="running">运行中</button>
+              <button data-st="exhausted">额度用完</button>
+            </div>
+
+            <div class="title">学习守护</div>
+
+            <div class="perm-card" id="permCard">
+              <div class="t">需要开启「使用情况访问权限」</div>
+              <div class="d">这是本应用的核心能力。该权限无法在应用内直接申请，需要你手动在系统设置中开启一次。</div>
+              <button class="btn">前往开启</button>
+            </div>
+
+            <div class="card" style="margin-top:16px">
+              <div id="tvStatus" class="sub14" style="font-weight:700">监控未启动</div>
+              <div class="stat-row">
+                <div class="stat-cell">
+                  <div class="lbl">今日娱乐已用</div>
+                  <div class="val" id="tvUsed">0 分钟</div>
+                </div>
+                <div class="stat-cell">
+                  <div class="lbl">剩余额度</div>
+                  <div class="val green" id="tvQuota">60 分钟</div>
+                </div>
+              </div>
+              <button class="btn btn-full" id="btnToggle">启动监控</button>
+            </div>
+
+            <button class="btn-parent">家长模式</button>
+          </div>
+
+          <!-- ---------- 界面2：答题锁 ---------- -->
+          <div class="pagecontent" id="s-lock" style="display:none">
+            <div class="lk-note">沉浸全屏 · 无状态栏</div>
+
+            <div id="lockBody">
+              <div class="lk-title">先完成学习任务</div>
+              <div class="lk-reason">抖音 已连续使用 10 分钟</div>
+              <div class="lk-hint">连续答对 3 题才能继续使用</div>
+              <div class="lk-prog" id="lkProg">答对进度 0 / 3</div>
+              <div class="lk-line"></div>
+              <div class="lk-q" id="lkQ">7 + 8 = ?</div>
+              <input id="lkInput" type="text" placeholder="输入答案" autocomplete="off">
+              <div class="lk-fb" id="lkFb"></div>
+              <div class="lk-actions">
+                <button class="btn" id="lkSubmit">提交答案</button>
+                <span class="lk-count" id="lkCount">30</span>
+              </div>
+              <div class="spacer"></div>
+              <button class="lk-call" id="lkCall">找家长</button>
+            </div>
+
+            <div class="lk-done" id="lockDone" style="display:none">
+              <div class="big">🎉</div>
+              <div class="t">完成，可以继续使用了</div>
+              <div class="d">弹窗关闭，回到刚才的应用</div>
+              <button class="btn" id="lkReset">再演示一次</button>
+            </div>
+          </div>
+
+          <!-- ---------- 界面3：家长模式 ---------- -->
+          <div class="pagecontent p20" id="s-parent" style="display:none">
+            <div class="card">
+              <div class="pt">家长模式</div>
+              <input id="pinInput" type="password" placeholder="请输入家长密码" inputmode="numeric">
+              <button class="btn pinbtn" id="pinBtn">进入</button>
+              <div class="err" id="pinErr">密码错误</div>
+              <div class="tip12">初始密码 1234，进入后请立即修改</div>
+            </div>
+
+            <div id="parentSettings" style="display:none">
+              <div class="sec-title">拦截规则</div>
+              <div class="card">
+                <div class="field"><label>连续使用多久后弹窗（分钟）</label><input type="number" value="10"></div>
+                <div class="field"><label>每日娱乐额度（分钟）</label><input type="number" value="60"></div>
+                <div class="field"><label>解锁需连续答对（题）</label><input type="number" value="3"></div>
+                <div class="field"><label>每题限时（秒）</label><input type="number" value="30"></div>
+                <div class="field"><label>孩子年级</label>
+                  <select><option>一年级</option><option>二年级</option><option>三年级</option><option>四年级</option><option>五年级</option><option>六年级</option></select>
+                </div>
+                <div class="field"><label>出题科目</label>
+                  <select><option>数学</option><option>语文</option><option>英语</option><option>三科混合</option></select>
+                </div>
+              </div>
+
+              <div class="sec-title">应用归类</div>
+              <button class="btn btn-full" id="gotoApps">管理应用归类</button>
+
+              <div class="sec-title">安全防护</div>
+              <button class="btn btn-full" id="adminBtn">激活设备管理器（防卸载）</button>
+              <div class="admin-note" id="adminNote">设备管理器已激活</div>
+
+              <button class="btn-parent" style="margin-top:8px">修改家长密码</button>
+              <button class="btn btn-full" id="saveBtn">保存设置</button>
+            </div>
+          </div>
+
+          <!-- ---------- 界面4：应用归类 ---------- -->
+          <div class="pagecontent" id="s-apps" style="display:none">
+            <div class="at">应用归类</div>
+            <div class="ad">只有「受限」的应用会被弹窗拦截。学习类应用永不弹窗、不计时。</div>
+            <div class="filters">
+              <button class="on">最近使用</button>
+              <button>全部应用</button>
+            </div>
+            <div id="appList"></div>
+          </div>
+
+          <div class="navbar" id="navbar"><i class="tri"></i><i></i><i class="sq"></i></div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab on" data-tab="main">主界面</button>
+        <button class="tab" data-tab="lock">答题锁</button>
+        <button class="tab" data-tab="parent">家长模式</button>
+        <button class="tab" data-tab="apps">应用归类</button>
+      </div>
+    </div>
+
+    <!-- ============ 右侧说明 ============ -->
+    <div class="notes" id="notes"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ 说明面板内容 ============ */
+  var NOTES = {
+    main: {
+      title: "主界面",
+      role: "家长打开 App 第一眼看到的页面，也是唯一能进入设置的入口。",
+      rows: [
+        ["布局文件", "<code>res/layout/activity_main.xml</code>"],
+        ["逻辑文件", "<code>ui/MainActivity.kt</code>"],
+        ["刷新频率", "每 2 秒自动刷新一次状态（代码里 REFRESH_INTERVAL_MS = 2000）"]
+      ],
+      list: [
+        "<b>权限卡片只在未授权时出现</b>，授权后整个消失，不会长期占位置。",
+        "<b>启动按钮在未授权时是灰的</b>，点了也没用——因为监控依赖使用情况访问权限。",
+        "<b>家长模式入口故意做得很不起眼</b>（一个纯文字按钮）。孩子如果不知道这里能进设置，就不会去研究怎么改规则。"
+      ],
+      warn: "切换上面的「未授权 / 已授权未启动 / 运行中 / 额度用完」可以看四种状态。真实设备上状态是自动的，这里的切换按钮只用于预览，不会写进代码。"
+    },
+    lock: {
+      title: "答题锁（孩子看到的界面）",
+      role: "整个产品的核心。全屏、不可返回、必须连续答对才能关闭。",
+      rows: [
+        ["布局文件", "<code>res/layout/activity_lock.xml</code>"],
+        ["逻辑文件", "<code>lock/LockActivity.kt</code>"],
+        ["题库逻辑", "<code>quiz/QuizEngine.kt</code> + <code>data/QuestionRepository.kt</code>"]
+      ],
+      list: [
+        "<b>返回键被完全吞掉</b>：按下不会有任何反应，代码里是一个空的回调。",
+        "<b>状态栏和导航栏都隐藏</b>：防止孩子从顶部下拉通知切走，也防止误触 Home。",
+        "<b>锁屏状态下也能弹出</b>：即使手机是黑屏的，到时间也会亮屏显示。",
+        "<b>每题有倒计时</b>（默认 30 秒）：超时自动换题并重置连对进度，防止孩子耗时间。",
+        "<b>答错会立刻告诉正确答案</b>，1.5 秒后换新题——目的是让他学会，不是卡住他。",
+        "<b>「找家长」需要输家长密码</b>：给「孩子在跟家长视频、家长同意再用一会儿」这种场景留的口子，不是后门。"
+      ],
+      warn: "按 Home 键目前还能退出。这是普通应用的硬限制，激活设备管理器后会真正屏蔽。对 6–9 岁通常够用，试下来不行再补。",
+      try: "可以真的试着答：答案是 15、7、12。答对 3 题看解锁效果，答错一道看反馈样式。"
+    },
+    parent: {
+      title: "家长模式",
+      role: "所有规则配置都在这里，必须先输密码才能进。",
+      rows: [
+        ["布局文件", "<code>res/layout/activity_parent.xml</code>"],
+        ["逻辑文件", "<code>ui/ParentActivity.kt</code>"],
+        ["初始密码", "1234（进入后务必改掉）"]
+      ],
+      list: [
+        "<b>密码区独占一屏</b>：密码没输对之前，下半部分设置区域完全不渲染，孩子翻不到。",
+        "<b>四个数字配置项</b>：触发阈值 10 分钟、每日额度 60 分钟、连对 3 题、每题 30 秒。这几个是调节松紧的主要旋钮。",
+        "<b>年级和科目决定出题难度</b>：数学题按年级实时生成，题量无限。",
+        "<b>设备管理器按钮</b>：激活后孩子无法在设置里直接卸载本应用，需要家长先在这里取消激活。"
+      ],
+      warn: "设备管理器一旦激活，你自己想卸载也得先回到这里取消激活——否则只能恢复出厂设置。",
+      try: "密码输 1234 点进入，可以看到设置区展开后的完整内容。"
+    },
+    apps: {
+      title: "应用归类",
+      role: "决定哪些应用会被拦。这是「学习软件不弹窗」的落地点。",
+      rows: [
+        ["容器布局", "<code>res/layout/activity_app_list.xml</code>"],
+        ["每行样式", "<code>res/layout/item_app.xml</code>"],
+        ["逻辑文件", "<code>ui/AppListActivity.kt</code>"],
+        ["预置名单", "<code>monitor/AppClassifier.kt</code>（19 个娱乐 + 3 个学习）"]
+      ],
+      list: [
+        "<b>手动指定的准确率是 100%</b>，代码里没有任何自动识别逻辑——不存在把学习软件误判成游戏的可能。",
+        "<b>三态而非两态</b>：学习（永不弹窗不计时）、受限（到点弹窗）、未分类（不拦，但计入时长报告）。",
+        "<b>「最近使用」比「全部应用」实用得多</b>：家长往往说不清孩子玩的那些游戏叫什么，但在最近用过的一眼里能认出来。",
+        "<b>这个入口藏在家长模式里</b>，不放在普通设置页，避免给孩子一份「要绕过的目标清单」。"
+      ],
+      warn: "两个最容易漏的：网课软件（钉钉、腾讯会议）必须设成学习类，一节课被打断后果严重；浏览器不要给白名单，那是刷视频和玩网页游戏的后门。",
+      try: "点每行下面的三个按钮，可以切换归类看高亮效果。"
+    }
+  };
+
+  /* ============ 界面切换 ============ */
+  var tabs = document.querySelectorAll(".tab");
+  var screens = { main:"s-main", lock:"s-lock", parent:"s-parent", apps:"s-apps" };
+  var statusbar = document.getElementById("statusbar");
+  var navbar = document.getElementById("navbar");
+  var notes = document.getElementById("notes");
+
+  function renderNotes(key){
+    var n = NOTES[key];
+    var html = '<div class="note-card">';
+    html += '<h2>' + n.title + '</h2>';
+    html += '<div class="role">' + n.role + '</div>';
+    html += '<table>';
+    for (var i = 0; i < n.rows.length; i++) {
+      html += '<tr><th>' + n.rows[i][0] + '</th><td>' + n.rows[i][1] + '</td></tr>';
+    }
+    html += '</table>';
+    html += '<ul class="ul">';
+    for (var j = 0; j < n.list.length; j++) html += '<li>' + n.list[j] + '</li>';
+    html += '</ul>';
+    if (n.warn) html += '<div class="warn"><b>注意：</b>' + n.warn + '</div>';
+    if (n["try"]) html += '<div class="try">' + n["try"] + '</div>';
+    html += '</div>';
+    notes.innerHTML = html;
+  }
+
+  function switchTab(key){
+    for (var k in screens) {
+      document.getElementById(screens[k]).style.display = (k === key) ? "flex" : "none";
+    }
+    // 答题锁是沉浸全屏，隐藏状态栏和导航栏
+    var immersive = (key === "lock");
+    statusbar.classList.toggle("hidden", immersive);
+    navbar.classList.toggle("hidden", immersive);
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.toggle("on", tabs[i].getAttribute("data-tab") === key);
+    }
+    renderNotes(key);
+  }
+
+  for (var t = 0; t < tabs.length; t++) {
+    tabs[t].addEventListener("click", function(){
+      switchTab(this.getAttribute("data-tab"));
+    });
+  }
+
+  /* ============ 主界面状态切换 ============ */
+  var MAIN_STATES = {
+    nogrant:   { perm:true,  status:"监控未启动", color:"var(--text-sub)",  used:0,  quota:60, quotaCls:"green", btn:"启动监控", btnOff:true  },
+    granted:   { perm:false, status:"监控未启动", color:"var(--text-sub)",  used:0,  quota:60, quotaCls:"green", btn:"启动监控", btnOff:false },
+    running:   { perm:false, status:"监控运行中", color:"var(--learning)",  used:25, quota:35, quotaCls:"green", btn:"停止监控", btnOff:false },
+    exhausted: { perm:false, status:"监控运行中", color:"var(--learning)",  used:60, quota:0,  quotaCls:"red",   btn:"停止监控", btnOff:false }
+  };
+  var stateBtns = document.querySelectorAll(".statebar button");
+  function applyMainState(key){
+    var s = MAIN_STATES[key];
+    document.getElementById("permCard").style.display = s.perm ? "block" : "none";
+    var st = document.getElementById("tvStatus");
+    st.textContent = s.status;
+    st.style.color = s.color;
+    document.getElementById("tvUsed").textContent = s.used + " 分钟";
+    var q = document.getElementById("tvQuota");
+    q.textContent = s.quota + " 分钟";
+    q.className = "val " + s.quotaCls;
+    var b = document.getElementById("btnToggle");
+    b.textContent = s.btn;
+    b.disabled = s.btnOff;
+    for (var i = 0; i < stateBtns.length; i++) {
+      stateBtns[i].classList.toggle("on", stateBtns[i].getAttribute("data-st") === key);
+    }
+  }
+  for (var i = 0; i < stateBtns.length; i++) {
+    stateBtns[i].addEventListener("click", function(){
+      applyMainState(this.getAttribute("data-st"));
+    });
+  }
+  applyMainState("granted");
+
+  /* ============ 答题锁交互 ============ */
+  var QUESTIONS = [
+    { q:"7 + 8 = ?",  a:"15" },
+    { q:"12 − 5 = ?", a:"7"  },
+    { q:"3 × 4 = ?",  a:"12" }
+  ];
+  var NEED = 3;
+  var lockState = { idx:0, streak:0, locked:false };
+  var timer = null;
+
+  var lkQ = document.getElementById("lkQ");
+  var lkInput = document.getElementById("lkInput");
+  var lkFb = document.getElementById("lkFb");
+  var lkProg = document.getElementById("lkProg");
+  var lkCount = document.getElementById("lkCount");
+  var lkSubmit = document.getElementById("lkSubmit");
+  var lockBody = document.getElementById("lockBody");
+  var lockDone = document.getElementById("lockDone");
+
+  function startCountdown(){
+    stopCountdown();
+    var left = 30;
+    lkCount.textContent = String(left);
+    timer = setInterval(function(){
+      left--;
+      lkCount.textContent = String(left);
+      if (left <= 0) {
+        stopCountdown();
+        lockState.streak = 0;
+        lkFb.textContent = "超时了，换一题";
+        lkFb.style.color = "var(--danger)";
+        lockState.locked = true;
+        setTimeout(function(){ nextQuestion(); }, 1500);
+      }
+    }, 1000);
+  }
+  function stopCountdown(){ if (timer) { clearInterval(timer); timer = null; } }
+
+  function nextQuestion(){
+    lockState.idx = (lockState.idx + 1) % QUESTIONS.length;
+    lkQ.textContent = QUESTIONS[lockState.idx].q;
+    lkInput.value = "";
+    lkInput.disabled = false;
+    lkSubmit.disabled = false;
+    lkFb.textContent = "";
+    lockState.locked = false;
+    lkProg.textContent = "答对进度 " + lockState.streak + " / " + NEED;
+    lkInput.focus();
+    startCountdown();
+  }
+
+  function submitAnswer(){
+    if (lockState.locked) return;
+    var val = lkInput.value.trim();
+    if (!val) { lkFb.textContent = "请先输入答案"; lkFb.style.color = "var(--danger)"; return; }
+    stopCountdown();
+    lockState.locked = true;
+    lkInput.disabled = true;
+    lkSubmit.disabled = true;
+    var correct = (val === QUESTIONS[lockState.idx].a);
+    if (correct) {
+      lockState.streak++;
+      lkFb.textContent = "答对了";
+      lkFb.style.color = "var(--learning)";
+      lkProg.textContent = "答对进度 " + lockState.streak + " / " + NEED;
+    } else {
+      lockState.streak = 0;
+      lkFb.textContent = "再想想，答案是 " + QUESTIONS[lockState.idx].a;
+      lkFb.style.color = "var(--danger)";
+    }
+    if (correct && lockState.streak >= NEED) {
+      setTimeout(function(){
+        lockBody.style.display = "none";
+        lockDone.style.display = "block";
+        stopCountdown();
+      }, 700);
+      return;
+    }
+    setTimeout(function(){ nextQuestion(); }, correct ? 700 : 1500);
+  }
+
+  lkSubmit.addEventListener("click", submitAnswer);
+  lkInput.addEventListener("keydown", function(e){ if (e.key === "Enter") submitAnswer(); });
+  document.getElementById("lkCall").addEventListener("click", function(){
+    lkFb.textContent = "需输入家长密码才能放行";
+    lkFb.style.color = "var(--text-hint)";
+  });
+  document.getElementById("lkReset").addEventListener("click", function(){
+    lockState.idx = 0; lockState.streak = 0; lockState.locked = false;
+    lockDone.style.display = "none";
+    lockBody.style.display = "block";
+    lkQ.textContent = QUESTIONS[0].q;
+    lkInput.value = ""; lkInput.disabled = false;
+    lkSubmit.disabled = false;
+    lkFb.textContent = "";
+    lkProg.textContent = "答对进度 0 / " + NEED;
+    startCountdown();
+  });
+  startCountdown();
+
+  /* ============ 家长模式 ============ */
+  document.getElementById("pinBtn").addEventListener("click", function(){
+    var v = document.getElementById("pinInput").value;
+    if (v === "1234") {
+      document.getElementById("pinErr").classList.remove("show");
+      document.getElementById("parentSettings").style.display = "block";
+    } else {
+      document.getElementById("pinErr").classList.add("show");
+    }
+  });
+  document.getElementById("pinInput").addEventListener("keydown", function(e){
+    if (e.key === "Enter") document.getElementById("pinBtn").click();
+  });
+  document.getElementById("gotoApps").addEventListener("click", function(){ switchTab("apps"); });
+  document.getElementById("adminBtn").addEventListener("click", function(){
+    document.getElementById("adminNote").style.display = "block";
+  });
+  document.getElementById("saveBtn").addEventListener("click", function(){
+    var b = document.getElementById("saveBtn");
+    var old = b.textContent;
+    b.textContent = "已保存";
+    setTimeout(function(){ b.textContent = old; }, 1200);
+  });
+
+  /* ============ 应用归类列表 ============ */
+  var APPS = [
+    { name:"抖音",         pkg:"com.ss.android.ugc.aweme",   cat:"restricted" },
+    { name:"蛋仔派对",     pkg:"com.tencent.tmgp.dzpd",      cat:"restricted" },
+    { name:"哔哩哔哩",     pkg:"tv.danmaku.bili",            cat:"restricted" },
+    { name:"洪恩识字",     pkg:"com.hongen.ianswer",         cat:"learning"   },
+    { name:"钉钉",         pkg:"com.dingtalk.android",       cat:"learning"   },
+    { name:"Chrome 浏览器", pkg:"com.android.chrome",        cat:"unknown"    }
+  ];
+  var CATS = [
+    { k:"learning",   cls:"c-learning",   label:"学习" },
+    { k:"restricted", cls:"c-restricted", label:"受限" },
+    { k:"unknown",    cls:"c-unknown",    label:"未分类" }
+  ];
+
+  function renderApps(){
+    var box = document.getElementById("appList");
+    var html = "";
+    for (var i = 0; i < APPS.length; i++) {
+      var app = APPS[i];
+      html += '<div class="app-item" data-i="' + i + '">';
+      html += '<div class="nm">' + app.name + '</div>';
+      html += '<div class="pk">' + app.pkg + '</div>';
+      html += '<div class="btns">';
+      for (var c = 0; c < CATS.length; c++) {
+        var cat = CATS[c];
+        var on = (app.cat === cat.k) ? " on " + cat.cls : "";
+        html += '<button class="' + on + '" data-cat="' + cat.k + '">' + cat.label + '</button>';
+      }
+      html += '</div></div>';
+    }
+    box.innerHTML = html;
+
+    var btns = box.querySelectorAll(".app-item button");
+    for (var b = 0; b < btns.length; b++) {
+      btns[b].addEventListener("click", function(){
+        var item = this.parentNode.parentNode;
+        var idx = parseInt(item.getAttribute("data-i"), 10);
+        var cat = this.getAttribute("data-cat");
+        APPS[idx].cat = cat;
+        renderApps();
+      });
+    }
+  }
+  renderApps();
+
+  /* ============ 时钟 ============ */
+  var clock = document.getElementById("clock");
+  var d = new Date();
+  clock.textContent = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
+
+  renderNotes("main");
+})();
+</script>
+</body>
+</html>

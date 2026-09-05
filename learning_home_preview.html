@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学习守护 · 主界面设计稿（学习模式）</title>
+<style>
+:root{
+  /* 主题变量 —— 切换主题只改这几个值 */
+  --brand:#185FA5; --brand-light:#E6F1FB; --brand-deep:#0C447C;
+  --page:#F4F8FC; --card:#FFFFFF; --ink:#222220; --ink-sub:#5F5E5A; --ink-hint:#8A8880;
+  --line:#E5E3DC; --ok:#0F6E56; --warn:#854F0B; --warn-bg:#FAEEDA; --danger:#A32D2D;
+  --radius:16px;
+}
+[data-theme="forest"]{
+  --brand:#2E7D5B; --brand-light:#E4F3EB; --brand-deep:#1B5039;
+  --page:#F3F9F5; --ok:#2E7D5B;
+}
+[data-theme="sunset"]{
+  --brand:#C2611F; --brand-light:#FBEDE0; --brand-deep:#8A4212;
+  --page:#FDF6F0;
+}
+[data-theme="candy"]{
+  --brand:#FF5C9E; --brand-light:#FFE6F2; --brand-deep:#C23A75;
+  --page:#FFF6FB; --card:#FFFFFF; --ink:#3A2C35; --ink-sub:#8C7A85; --ink-hint:#BBAEB6;
+  --line:#F6DCE9; --ok:#1FA971; --warn:#E0890B; --warn-bg:#FFF2DF; --danger:#E5484D;
+}
+/* 模块配色固定，保证六个模块一眼可分 */
+.m-chinese{--mc:#D9534F;--mbg:#FDECEC}
+.m-math   {--mc:#3A7BD5;--mbg:#EBF3FD}
+.m-english{--mc:#8B5CF6;--mbg:#F3EDFD}
+.m-music  {--mc:#EC4899;--mbg:#FDECF5}
+.m-sport  {--mc:#16A34A;--mbg:#E9F8EE}
+.m-riddle {--mc:#F59E0B;--mbg:#FEF6E7}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+  background:#EFEEEA;color:var(--ink);line-height:1.6;padding:26px 18px 60px;
+  transition:background .3s;
+}
+.wrap{max-width:1220px;margin:0 auto}
+
+header{margin-bottom:22px}
+h1{font-size:23px;font-weight:700;letter-spacing:-.2px}
+.sub{color:var(--ink-sub);font-size:14px;margin-top:6px;max-width:820px}
+.badge{display:inline-block;background:var(--brand-light);color:var(--brand);font-size:12px;
+  padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:2px}
+
+.main{display:flex;gap:32px;align-items:flex-start}
+@media(max-width:1040px){.main{flex-direction:column;align-items:center}}
+
+/* ---------- 手机 ---------- */
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0}
+.phone{width:368px;height:748px;background:#1A1A18;border-radius:42px;padding:11px;
+  box-shadow:0 20px 48px rgba(0,0,0,.22);position:relative}
+.phone::after{content:"";position:absolute;top:21px;left:50%;transform:translateX(-50%);
+  width:84px;height:5px;background:#3A3A36;border-radius:3px}
+.screen{width:100%;height:100%;background:var(--page);border-radius:32px;overflow:hidden;
+  display:flex;flex-direction:column;transition:background .3s}
+.statusbar{height:30px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;font-size:12px;color:var(--ink);flex-shrink:0;font-weight:600}
+.sb-icons{display:flex;align-items:center;gap:5px}
+.navbar{height:42px;display:flex;align-items:center;justify-content:space-around;
+  flex-shrink:0;background:var(--card);border-top:1px solid var(--line);transition:background .3s}
+.navbar i{display:block;width:16px;height:16px;border:1.6px solid var(--ink-sub);border-radius:50%}
+.navbar i.tri{border:none;width:0;height:0;border-left:8px solid transparent;
+  border-right:8px solid transparent;border-bottom:13px solid var(--ink-sub);border-radius:0}
+.navbar i.sq{border-radius:2px;transform:rotate(45deg);width:13px;height:13px}
+.pagecontent{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;
+  display:flex;flex-direction:column}
+.pagecontent::-webkit-scrollbar{width:4px}
+.pagecontent::-webkit-scrollbar-thumb{background:#D9D7D0;border-radius:2px}
+
+/* ---------- 主题切换条 ---------- */
+.themebar{display:flex;gap:7px;align-items:center}
+.themebar .lb{font-size:11px;color:var(--ink-hint);margin-right:2px}
+.dot{width:24px;height:24px;border-radius:50%;border:2px solid #fff;cursor:pointer;
+  box-shadow:0 1px 4px rgba(0,0,0,.14);transition:.15s;padding:0}
+.dot:hover{transform:scale(1.12)}
+.dot.on{outline:2px solid var(--ink);outline-offset:2px}
+@media(max-width:1040px){.phone-col .themebar{display:none}}
+
+/* ---------- 主界面 ---------- */
+#v-home{padding:16px 16px 20px}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.greet .n{font-size:19px;font-weight:700}
+.greet .d{font-size:12px;color:var(--ink-hint);margin-top:1px}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--brand-light);color:var(--brand);
+  display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700}
+
+.grade-tabs{display:flex;background:rgba(0,0,0,.045);border-radius:12px;padding:3px;margin-bottom:14px}
+.grade-tabs button{flex:1;border:none;background:transparent;font-family:inherit;font-size:13px;
+  color:var(--ink-sub);padding:7px 0;border-radius:10px;cursor:pointer;transition:.15s}
+.grade-tabs button.on{background:var(--card);color:var(--brand);font-weight:700;
+  box-shadow:0 1px 4px rgba(0,0,0,.08)}
+
+.quota-card{background:var(--card);border-radius:var(--radius);padding:16px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);transition:background .3s}
+.qc-top{display:flex;align-items:baseline;justify-content:space-between}
+.qc-title{font-size:13px;color:var(--ink-sub)}
+.qc-num{font-size:30px;font-weight:800;color:var(--brand);line-height:1.1}
+.qc-num small{font-size:13px;font-weight:600;color:var(--ink-hint);margin-left:3px}
+.bar{height:8px;background:rgba(0,0,0,.07);border-radius:5px;margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);border-radius:5px;transition:width .4s}
+.bar i.over{background:var(--danger)}
+.qc-foot{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-hint);margin-top:7px}
+.qc-tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
+.qc-tag.free{background:#E9F8EE;color:var(--ok)}
+.qc-tag.warn{background:var(--warn-bg);color:var(--warn)}
+
+.sec-title{font-size:15px;font-weight:700;margin:20px 0 10px;display:flex;
+  align-items:center;justify-content:space-between}
+.sec-title span{font-size:12px;color:var(--ink-hint);font-weight:400}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.mcard{background:var(--mbg);border-radius:14px;padding:13px;cursor:pointer;position:relative;
+  border:1.5px solid transparent;transition:.18s}
+.mcard:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.09);
+  border-color:var(--mc)}
+.mcard .ico{font-size:26px;line-height:1}
+.mcard .nm{font-size:15px;font-weight:700;margin-top:7px;color:var(--ink)}
+.mcard .meta{font-size:11px;color:var(--ink-sub);margin-top:2px}
+.mbar{height:5px;background:rgba(255,255,255,.75);border-radius:3px;margin-top:9px;overflow:hidden}
+.mbar i{display:block;height:100%;background:var(--mc);border-radius:3px}
+.dots{position:absolute;top:12px;right:12px;display:flex;gap:3px}
+.dots b{width:5px;height:5px;border-radius:50%;background:var(--mc);opacity:.28}
+.dots b.on{opacity:1}
+
+.today{background:var(--card);border-radius:var(--radius);padding:14px;margin-top:16px;
+  display:flex;justify-content:space-around;text-align:center;transition:background .3s}
+.today .k{font-size:20px;font-weight:800;color:var(--brand)}
+.today .l{font-size:11.5px;color:var(--ink-hint);margin-top:2px}
+.parent-link{text-align:center;font-size:12.5px;color:var(--ink-hint);margin-top:16px;
+  cursor:pointer;padding:6px}
+.parent-link:hover{color:var(--brand)}
+
+/* ---------- 练习界面 ---------- */
+#v-practice{display:none;padding:0 0 16px;background:var(--page)}
+.pr-head{padding:14px 16px 10px;display:flex;align-items:center;gap:10px}
+.back{font-size:20px;color:var(--ink-sub);cursor:pointer;line-height:1}
+.pr-title{font-size:16px;font-weight:700;flex:1}
+.pr-close{font-size:12px;color:var(--ink-hint)}
+.pr-prog{padding:0 16px 12px}
+.pr-prog .t{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-sub)}
+.pr-prog .bar{margin-top:6px;height:6px}
+.lvl-tabs{display:flex;gap:7px;padding:0 16px 14px}
+.lvl-tabs button{flex:1;border:1.5px solid var(--line);background:var(--card);border-radius:9px;
+  font-family:inherit;font-size:12px;color:var(--ink-sub);padding:6px 0;cursor:pointer;transition:.15s}
+.lvl-tabs button.on{background:var(--mc);border-color:var(--mc);color:#fff;font-weight:700}
+.q-card{background:var(--card);margin:0 16px;border-radius:18px;padding:22px 18px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);transition:background .3s}
+.q-tag{display:inline-block;font-size:11px;padding:3px 9px;border-radius:10px;
+  background:var(--mbg);color:var(--mc);font-weight:700}
+.q-text{font-size:22px;font-weight:600;margin-top:14px;line-height:1.5;text-align:center}
+.opts{margin-top:18px;display:flex;flex-direction:column;gap:9px}
+.opt{border:1.5px solid var(--line);background:var(--card);border-radius:11px;padding:12px 14px;
+  font-size:15px;cursor:pointer;font-family:inherit;text-align:left;color:var(--ink);
+  display:flex;align-items:center;gap:10px;transition:.15s}
+.opt:hover{border-color:var(--mc)}
+.opt .k{width:22px;height:22px;border-radius:50%;background:var(--mbg);color:var(--mc);
+  font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opt.right{border-color:var(--ok);background:#EDF8F4}
+.opt.right .k{background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--danger);background:#FBEEEE}
+.opt.wrong .k{background:var(--danger);color:#fff}
+.fb{margin:14px 16px 0;font-size:14px;text-align:center;min-height:22px;font-weight:600}
+.fb.ok{color:var(--ok)}
+.fb.no{color:var(--danger)}
+.nextbtn{margin:16px 16px 0;background:var(--mc);color:#fff;border:none;border-radius:11px;
+  padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;width:calc(100% - 32px)}
+.nextbtn:disabled{background:#C9C7C0;cursor:not-allowed}
+
+/* ---------- 规则界面 ---------- */
+#v-rule{display:none;padding:16px}
+.rule-head{font-size:17px;font-weight:700;margin-bottom:4px}
+.rule-sub{font-size:12.5px;color:var(--ink-sub);margin-bottom:18px}
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;
+  background:linear-gradient(180deg,var(--ok),var(--warn),var(--danger));border-radius:2px}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{content:"";position:absolute;left:-24px;top:5px;width:11px;height:11px;
+  border-radius:50%;background:var(--c);box-shadow:0 0 0 3px var(--card)}
+.tl-item .rg{font-size:15px;font-weight:800;color:var(--c)}
+.tl-item .rl{font-size:12px;color:var(--ink-hint);margin-top:1px}
+.tl-item .rb{background:var(--card);border-radius:11px;padding:11px 13px;margin-top:8px;
+  font-size:13px;color:var(--ink-sub);box-shadow:0 1px 5px rgba(0,0,0,.05)}
+.tl-item .rb b{color:var(--ink)}
+.rnote{background:var(--warn-bg);border-radius:11px;padding:12px 14px;font-size:12.5px;
+  color:var(--warn);margin-top:6px;line-height:1.65}
+.rnote b{font-weight:700}
+
+/* ---------- 家长模式 ---------- */
+#v-parent{padding:16px 16px 24px;display:none}
+.pin-gate{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex:1;text-align:center;gap:13px;padding-bottom:40px}
+.pin-gate .lock{font-size:42px}
+.pin-gate .t{font-size:18px;font-weight:800}
+.pin-gate .s{font-size:12.5px;color:var(--ink-sub);margin-top:-7px}
+.pin-input{width:150px;text-align:center;font-size:22px;letter-spacing:9px;
+  border:1.6px solid var(--line);border-radius:12px;padding:10px;font-family:inherit;
+  background:var(--card);color:var(--ink);outline:none}
+.pin-input:focus{border-color:var(--brand)}
+.pin-btn{background:var(--brand);color:#fff;border:none;border-radius:12px;
+  padding:11px 38px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.pin-err{color:var(--danger);font-size:13px;min-height:18px}
+.pin-hint{font-size:11.5px;color:var(--ink-hint);margin-top:6px}
+
+.set-card{background:var(--card);border-radius:var(--radius);padding:14px 14px 6px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:13px;transition:background .3s}
+.set-sec{font-size:13px;font-weight:800;color:var(--brand);margin:2px 0 8px}
+.set-row{display:flex;align-items:center;justify-content:space-between;
+  padding:11px 0;border-bottom:1px solid var(--line)}
+.set-row:last-child{border-bottom:none}
+.set-row .l{font-size:13.5px;color:var(--ink)}
+.set-row .d{font-size:11px;color:var(--ink-hint);margin-top:2px}
+.stepper{display:flex;align-items:center;gap:0}
+.stepper button{width:30px;height:30px;border:1.5px solid var(--line);background:var(--card);
+  font-size:18px;line-height:1;cursor:pointer;color:var(--ink-sub);font-family:inherit}
+.stepper button:first-child{border-radius:9px 0 0 9px}
+.stepper button:last-child{border-radius:0 9px 9px 9px;border-left:none}
+.stepper .v{width:42px;text-align:center;font-size:15px;font-weight:700;
+  border:1.5px solid var(--line);border-left:none;border-right:none;height:30px;
+  line-height:27px;color:var(--ink)}
+.stepper .u{font-size:12px;color:var(--ink-sub);margin-left:7px;width:14px}
+.seg{display:flex;background:rgba(0,0,0,.045);border-radius:10px;padding:3px;gap:3px}
+.seg button{flex:1;border:none;background:transparent;font-family:inherit;font-size:13px;
+  color:var(--ink-sub);padding:6px 0;border-radius:8px;cursor:pointer}
+.seg button.on{background:var(--card);color:var(--brand);font-weight:700;
+  box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.sel{appearance:none;border:1.5px solid var(--line);background:var(--card);border-radius:9px;
+  padding:7px 30px 7px 12px;font-family:inherit;font-size:13.5px;color:var(--ink);
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-sub) 50%),linear-gradient(135deg,var(--ink-sub) 50%,transparent 50%);
+  background-position:calc(100% - 14px) 50%,calc(100% - 9px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.theme-chips{display:flex;flex-wrap:wrap;gap:8px}
+.tchip{display:flex;align-items:center;gap:7px;border:1.5px solid var(--line);background:var(--card);
+  border-radius:20px;padding:6px 12px 6px 8px;font-size:12.5px;color:var(--ink);cursor:pointer;font-family:inherit}
+.tchip .sw{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+.tchip.on{border-color:var(--brand);color:var(--brand);font-weight:700}
+.pbtn{display:flex;align-items:center;justify-content:space-between;width:100%;
+  border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:13px 14px;
+  font-size:14px;color:var(--ink);cursor:pointer;font-family:inherit;margin-bottom:10px;text-align:left}
+.pbtn .ar{color:var(--ink-hint);font-size:17px}
+.pbtn.warn{border-color:var(--warn-bg);background:var(--warn-bg);color:var(--warn)}
+.save-btn{width:100%;background:var(--brand);color:#fff;border:none;border-radius:12px;
+  padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:2px}
+.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);
+  background:rgba(34,34,32,.92);color:#fff;font-size:13px;padding:9px 17px;border-radius:20px;
+  z-index:99;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.show{opacity:1}
+
+/* ---------- 说明面板 ---------- */
+.notes{flex:1;min-width:0;max-width:560px}
+.note-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+.note-card h2{font-size:16.5px;font-weight:700;margin-bottom:3px}
+.note-card .role{font-size:13px;color:var(--ink-sub);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+table th{text-align:left;color:var(--ink-hint);font-weight:600;font-size:12px;padding:6px 10px 6px 0;
+  border-bottom:1px solid var(--line);width:88px;vertical-align:top;white-space:nowrap}
+table td{padding:6px 0;border-bottom:1px solid var(--line)}
+table tr:last-child th,table tr:last-child td{border-bottom:none}
+code{background:#F4F3F0;padding:1px 6px;border-radius:4px;
+  font-family:ui-monospace,Consolas,monospace;font-size:12.5px;color:var(--brand-deep)}
+.ul{margin:6px 0 0 18px;font-size:13.5px;color:var(--ink-sub)}
+.ul li{margin-bottom:6px}
+.ul b{color:var(--ink)}
+.box{border-radius:9px;padding:11px 14px;font-size:13px;margin-top:13px;line-height:1.6}
+.box.warn{background:var(--warn-bg);color:var(--warn)}
+.box.ok{background:#EDF8F4;color:var(--ok)}
+.box.info{background:var(--brand-light);color:var(--brand-deep)}
+.box b{font-weight:700}
+
+/* ---------- 底部题库规划 ---------- */
+.plan{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:22px;overflow-x:auto}
+.plan h2{font-size:17px;font-weight:700;margin-bottom:3px}
+.plan .ps{font-size:13px;color:var(--ink-sub);margin-bottom:16px}
+.plan table{min-width:760px}
+.plan th{width:auto;font-size:12.5px;color:var(--ink);font-weight:700;padding:8px 12px 8px 0}
+.plan td{padding:8px 12px 8px 0;font-size:13px}
+.pill{display:inline-block;font-size:11px;padding:2px 9px;border-radius:10px;font-weight:700}
+.pill.easy{background:#EDF8F4;color:var(--ok)}
+.pill.mid{background:var(--brand-light);color:var(--brand-deep)}
+.pill.hard{background:var(--warn-bg);color:var(--warn)}
+.total-row td{font-weight:800;border-top:2px solid var(--ink);border-bottom:none!important}
+.num{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>主界面设计稿 · 学习模式<span class="badge">可切换主题 / 可点开模块</span></h1>
+    <p class="sub">主界面从「监控状态页」改成「学习首页」：顶部是今日娱乐额度和年级切换，中部是六个学习模块的入口。
+    点手机上方的小圆点可以切换四套配色；点模块卡片可以进入练习界面看答题效果；下方还有<b>分段弹窗规则</b>和<b>家长模式</b>两个页签。</p>
+  </header>
+
+  <div class="main">
+
+    <!-- ========== 手机 ========== -->
+    <div class="phone-col">
+      <div class="themebar">
+        <span class="lb">配色</span>
+        <button class="dot on" data-theme="ocean"  style="background:#185FA5" title="海洋蓝"></button>
+        <button class="dot"    data-theme="forest" style="background:#2E7D5B" title="森林绿"></button>
+        <button class="dot"    data-theme="sunset" style="background:#C2611F" title="暖阳橙"></button>
+        <button class="dot"    data-theme="candy"  style="background:#FF5C9E" title="糖果马卡龙"></button>
+        <span class="lb" style="margin-left:8px">视图</span>
+        <button class="dot on" data-view="home"    style="background:#8A8880" title="主界面"></button>
+        <button class="dot"    data-view="practice" style="background:#3A7BD5" title="练习"></button>
+        <button class="dot"    data-view="rule"    style="background:#A32D2D" title="规则"></button>
+        <button class="dot"    data-view="parent"  style="background:#6B4E9E" title="家长模式"></button>
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="statusbar">
+            <span id="clock">10:09</span>
+            <span class="sb-icons">
+              <svg width="15" height="11" viewBox="0 0 15 11"><g fill="#222220"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="5" width="3" height="6" rx="1"/><rect x="8" y="2.5" width="3" height="8.5" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></g></svg>
+              <svg width="14" height="11" viewBox="0 0 14 11"><path d="M7 9.6 5.2 7.6a2.6 2.6 0 0 1 3.6 0L7 9.6Zm0-4.3a5 5 0 0 0-3.5 1.5L2.1 5.4a7 7 0 0 1 9.8 0l-1.4 1.4A5 5 0 0 0 7 5.3Z" fill="#222220"/></svg>
+              <svg width="22" height="11" viewBox="0 0 22 11"><rect x="0.5" y="0.5" width="18" height="10" rx="2.5" fill="none" stroke="#222220"/><rect x="2" y="2" width="12" height="7" rx="1.5" fill="#222220"/><path d="M20 4v3a1.8 1.8 0 0 0 0-3Z" fill="#222220"/></svg>
+            </span>
+          </div>
+
+          <!-- ===== 视图1：主界面 ===== -->
+          <div class="pagecontent" id="v-home">
+            <div class="topbar">
+              <div class="greet">
+                <div class="n">下午好，小朋友</div>
+                <div class="d">9月3日 星期四 · 今天学了 18 分钟</div>
+              </div>
+              <div class="avatar">小</div>
+            </div>
+
+            <div class="grade-tabs" id="gradeTabs">
+              <button class="on" data-g="1">一年级</button>
+              <button data-g="2">二年级</button>
+              <button data-g="3">三年级</button>
+            </div>
+
+            <div class="quota-card">
+              <div class="qc-top">
+                <div>
+                  <div class="qc-title">今日娱乐剩余</div>
+                  <div class="qc-num"><span id="qcLeft">35</span><small>分钟</small></div>
+                </div>
+                <span class="qc-tag free" id="qcTag">额度内</span>
+              </div>
+              <div class="bar"><i id="qcBar" style="width:42%"></i></div>
+              <div class="qc-foot"><span>已用 25 分钟</span><span>每日额度 60 分钟</span></div>
+            </div>
+
+            <div class="sec-title">学习模块<span id="gradeHint">一年级 · 共 3600 题</span></div>
+            <div class="grid" id="modGrid"></div>
+
+            <div class="today">
+              <div><div class="k">18</div><div class="l">今日学习(分钟)</div></div>
+              <div><div class="k">42</div><div class="l">累计答题</div></div>
+              <div><div class="k">36</div><div class="l">连续天数</div></div>
+            </div>
+
+            <div class="parent-link">家长模式</div>
+          </div>
+
+          <!-- ===== 视图2：练习 ===== -->
+          <div class="pagecontent" id="v-practice">
+            <div class="pr-head">
+              <span class="back" id="prBack">‹</span>
+              <span class="pr-title" id="prTitle">数学 · 一年级</span>
+              <span class="pr-close" id="prClose">关闭</span>
+            </div>
+            <div class="pr-prog">
+              <div class="t"><span id="prIdx">第 121 题</span><span id="prTot">共 600 题</span></div>
+              <div class="bar"><i id="prBar" style="width:20%;background:var(--mc)"></i></div>
+            </div>
+            <div class="lvl-tabs" id="lvlTabs">
+              <button data-l="0">简单 1-200</button>
+              <button class="on" data-l="1">中等 201-400</button>
+              <button data-l="2">困难 401-600</button>
+            </div>
+            <div class="q-card">
+              <span class="q-tag" id="qTag">中等</span>
+              <div class="q-text" id="qText">13 − 8 = ?</div>
+              <div class="opts" id="qOpts"></div>
+            </div>
+            <div class="fb" id="qFb"></div>
+            <button class="nextbtn" id="qNext" disabled>下一题</button>
+          </div>
+
+          <!-- ===== 视图3：规则 ===== -->
+          <div class="pagecontent" id="v-rule">
+            <div class="rule-head">弹窗规则</div>
+            <div class="rule-sub">只针对「受限」应用（游戏、短视频）</div>
+            <div class="tl">
+              <div class="tl-item" style="--c:var(--ok)">
+                <div class="rg">0 – 60 分钟</div>
+                <div class="rl">自由使用</div>
+                <div class="rb">不弹窗、不打扰。这是每天<b>包含在内</b>的娱乐额度。</div>
+              </div>
+              <div class="tl-item" style="--c:var(--warn)">
+                <div class="rg">60 – 90 分钟</div>
+                <div class="rl">超出额度阶段</div>
+                <div class="rb">每玩满 <b>10 分钟</b>弹一次窗，连续答对 <b>3 题</b>，换取 <b>10 分钟</b>。<br>答不出就一直卡在弹窗上。</div>
+              </div>
+              <div class="tl-item" style="--c:var(--danger)">
+                <div class="rg">90 分钟以上</div>
+                <div class="rl">加密拦截阶段</div>
+                <div class="rb">频率收紧到每 <b>5 分钟</b>弹一次，同样答对 3 题换 10 分钟。<br>玩得越久，题目越难、节奏越紧。</div>
+              </div>
+            </div>
+            <div class="rnote">
+              <b>关于「累计超过 30 分钟」的理解：</b>我按「超出 60 分钟额度后又累计玩了 30 分钟」来做的，也就是<b>当天总时长到 90 分钟时</b>切换成 5 分钟一次。如果你说的 30 分钟是从 60 分钟那一刻往前算的另一套口径，告诉我，改一个数字就行。
+            </div>
+          </div>
+
+          <!-- ===== 视图4：家长模式 ===== -->
+          <div class="pagecontent" id="v-parent">
+            <div class="pin-gate" id="pinGate">
+              <div class="lock">🔒</div>
+              <div class="t">家长模式</div>
+              <div class="s">请输入 4 位密码</div>
+              <input class="pin-input" id="pinInput" maxlength="4" inputmode="numeric" placeholder="••••">
+              <button class="pin-btn" id="pinEnter">进入</button>
+              <div class="pin-err" id="pinErr"></div>
+              <div class="pin-hint">默认密码 1234（可在下方修改）</div>
+            </div>
+
+            <div id="parentSettings" style="display:none">
+              <div class="set-card">
+                <div class="set-sec">学习守护规则</div>
+                <div class="set-row">
+                  <div><div class="l">每日娱乐额度</div><div class="d">额度内不弹窗</div></div>
+                  <div class="stepper" data-min="0" data-max="600"><button data-d="-1">−</button><div class="v" data-key="quota">60</div><button data-d="1">+</button><span class="u">分</span></div>
+                </div>
+                <div class="set-row">
+                  <div><div class="l">超额弹窗间隔</div><div class="d">超额度后每多久弹一次</div></div>
+                  <div class="stepper" data-min="1" data-max="60"><button data-d="-1">−</button><div class="v" data-key="over">10</div><button data-d="1">+</button><span class="u">分</span></div>
+                </div>
+                <div class="set-row">
+                  <div><div class="l">加密弹窗间隔</div><div class="d">玩太久后收紧到</div></div>
+                  <div class="stepper" data-min="1" data-max="30"><button data-d="-1">−</button><div class="v" data-key="tight">5</div><button data-d="1">+</button><span class="u">分</span></div>
+                </div>
+                <div class="set-row">
+                  <div><div class="l">答对题数</div><div class="d">连对几题才放行</div></div>
+                  <div class="stepper" data-min="1" data-max="20"><button data-d="-1">−</button><div class="v" data-key="streak">3</div><button data-d="1">+</button><span class="u">题</span></div>
+                </div>
+                <div class="set-row">
+                  <div><div class="l">换得时长</div><div class="d">答对后放行多久</div></div>
+                  <div class="stepper" data-min="1" data-max="60"><button data-d="-1">−</button><div class="v" data-key="earn">10</div><button data-d="1">+</button><span class="u">分</span></div>
+                </div>
+              </div>
+
+              <div class="set-card">
+                <div class="set-sec">学习内容</div>
+                <div class="set-row">
+                  <div class="l">孩子年级</div>
+                  <div class="seg" id="pgSeg">
+                    <button class="on" data-g="1">一年级</button>
+                    <button data-g="2">二年级</button>
+                    <button data-g="3">三年级</button>
+                  </div>
+                </div>
+                <div class="set-row">
+                  <div class="l">弹窗出题科目</div>
+                  <select class="sel" id="pSubject">
+                    <option value="math">数学</option>
+                    <option value="chinese">语文</option>
+                    <option value="english">英语</option>
+                    <option value="mixed">三科混合</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="set-card">
+                <div class="set-sec">外观主题</div>
+                <div class="theme-chips" id="pThemes">
+                  <div class="tchip on" data-theme="ocean"><span class="sw" style="background:#185FA5"></span>海洋蓝</div>
+                  <div class="tchip" data-theme="forest"><span class="sw" style="background:#2E7D5B"></span>森林绿</div>
+                  <div class="tchip" data-theme="sunset"><span class="sw" style="background:#C2611F"></span>暖阳橙</div>
+                  <div class="tchip" data-theme="candy"><span class="sw" style="background:#FF5C9E"></span>糖果马卡龙</div>
+                </div>
+              </div>
+
+              <div class="set-card" style="padding-bottom:14px">
+                <div class="set-sec">应用与防护</div>
+                <button class="pbtn" id="pManage">管理受限 / 学习应用<span class="ar">›</span></button>
+                <button class="pbtn" id="pAdmin">开启防卸载（设备管理员）<span class="ar">›</span></button>
+                <button class="pbtn" id="pChangePin">修改密码<span class="ar">›</span></button>
+              </div>
+
+              <button class="save-btn" id="pSave">保存设置</button>
+            </div>
+          </div>
+
+          <div class="navbar"><i class="tri"></i><i></i><i class="sq"></i></div>
+        </div>
+      </div>
+
+      <div class="tabs" style="display:none"></div>
+    </div>
+
+    <!-- ========== 说明 ========== -->
+    <div class="notes" id="notes"></div>
+  </div>
+
+  <!-- ========== 题库规划 ========== -->
+  <div class="plan">
+    <h2>题库规模与实现路径</h2>
+    <p class="ps">6 模块 × 3 年级 × 600 题 = <b>10,800 道</b>。这个量不能靠手写，只能「结构化数据 + 生成器」。各模块可行性差别很大：</p>
+    <table>
+      <thead>
+        <tr><th>模块</th><th class="num">题量</th><th>实现方式</th><th>难度分档（各 200 题）</th><th>可行性</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>数学</b></td><td class="num">1,800</td>
+          <td>算法参数化生成，题量实际无限</td>
+          <td>一年级：20 以内加减 → 100 以内 → 混合<br>二年级：表内乘法 → 两位数加减 → 应用题<br>三年级：万以内 → 多位数乘除 → 分数初步</td>
+          <td><span class="pill easy">最容易</span></td>
+        </tr>
+        <tr>
+          <td><b>语文</b></td><td class="num">1,800</td>
+          <td>生字表 + 古诗库 + 词语库，模板生成</td>
+          <td>拼音选字 → 形近字/量词 → 古诗填空与理解</td>
+          <td><span class="pill easy">可做</span></td>
+        </tr>
+        <tr>
+          <td><b>英语</b></td><td class="num">1,800</td>
+          <td>1-3 年级词库（约 400 词）+ 模板生成</td>
+          <td>看图选词 → 中英互译 → 拼写与简单句型</td>
+          <td><span class="pill easy">可做</span></td>
+        </tr>
+        <tr>
+          <td><b>脑筋急转弯</b></td><td class="num">1,800</td>
+          <td><b>无法生成，只能收集</b></td>
+          <td>按年龄段打标分组</td>
+          <td><span class="pill hard">需人工</span></td>
+        </tr>
+        <tr>
+          <td><b>音乐</b></td><td class="num">1,800</td>
+          <td>常识题可生成；听音题需音频资源</td>
+          <td>乐器/节奏常识 → 儿歌歌词接龙 → 简谱识读</td>
+          <td><span class="pill mid">部分可做</span></td>
+        </tr>
+        <tr>
+          <td><b>运动</b></td><td class="num">1,800</td>
+          <td><b>建议改成动作打卡，不做纸笔题</b></td>
+          <td>跳绳/拍球/深蹲/平衡，按完成数量分级</td>
+          <td><span class="pill mid">形态不同</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>合计</td><td class="num">10,800</td><td colspan="3">算法可覆盖约 5,400 题；其余 5,400 题需要内容源或改形态</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ 模块数据 ============ */
+  var MODULES = [
+    { key:"chinese", cls:"m-chinese", ico:"\u{1F4D6}", name:"语文",       done:[128, 96, 74] },
+    { key:"math",    cls:"m-math",    ico:"\u{1F522}", name:"数学",       done:[210,188,132] },
+    { key:"english", cls:"m-english", ico:"\u{1F524}", name:"英语",       done:[ 88, 61, 45] },
+    { key:"music",   cls:"m-music",   ico:"\u{1F3B5}", name:"音乐",       done:[ 32, 24, 12] },
+    { key:"sport",   cls:"m-sport",   ico:"\u{26BD}", name:"运动",       done:[ 15, 11,  8] },
+    { key:"riddle",  cls:"m-riddle",  ico:"\u{1F4A1}", name:"脑筋急转弯", done:[ 54, 40, 22] }
+  ];
+  var TOTAL = 600;
+  var grade = 1;   // 1/2/3
+  var level = 1;   // 0简单 1中等 2困难
+  var curMod = MODULES[1];
+
+  /* ============ 说明内容 ============ */
+  var NOTES = {
+    home:{
+      title:"主界面 · 学习模式",
+      role:"孩子打开 App 看到的第一屏。监控信息退到一张小卡片，学习入口占主导。",
+      rows:[
+        ["布局文件","<code>res/layout/activity_main.xml</code>（重做）"],
+        ["逻辑文件","<code>ui/MainActivity.kt</code>（重做）"],
+        ["新增主题","<code>values/themes.xml</code> 增加 4 套 + <code>ui/ThemeManager.kt</code>"],
+        ["新增数据","<code>data/LearningProgress.kt</code>（模块×年级×难度进度）"]
+      ],
+      list:[
+        "<b>六个模块卡片显示真实进度</b>（如 210/600），孩子有收集欲，比单纯「去学习」的按钮有效得多。",
+        "<b>年级切换在顶部</b>，切换后六个模块的题目池和进度一起变。",
+        "<b>右上角三个小点</b>表示难度分档，只点亮已解锁的档位——简单档没过半，中等档是灰的。",
+        "<b>娱乐额度卡保留但弱化</b>：它现在是「还剩多少」的提醒，不再是主界面主角。",
+        "<b>家长模式入口压到最底部</b>，灰色小字。孩子一般不会翻到那里。"
+      ],
+      info:"上方四个圆点可切换整套配色。四套主题只改主色和背景色，模块配色保持不变——这样六个模块无论哪套主题下都一眼可分。",
+      warn:"主题切换在 Android 上需要在 <code>Activity.onCreate()</code> 之前调用 <code>setTheme()</code>，且切换后要重启 Activity 才生效，这部分我会处理好。"
+    },
+    practice:{
+      title:"模块练习界面",
+      role:"点主界面任一模块进入。题目按「年级 + 难度档」从对应题库里取。",
+      rows:[
+        ["布局文件","<code>res/layout/activity_practice.xml</code>（新增）"],
+        ["逻辑文件","<code>ui/PracticeActivity.kt</code>（新增）"],
+        ["题库接口","<code>data/QuestionRepository.kt</code>（重构为按模块/年级/难度取题）"],
+        ["进度存储","SharedPreferences，键：<code>prog_{模块}_{年级}</code>"]
+      ],
+      list:[
+        "<b>每个模块 600 题分三档</b>：简单 1-200、中等 201-400、困难 401-600。难度档可手动切，但默认跟着进度走。",
+        "<b>题目顺序固定而非随机</b>：孩子能感觉到「我在往前推进」，第 121 题就是第 121 题。随机出题会让他觉得永远做不完。",
+        "<b>四选一为主</b>：6–9 岁用键盘输入答案太慢，尤其是被弹窗拦住的时候，选项点击更顺畅。数学的填空题保留输入。",
+        "<b>做错的题会回到本档末尾重做一次</b>，这是自适应逻辑，但很轻，不做复杂的艾宾浩斯曲线。",
+        "<b>进度独立存储</b>：三个年级各有一套 600 题，换年级不会互相覆盖。"
+      ],
+      info:"这里演示的是数学一年级中等档，答案是 5。点选项会即时判定对错，点「下一题」进入下一道。",
+      warn:"音乐和运动两个模块<b>不建议做成四选一</b>：音乐没有音频资源支撑听音题，运动本质是动作不是知识。这两个模块我建议改成另一种形态，下面题库表里写了。"
+    },
+    rule:{
+      title:"分段弹窗规则",
+      role:"替换原来「满 10 分钟就弹窗」的单一规则，改成三段式。",
+      rows:[
+        ["配置文件","<code>data/PrefsManager.kt</code>（阈值配置）"],
+        ["判定逻辑","<code>monitor/UsageMonitorService.kt</code>（分段判定）"],
+        ["可调项","每日额度 / 常规间隔 / 加密间隔 / 连对题数 / 换取时长"]
+      ],
+      list:[
+        "<b>第一段（0–60 分钟）不打扰</b>：这是给孩子的「确定性」，他知道 60 分钟之内是安全的，不用提心吊胆。",
+        "<b>第二段（60–90 分钟）每 10 分钟弹窗</b>，答对 3 题换 10 分钟——刚好够玩到下一次弹窗，形成稳定的节奏。",
+        "<b>第三段（90 分钟以上）收紧到 5 分钟</b>：这是「刹车」，让继续玩的成本明显上升，而不是无限循环下去。",
+        "<b>题目难度随阶段上升</b>：第二段出中等档，第三段出困难档，越往后越难蒙对。",
+        "<b>弹窗里的题目来自孩子当前年级</b>，跟主界面选的年级一致。"
+      ],
+      warn:"规则里有个需要你确认的口径：「累计超过 30 分钟每 5 分钟弹窗」——我理解为超出 60 分钟额度后又累计玩了 30 分钟（即当天总时长 90 分钟）。如果指的是别的口径，改一个数字就行。",
+      ok:"另一个提醒：如果只剩「答对换时间」这一条路，孩子可能为了多玩而快速乱选答案。所以错题会回到本档末尾重做，蒙混过关的时间成本比认真作答更高。"
+    },
+    parent:{
+      title:"家长模式",
+      role:"受密码保护。所有规则配置、应用名单、防护开关都在这里，入口必须藏好，不能让孩子随意进。",
+      rows:[
+        ["布局文件","<code>res/layout/activity_parent.xml</code>（已有，待补新字段）"],
+        ["逻辑文件","<code>ui/ParentActivity.kt</code>（已有 PIN 门禁）"],
+        ["新增字段","每日额度 / 超额间隔 / 加密间隔 / 连对题数 / 换得时长 / 主题"],
+        ["防护","设备管理员防卸载 + 修改密码"]
+      ],
+      list:[
+        "<b>第一道门是密码</b>：进入就弹 PIN 输入，默认 1234。错一次给红色提示，不告诉对不对（防止孩子试号）。",
+        "<b>守护规则五个数字都可在真机上加减</b>：额度(60) / 超额间隔(10) / 加密间隔(5) / 连对题数(3) / 换得时长(10)——这就是你要的三段式规则的全部旋钮。",
+        "<b>出题科目和年级联动</b>：弹窗里出的题来自这里选的年级和科目，跟主界面一致。",
+        "<b>主题切换在这里也能用</b>（外观主题那一行点一下，整屏立即换色），跟顶部圆点是同一个机制。",
+        "<b>应用管理</b>：进入后能看到受限名单（游戏/短视频）和学习白名单，手动增删——这是你之前要求的核心能力。",
+        "<b>防卸载</b>：开启设备管理员后，孩子无法在设置里直接卸载，也不会被一键清理干掉。"
+      ],
+      info:"预览里密码是 1234，点「进入」即可。各设置项点 ± 即时改数；主题点一下整屏换色；保存只弹提示（未接真机存储）。",
+      warn:"真实代码里 <code>ParentActivity</code> 还没有「超额间隔/加密间隔/换得时长/主题」这几个字段，仍是旧的每日额度 + 连对题数 + 每题秒数。等你确认主界面布局后，我会把新字段一并写进 <code>PrefsManager</code> 和界面。"
+    }
+  };
+
+  /* ============ 视图切换 ============ */
+  var views = { home:"v-home", practice:"v-practice", rule:"v-rule", parent:"v-parent" };
+  var notesBox = document.getElementById("notes");
+
+  function renderNotes(key){
+    var n = NOTES[key];
+    var h = '<div class="note-card"><h2>' + n.title + '</h2><div class="role">' + n.role + '</div><table>';
+    for (var i = 0; i < n.rows.length; i++)
+      h += '<tr><th>' + n.rows[i][0] + '</th><td>' + n.rows[i][1] + '</td></tr>';
+    h += '</table><ul class="ul">';
+    for (var j = 0; j < n.list.length; j++) h += '<li>' + n.list[j] + '</li>';
+    h += '</ul>';
+    if (n.info) h += '<div class="box info">' + n.info + '</div>';
+    if (n.ok)   h += '<div class="box ok">' + n.ok + '</div>';
+    if (n.warn) h += '<div class="box warn"><b>注意：</b>' + n.warn + '</div>';
+    h += '</div>';
+    notesBox.innerHTML = h;
+  }
+
+  function switchView(key){
+    for (var k in views) document.getElementById(views[k]).style.display = (k === key) ? "flex" : "none";
+    var dots = document.querySelectorAll('.themebar [data-view]');
+    for (var i = 0; i < dots.length; i++)
+      dots[i].classList.toggle("on", dots[i].getAttribute("data-view") === key);
+    if (key === "parent") resetParent();
+    renderNotes(key);
+  }
+
+  var viewDots = document.querySelectorAll('.themebar [data-view]');
+  for (var i = 0; i < viewDots.length; i++) {
+    viewDots[i].addEventListener("click", function(){ switchView(this.getAttribute("data-view")); });
+  }
+
+  /* ============ 主题切换 ============ */
+  var themeDots = document.querySelectorAll('.themebar [data-theme]');
+  for (var i = 0; i < themeDots.length; i++) {
+    themeDots[i].addEventListener("click", function(){
+      var t = this.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", t);
+      for (var j = 0; j < themeDots.length; j++) themeDots[j].classList.remove("on");
+      this.classList.add("on");
+    });
+  }
+
+  /* ============ 年级切换 ============ */
+  var gradeBtns = document.querySelectorAll("#gradeTabs button");
+  function applyGrade(g){
+    grade = g;
+    for (var i = 0; i < gradeBtns.length; i++)
+      gradeBtns[i].classList.toggle("on", parseInt(gradeBtns[i].getAttribute("data-g"), 10) === g);
+    document.getElementById("gradeHint").textContent = ["一年级","二年级","三年级"][g-1] + " · 共 3600 题";
+    renderModules();
+  }
+  for (var i = 0; i < gradeBtns.length; i++) {
+    gradeBtns[i].addEventListener("click", function(){ applyGrade(parseInt(this.getAttribute("data-g"), 10)); });
+  }
+
+  /* ============ 模块网格 ============ */
+  function renderModules(){
+    var box = document.getElementById("modGrid");
+    var h = "";
+    for (var i = 0; i < MODULES.length; i++) {
+      var m = MODULES[i];
+      var done = m.done[grade - 1];
+      var pct = Math.round(done / TOTAL * 100);
+      var unlocked = Math.min(2, Math.floor(done / (TOTAL / 3)));
+      h += '<div class="mcard ' + m.cls + '" data-i="' + i + '">';
+      h += '<div class="dots">';
+      for (var d = 0; d < 3; d++) h += '<b class="' + (d <= unlocked ? "on" : "") + '"></b>';
+      h += '</div>';
+      h += '<div class="ico">' + m.ico + '</div>';
+      h += '<div class="nm">' + m.name + '</div>';
+      h += '<div class="meta">' + done + ' / ' + TOTAL + ' 题</div>';
+      h += '<div class="mbar"><i style="width:' + pct + '%"></i></div>';
+      h += '</div>';
+    }
+    box.innerHTML = h;
+    var cards = box.querySelectorAll(".mcard");
+    for (var c = 0; c < cards.length; c++) {
+      cards[c].addEventListener("click", function(){
+        curMod = MODULES[parseInt(this.getAttribute("data-i"), 10)];
+        openPractice();
+      });
+    }
+  }
+  renderModules();
+  applyGrade(1);
+
+  /* ============ 练习界面 ============ */
+  var BANK = {
+    math:[
+      { q:"13 − 8 = ?", o:["4","5","6","7"], a:1 },
+      { q:"7 + 9 = ?",  o:["15","16","17","18"], a:1 },
+      { q:"6 × 3 = ?",  o:["12","15","18","21"], a:2 },
+      { q:"20 以内最大的数是？", o:["19","20","21","18"], a:1 },
+      { q:"15 比 9 多几？", o:["5","6","7","8"], a:1 }
+    ],
+    chinese:[
+      { q:"「日」加一笔是什么字？", o:["目","月","天","木"], a:0 },
+      { q:"下面哪个是量词？", o:["跑","只","红","大"], a:1 },
+      { q:"「大」的反义词是？", o:["多","小","高","长"], a:1 },
+      { q:"「春眠不觉晓」下一句是？", o:["处处闻啼鸟","夜来风雨声","花落知多少","低头思故乡"], a:0 },
+      { q:"「木」和「目」读音？", o:["相同","不同","不确定","一个读mù一个读mò"], a:0 }
+    ],
+    english:[
+      { q:"苹果 的英文是？", o:["apple","apply","appie","aplle"], a:0 },
+      { q:"How are you? 的意思是？", o:["你几岁","你好吗","你是谁","你在哪"], a:1 },
+      { q:"cat 是什么动物？", o:["狗","猫","鸟","鱼"], a:1 },
+      { q:"one, two, ___ 下一个是？", o:["four","three","five","six"], a:1 },
+      { q:"「红色」的英文是？", o:["read","red","ride","road"], a:1 }
+    ],
+    music:[
+      { q:"钢琴有几排琴键？", o:["一排","两排","三排","四排"], a:1 },
+      { q:"下面哪个是打击乐器？", o:["小提琴","鼓","长笛","钢琴"], a:1 },
+      { q:"do re mi 一共有几个音？", o:["5个","6个","7个","8个"], a:2 },
+      { q:"《小星星》第一句是？", o:["一闪一闪亮晶晶","两只老虎跑得快","小兔子乖乖","找呀找呀找朋友"], a:0 },
+      { q:"唱歌时打拍子用的是？", o:["脚","手","头","眼睛"], a:1 }
+    ],
+    riddle:[
+      { q:"什么东西越洗越脏？", o:["衣服","水","肥皂","毛巾"], a:1 },
+      { q:"什么东西有头无脚？", o:["椅子","砖头","桌子","书本"], a:1 },
+      { q:"什么车寸步难行？", o:["风车","汽车","火车","自行车"], a:0 },
+      { q:"什么书买不到？", o:["遗书","画书","故事书","课本"], a:0 },
+      { q:"什么水永远用不完？", o:["自来水","泪水","薪水","河水"], a:2 }
+    ],
+    sport:[
+      { q:"跳绳一分钟，一年级合格标准大约是？", o:["17个","30个","60个","100个"], a:1 },
+      { q:"跑步前应该先做什么？", o:["喝水","热身","坐下","吃饭"], a:1 },
+      { q:"拍球时眼睛应该看？", o:["球","前方","地面","天空"], a:1 },
+      { q:"深蹲主要锻炼哪个部位？", o:["手臂","腿","脖子","腰"], a:1 },
+      { q:"运动后心跳会？", o:["变慢","变快","不变","停止"], a:1 }
+    ]
+  };
+  var qIdx = 0;
+  var answered = false;
+
+  function openPractice(){
+    qIdx = 0;
+    var m = curMod;
+    var host = document.getElementById("v-practice");
+    host.className = "pagecontent " + m.cls;
+    document.getElementById("prTitle").textContent = m.name + " · " + ["一年级","二年级","三年级"][grade-1];
+    level = 1;
+    var lv = document.querySelectorAll("#lvlTabs button");
+    for (var i = 0; i < lv.length; i++) lv[i].classList.toggle("on", parseInt(lv[i].getAttribute("data-l"), 10) === level);
+    switchView("practice");
+    renderQuestion();
+  }
+
+  function renderQuestion(){
+    var bank = BANK[curMod.key] || BANK.math;
+    var q = bank[qIdx % bank.length];
+    var base = level * 200 + qIdx + 1;
+    document.getElementById("prIdx").textContent = "第 " + (level * 200 + 121) + " 题";
+    document.getElementById("prTot").textContent = "本档 200 题";
+    document.getElementById("prBar").style.width = ((qIdx % bank.length) / bank.length * 100 + 20) + "%";
+    document.getElementById("qTag").textContent = ["简单","中等","困难"][level];
+    document.getElementById("qText").textContent = q.q;
+    var box = document.getElementById("qOpts");
+    var h = "";
+    for (var i = 0; i < q.o.length; i++)
+      h += '<button class="opt" data-i="' + i + '"><span class="k">' + "ABCD".charAt(i) + '</span>' + q.o[i] + '</button>';
+    box.innerHTML = h;
+    document.getElementById("qFb").textContent = "";
+    document.getElementById("qFb").className = "fb";
+    var nb = document.getElementById("qNext");
+    nb.disabled = true;
+    nb.textContent = "下一题";
+    answered = false;
+
+    var opts = box.querySelectorAll(".opt");
+    for (var j = 0; j < opts.length; j++) {
+      opts[j].addEventListener("click", function(){
+        if (answered) return;
+        answered = true;
+        var pick = parseInt(this.getAttribute("data-i"), 10);
+        var fb = document.getElementById("qFb");
+        if (pick === q.a) {
+          this.classList.add("right");
+          fb.textContent = "答对了！";
+          fb.className = "fb ok";
+        } else {
+          this.classList.add("wrong");
+          opts[q.a].classList.add("right");
+          fb.textContent = "再想想，正确答案是 " + "ABCD".charAt(q.a) + "（本题会回到本档末尾重做）";
+          fb.className = "fb no";
+        }
+        document.getElementById("qNext").disabled = false;
+      });
+    }
+  }
+
+  document.getElementById("qNext").addEventListener("click", function(){
+    qIdx++;
+    if (qIdx >= 5) { qIdx = 0; }
+    renderQuestion();
+  });
+  var lvBtns = document.querySelectorAll("#lvlTabs button");
+  for (var i = 0; i < lvBtns.length; i++) {
+    lvBtns[i].addEventListener("click", function(){
+      level = parseInt(this.getAttribute("data-l"), 10);
+      for (var j = 0; j < lvBtns.length; j++)
+        lvBtns[j].classList.toggle("on", parseInt(lvBtns[j].getAttribute("data-l"), 10) === level);
+      qIdx = 0;
+      renderQuestion();
+    });
+  }
+  document.getElementById("prBack").addEventListener("click", function(){ switchView("home"); });
+  document.getElementById("prClose").addEventListener("click", function(){ switchView("home"); });
+
+  /* ============ 额度卡演示：点一下切到超额状态 ============ */
+  var quotaStates = [
+    { left:35, used:25, pct:42, tag:"额度内", cls:"free", bar:"" },
+    { left:0,  used:72, pct:100, tag:"已超额 · 每10分钟弹窗", cls:"warn", bar:"over" },
+    { left:0,  used:95, pct:100, tag:"加密中 · 每5分钟弹窗", cls:"warn", bar:"over" }
+  ];
+  var qState = 0;
+  document.querySelector(".quota-card").addEventListener("click", function(){
+    qState = (qState + 1) % quotaStates.length;
+    var s = quotaStates[qState];
+    document.getElementById("qcLeft").textContent = s.left;
+    document.getElementById("qcBar").style.width = s.pct + "%";
+    document.getElementById("qcBar").className = s.bar;
+    var t = document.getElementById("qcTag");
+    t.textContent = s.tag;
+    t.className = "qc-tag " + s.cls;
+    this.querySelector(".qc-foot span").textContent = "已用 " + s.used + " 分钟";
+  });
+
+  /* ============ 家长模式 ============ */
+  var PARENT_PIN = "1234";
+  function resetParent(){
+    document.getElementById("pinGate").style.display = "flex";
+    document.getElementById("parentSettings").style.display = "none";
+    document.getElementById("pinInput").value = "";
+    document.getElementById("pinErr").textContent = "";
+  }
+  function toast(msg){
+    var t = document.getElementById("toast");
+    if (!t){ t = document.createElement("div"); t.className = "toast"; t.id = "toast"; document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(t._tm);
+    t._tm = setTimeout(function(){ t.classList.remove("show"); }, 1500);
+  }
+  document.getElementById("pinEnter").addEventListener("click", function(){
+    var v = document.getElementById("pinInput").value;
+    if (v === PARENT_PIN){
+      document.getElementById("pinGate").style.display = "none";
+      document.getElementById("parentSettings").style.display = "block";
+    } else {
+      document.getElementById("pinErr").textContent = "密码错误，请重试";
+    }
+  });
+  document.getElementById("pinInput").addEventListener("input", function(){ this.value = this.value.replace(/\D/g, ""); });
+  document.getElementById("pinInput").addEventListener("keydown", function(e){ if (e.key === "Enter") document.getElementById("pinEnter").click(); });
+
+  var steppers = document.querySelectorAll("#v-parent .stepper");
+  for (var si = 0; si < steppers.length; si++){
+    (function(st){
+      var min = parseInt(st.getAttribute("data-min"), 10);
+      var max = parseInt(st.getAttribute("data-max"), 10);
+      var valEl = st.querySelector(".v");
+      st.addEventListener("click", function(e){
+        var btn = e.target.closest("button");
+        if (!btn) return;
+        var d = parseInt(btn.getAttribute("data-d"), 10);
+        var cur = parseInt(valEl.textContent, 10) || 0;
+        cur = Math.max(min, Math.min(max, cur + d));
+        valEl.textContent = cur;
+      });
+    })(steppers[si]);
+  }
+  var pgBtns = document.querySelectorAll("#pgSeg button");
+  for (var pi = 0; pi < pgBtns.length; pi++){
+    pgBtns[pi].addEventListener("click", function(){
+      for (var j = 0; j < pgBtns.length; j++) pgBtns[j].classList.toggle("on", pgBtns[j] === this);
+    });
+  }
+  var pChips = document.querySelectorAll("#pThemes .tchip");
+  for (var ci = 0; ci < pChips.length; ci++){
+    pChips[ci].addEventListener("click", function(){
+      var t = this.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", t);
+      for (var j = 0; j < pChips.length; j++) pChips[j].classList.toggle("on", pChips[j] === this);
+      var tdots = document.querySelectorAll('.themebar [data-theme]');
+      for (var k = 0; k < tdots.length; k++) tdots[k].classList.toggle("on", tdots[k].getAttribute("data-theme") === t);
+    });
+  }
+  document.getElementById("pManage").addEventListener("click", function(){ toast("进入应用管理（受限/学习名单）"); });
+  document.getElementById("pAdmin").addEventListener("click", function(){ toast("已发起设备管理员激活"); });
+  document.getElementById("pChangePin").addEventListener("click", function(){ toast("请输入新密码（≥4 位）"); });
+  document.getElementById("pSave").addEventListener("click", function(){
+    var b = this, old = b.textContent; b.textContent = "已保存 ✓";
+    setTimeout(function(){ b.textContent = old; }, 1400);
+    toast("设置已保存");
+  });
+  document.querySelector(".parent-link").addEventListener("click", function(){ switchView("parent"); });
+
+  /* ============ 时钟 ============ */
+  var d = new Date();
+  document.getElementById("clock").textContent = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
+
+  renderNotes("home");
+})();
+</script>
+</body>
+</html>

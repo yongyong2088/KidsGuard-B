@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        自定义主题属性。
+        布局里统一用 ?attr/kgXxx 引用颜色，切换主题时整套界面才会跟着变。
+        如果直接写 @color/brand，颜色是写死的，换主题不会变。
+    -->
+    <attr name="kgBrand" format="color" />
+    <attr name="kgBrandDark" format="color" />
+    <attr name="kgBrandLight" format="color" />
+    <attr name="kgPageBg" format="color" />
+    <attr name="kgCardBg" format="color" />
+
+</resources>

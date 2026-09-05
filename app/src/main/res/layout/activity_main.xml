@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    学习中心主界面。
+    样式可以随意调整：
+      - 六个模块卡片在 MainActivity 里用代码动态生成（结构统一），想换配色改 colors.xml 的 subj_* 即可
+      - 顶部四个小圆点是主题切换，点击整屏换色
+      - 不要删除带 id 的控件，否则 Kotlin 会编译不过
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/kgPageBg">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="28dp">
+
+        <!-- 顶部：问候 + 主题切换 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_greeting"
+                    android:textColor="?attr/kgBrandDark"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/main_greeting_sub"
+                    android:textColor="@color/text_sub"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/themeOcean"
+                    style="@style/ThemeDot"
+                    android:background="@drawable/dot_ocean" />
+
+                <View
+                    android:id="@+id/themeForest"
+                    style="@style/ThemeDot"
+                    android:background="@drawable/dot_forest" />
+
+                <View
+                    android:id="@+id/themeSunset"
+                    style="@style/ThemeDot"
+                    android:background="@drawable/dot_sunset" />
+
+                <View
+                    android:id="@+id/themeCandy"
+                    style="@style/ThemeDot"
+                    android:background="@drawable/dot_candy" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 星星横幅：点击进奖励小屋 -->
+        <LinearLayout
+            android:id="@+id/bannerStars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="?attr/kgCardBg"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tvStarsBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:textColor="?attr/kgBrandDark"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="去奖励小屋 →"
+                android:textColor="?attr/kgBrand"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 守护额度卡 -->
+        <LinearLayout
+            android:id="@+id/cardGuardian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="?attr/kgCardBg"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_guardian_title"
+                        android:textColor="@color/text_sub"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvQuotaValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="?attr/kgBrand"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvGuardianStage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/text_sub"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressGuardian"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="?attr/kgBrand" />
+        </LinearLayout>
+
+        <!-- 年级切换 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/main_grade_label"
+            android:textColor="@color/text_sub"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/chipG1"
+                style="@style/GradeChip"
+                android:text="@string/grade_g1" />
+
+            <Button
+                android:id="@+id/chipG2"
+                style="@style/GradeChip"
+                android:text="@string/grade_g2" />
+
+            <Button
+                android:id="@+id/chipG3"
+                style="@style/GradeChip"
+                android:text="@string/grade_g3" />
+        </LinearLayout>
+
+        <!-- 六个模块卡片容器（MainActivity 动态填充） -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/main_modules_label"
+            android:textColor="@color/text_sub"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/modulesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <Button
+            android:id="@+id/btnParent"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/main_btn_parent"
+            android:textColor="?attr/kgBrand" />
+
+    </LinearLayout>
+</ScrollView>

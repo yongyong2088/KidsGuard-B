@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        四套主题。切换主题只改主色和页面底色，六个模块的配色保持不变，
+        这样无论哪套主题下，语文/数学/英语/音乐/运动/脑筋急转弯都能一眼分清。
+        想加更多主题：复制一份 style，改四个色值，再到 ThemeManager 里注册即可。
+    -->
+
+    <!-- 海洋蓝（默认） -->
+    <style name="Theme.KidsGuard.Ocean" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/ocean_brand</item>
+        <item name="colorPrimaryDark">@color/ocean_brand_dark</item>
+        <item name="colorAccent">@color/ocean_brand</item>
+        <item name="kgBrand">@color/ocean_brand</item>
+        <item name="kgBrandDark">@color/ocean_brand_dark</item>
+        <item name="kgBrandLight">@color/ocean_brand_light</item>
+        <item name="kgPageBg">@color/ocean_page</item>
+        <item name="kgCardBg">@color/bg_card</item>
+        <item name="android:windowBackground">@color/ocean_page</item>
+        <item name="android:statusBarColor">@color/ocean_brand_dark</item>
+    </style>
+
+    <!-- 森林绿 -->
+    <style name="Theme.KidsGuard.Forest" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/forest_brand</item>
+        <item name="colorPrimaryDark">@color/forest_brand_dark</item>
+        <item name="colorAccent">@color/forest_brand</item>
+        <item name="kgBrand">@color/forest_brand</item>
+        <item name="kgBrandDark">@color/forest_brand_dark</item>
+        <item name="kgBrandLight">@color/forest_brand_light</item>
+        <item name="kgPageBg">@color/forest_page</item>
+        <item name="kgCardBg">@color/bg_card</item>
+        <item name="android:windowBackground">@color/forest_page</item>
+        <item name="android:statusBarColor">@color/forest_brand_dark</item>
+    </style>
+
+    <!-- 暖阳橙 -->
+    <style name="Theme.KidsGuard.Sunset" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/sunset_brand</item>
+        <item name="colorPrimaryDark">@color/sunset_brand_dark</item>
+        <item name="colorAccent">@color/sunset_brand</item>
+        <item name="kgBrand">@color/sunset_brand</item>
+        <item name="kgBrandDark">@color/sunset_brand_dark</item>
+        <item name="kgBrandLight">@color/sunset_brand_light</item>
+        <item name="kgPageBg">@color/sunset_page</item>
+        <item name="kgCardBg">@color/bg_card</item>
+        <item name="android:windowBackground">@color/sunset_page</item>
+        <item name="android:statusBarColor">@color/sunset_brand_dark</item>
+    </style>
+
+    <!-- 糖果马卡龙 -->
+    <style name="Theme.KidsGuard.Candy" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/candy_brand</item>
+        <item name="colorPrimaryDark">@color/candy_brand_dark</item>
+        <item name="colorAccent">@color/candy_brand</item>
+        <item name="kgBrand">@color/candy_brand</item>
+        <item name="kgBrandDark">@color/candy_brand_dark</item>
+        <item name="kgBrandLight">@color/candy_brand_light</item>
+        <item name="kgPageBg">@color/candy_page</item>
+        <item name="kgCardBg">@color/bg_card</item>
+        <item name="android:windowBackground">@color/candy_page</item>
+        <item name="android:statusBarColor">@color/candy_brand_dark</item>
+    </style>
+
+    <!-- 默认入口，指向海洋蓝 -->
+    <style name="Theme.KidsGuard" parent="Theme.KidsGuard.Ocean" />
+
+    <!-- 主题切换小圆点 -->
+    <style name="ThemeDot">
+        <item name="android:layout_width">26dp</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/kgCardBg</item>
+    </style>
+
+    <!-- 年级切换芯片 -->
+    <style name="GradeChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <!-- 练习界面难度芯片 -->
+    <style name="PracticeDiffChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <!-- 全屏答题锁：固定用海洋蓝配色，避免孩子通过换主题影响拦截界面 -->
+    <style name="Theme.KidsGuard.Lock" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/ocean_brand</item>
+        <item name="colorAccent">@color/ocean_brand</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/bg_card</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <!-- 通用大圆角 shape，用于所有卡通按钮 -->
+    <style name="CartoonShapeOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <!-- 卡通主按钮：跟随主题主色、白字、圆角、阴影、按下反馈 -->
+    <style name="CartoonButton" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="backgroundTint">?attr/kgBrand</item>
+        <item name="elevation">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- 卡通选项/次按钮：白底圆角描边，主色文字 -->
+    <style name="CartoonOptionButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">?attr/kgBrand</item>
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="android:textColor">?attr/kgBrandDark</item>
+        <item name="elevation">3dp</item>
+    </style>
+
+    <!-- 年级 / 难度芯片：圆角化 -->
+    <style name="GradeChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">?attr/kgBrand</item>
+    </style>
+
+    <style name="PracticeDiffChip" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/CartoonShapeOverlay</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">?attr/kgBrand</item>
+    </style>
+
+</resources>
