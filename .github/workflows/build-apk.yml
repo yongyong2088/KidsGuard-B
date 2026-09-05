@@ -28,7 +28,22 @@ jobs:
         run: chmod +x gradlew
 
       - name: 编译 Debug APK
-        run: ./gradlew :app:assembleDebug --stacktrace
+        run: ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee /tmp/gradle.log
+
+      - name: 提取编译错误到 Summary
+        if: always()
+        run: |
+          echo '## 编译错误摘要' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          grep -E "^e: | error:|What went wrong|Execution failed|Unresolved reference|Type mismatch|None of the following|cannot find symbol|Exception in" /tmp/gradle.log | head -60 >> $GITHUB_STEP_SUMMARY || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: 上传完整编译日志
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-log
+          path: /tmp/gradle.log
 
       - name: 上传 APK 产物
         if: success()
@@ -37,10 +52,3 @@ jobs:
           name: KidsGuard-debug-apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
-
-      - name: 上传失败日志
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-failure-log
-          path: "**/build/*.log"
