@@ -42,18 +42,39 @@ jobs:
           chmod +x "$GW"
           echo "gw_dir=$GW_DIR" >> "$GITHUB_OUTPUT"
 
+      - name: 环境诊断
+        run: |
+          echo "=== Java 版本 ==="
+          java -version
+          echo "=== javac 版本 ==="
+          javac -version
+          echo "=== Gradle wrapper 信息 ==="
+          GW="${{ steps.locate.outputs.gw_dir }}"
+          cd "$GW"
+          ls -la
+          ls -la gradle/wrapper
+          echo "=== settings.gradle.kts ==="
+          cat settings.gradle.kts
+          echo "=== build.gradle.kts ==="
+          cat build.gradle.kts
+
       - name: 编译 Debug APK
         working-directory: ${{ steps.locate.outputs.gw_dir }}
         run: |
           set -o pipefail
-          ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee /tmp/gradle.log
+          ./gradlew :app:assembleDebug --stacktrace --no-daemon 2>&1 | tee /tmp/gradle.log
 
       - name: 提取编译错误到 Summary
         if: always()
         run: |
+          echo '## Gradle 日志前 200 行' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          head -200 /tmp/gradle.log >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo '' >> "$GITHUB_STEP_SUMMARY"
           echo '## 编译错误摘要' >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
-          grep -E "^e: | error:|What went wrong|Execution failed|Unresolved reference|Type mismatch|None of the following|cannot find symbol|Exception in" /tmp/gradle.log | head -60 >> "$GITHUB_STEP_SUMMARY" || true
+          grep -iE "^e: |error:|FAILURE|FAILED|What went wrong|Execution failed|Unresolved reference|Type mismatch|None of the following|cannot find symbol|Exception|AAPT|Could not|Unable to|No cached version|Deprecated Gradle features|BUILD FAILED" /tmp/gradle.log | head -80 >> "$GITHUB_STEP_SUMMARY" || true
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
       - name: 列出构建产物（诊断用）
@@ -72,6 +93,7 @@ jobs:
         with:
           name: gradle-log
           path: /tmp/gradle.log
+          retention-days: 3
 
       - name: 上传 APK 产物
         if: success()
@@ -81,3 +103,4 @@ jobs:
           path: |
             **/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+          retention-days: 7
