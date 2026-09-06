@@ -19,8 +19,6 @@
     <string name="main_guardian_over">已超额</string>
     <string name="main_remaining">剩余 %1$d 分钟</string>
     <string name="main_guardian_explain">每天娱乐 %1$d 分钟；超过后每 %2$d 分钟弹一次答题，答对 %5$d 题可再看 %6$d 分钟；当天总时长达到 %3$d 分钟后，加密为每 %4$d 分钟弹一次。</string>
-    <string name="main_grade_label">选择年级</string>
-    <string name="main_modules_label">学习模块</string>
     <string name="main_module_progress">已做 %1$d / %2$d</string>
     <string name="main_btn_parent">家长模式</string>
 
