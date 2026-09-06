@@ -16,10 +16,15 @@ class PrefsManager(context: Context) {
 
     // ---------- 外观 ----------
 
-    /** 主题：ocean / forest / sunset */
+    /** 主题：ocean / forest / sunset / candy */
     var theme: String
         get() = prefs.getString(KEY_THEME, "ocean") ?: "ocean"
         set(value) = prefs.edit().putString(KEY_THEME, value).apply()
+
+    /** 孩子姓名：首页问候与资料卡使用，默认「小朋友」 */
+    var childName: String
+        get() = prefs.getString(KEY_CHILD_NAME, "小朋友") ?: "小朋友"
+        set(value) = prefs.edit().putString(KEY_CHILD_NAME, value.ifBlank { "小朋友" }).apply()
 
     // ---------- 弹窗规则（三段式） ----------
 
@@ -313,6 +318,7 @@ class PrefsManager(context: Context) {
 
         private const val KEY_PIN = "pin"
         private const val KEY_THEME = "theme"
+        private const val KEY_CHILD_NAME = "child_name"
         private const val KEY_THRESHOLD = "threshold_minutes"
         private const val KEY_DAILY_QUOTA = "daily_quota_minutes"
         private const val KEY_INTERVAL_NORMAL = "interval_normal"

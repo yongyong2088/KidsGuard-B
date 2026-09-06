@@ -2,14 +2,16 @@
 <resources>
     <string name="app_name">学习守护</string>
 
-    <!-- 主界面问候（代码会按时间替换为早/下/晚好，这里只是默认占位） -->
-    <string name="main_greeting">你好，小朋友</string>
+    <!-- 主界面问候（代码会按时间替换为早/下/晚好，并填入孩子姓名） -->
+    <string name="main_greeting">你好，%1$s</string>
 
     <!-- 主界面（学习中心） -->
-    <string name="main_greeting_morning">早上好，小朋友</string>
-    <string name="main_greeting_afternoon">下午好，小朋友</string>
-    <string name="main_greeting_evening">晚上好，小朋友</string>
+    <string name="main_greeting_morning">早上好，%1$s</string>
+    <string name="main_greeting_afternoon">下午好，%1$s</string>
+    <string name="main_greeting_evening">晚上好，%1$s</string>
     <string name="main_greeting_sub">今天也要加油学习哦</string>
+    <string name="main_profile">%1$s · %2$s</string>
+    <string name="main_modules_label">选一个模块开始吧</string>
     <string name="main_guardian_title">今日娱乐额度</string>
     <string name="main_guardian_free">额度内 · 放心玩</string>
     <string name="main_guardian_normal">已超额 · 每 %1$d 分钟答一题</string>
@@ -69,6 +71,17 @@
     <string name="parent_btn_save">保存设置</string>
     <string name="parent_saved">已保存</string>
 
+    <!-- 我的资料（设置） -->
+    <string name="settings_title">我的资料</string>
+    <string name="settings_tip">登记孩子的信息，首页会更亲切哦</string>
+    <string name="settings_name">孩子名字</string>
+    <string name="settings_name_hint">例如：小明</string>
+    <string name="settings_grade">在读年级</string>
+    <string name="settings_theme">喜欢的颜色</string>
+    <string name="settings_save">保存资料</string>
+    <string name="settings_saved">资料已保存</string>
+    <string name="settings_name_empty">请先填写孩子的名字</string>
+
     <!-- 应用归类 -->
     <string name="apps_title">应用归类</string>
     <string name="apps_tip">只有「受限」的应用会被弹窗拦截。学习类应用永不弹窗、不计时。</string>
@@ -118,6 +131,11 @@
         <item>暖阳橙</item>
         <item>糖果马卡龙</item>
     </string-array>
+
+    <string name="theme_ocean">海洋蓝</string>
+    <string name="theme_forest">森林绿</string>
+    <string name="theme_sunset">暖阳橙</string>
+    <string name="theme_candy">糖果马卡龙</string>
 
     <string-array name="theme_values" translatable="false">
         <item>ocean</item>

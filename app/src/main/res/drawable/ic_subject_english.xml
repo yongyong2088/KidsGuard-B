@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- 苹果：果实 + 果柄 + 叶子 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24 18C18 12 8 15 12 28C15 39 22 41 24 35C26 41 33 39 36 28C40 15 30 12 24 18Z" />
+    <rect
+        x="22.5"
+        y="7"
+        width="3"
+        height="10"
+        rx="1.5"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28 12C32 8 39 10 36 17C32 17 29 16 28 12Z" />
+</vector>

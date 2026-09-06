@@ -51,14 +51,16 @@ enum class Subject(
     val emoji: String,
     val colorRes: Int,
     val bgRes: Int,
+    /** 首页卡片用的卡通矢量图标 */
+    val iconRes: Int,
     val kind: Kind
 ) {
-    CHINESE("chinese", "语文", "\uD83D\uDCD6", R.color.subj_chinese, R.color.subj_chinese_bg, Kind.QUIZ),
-    MATH("math", "数学", "\uD83D\uDD22", R.color.subj_math, R.color.subj_math_bg, Kind.QUIZ),
-    ENGLISH("english", "英语", "\uD83D\uDD24", R.color.subj_english, R.color.subj_english_bg, Kind.QUIZ),
-    MUSIC("music", "音乐", "\uD83C\uDFB5", R.color.subj_music, R.color.subj_music_bg, Kind.QUIZ),
-    SPORT("sport", "运动", "⚽", R.color.subj_sport, R.color.subj_sport_bg, Kind.SPORT),
-    RIDDLE("riddle", "脑筋急转弯", "\uD83D\uDCA1", R.color.subj_riddle, R.color.subj_riddle_bg, Kind.QUIZ);
+    CHINESE("chinese", "语文", "\uD83D\uDCD6", R.color.subj_chinese, R.color.subj_chinese_bg, R.drawable.ic_subject_chinese, Kind.QUIZ),
+    MATH("math", "数学", "\uD83D\uDD22", R.color.subj_math, R.color.subj_math_bg, R.drawable.ic_subject_math, Kind.QUIZ),
+    ENGLISH("english", "英语", "\uD83D\uDD24", R.color.subj_english, R.color.subj_english_bg, R.drawable.ic_subject_english, Kind.QUIZ),
+    MUSIC("music", "音乐", "\uD83C\uDFB5", R.color.subj_music, R.color.subj_music_bg, R.drawable.ic_subject_music, Kind.QUIZ),
+    SPORT("sport", "运动", "⚽", R.color.subj_sport, R.color.subj_sport_bg, R.drawable.ic_subject_sport, Kind.SPORT),
+    RIDDLE("riddle", "脑筋急转弯", "\uD83D\uDCA1", R.color.subj_riddle, R.color.subj_riddle_bg, R.drawable.ic_subject_riddle, Kind.QUIZ);
 
     /** 模块的形态：QUIZ 是答题，SPORT 是动作打卡 */
     enum class Kind { QUIZ, SPORT }

@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- 八分音符 -->
+    <ellipse
+        android:fillColor="#FFFFFF"
+        android:cx="17"
+        android:cy="35"
+        android:rx="7"
+        android:ry="5.5" />
+    <rect
+        x="22"
+        y="10"
+        width="3.5"
+        height="25"
+        android:fillColor="#FFFFFF" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25.5 10C33 12 36 21 31 27C34 19 30 14 25.5 16Z" />
+</vector>
