@@ -5,11 +5,11 @@
     android:viewportHeight="48">
     <!-- 八分音符 -->
     <ellipse
-        android:fillColor="#FFFFFF"
-        android:cx="17"
-        android:cy="35"
-        android:rx="7"
-        android:ry="5.5" />
+        cx="17"
+        cy="35"
+        rx="7"
+        ry="5.5"
+        android:fillColor="#FFFFFF" />
     <rect
         x="22"
         y="10"
