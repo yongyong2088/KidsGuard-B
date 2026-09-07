@@ -159,6 +159,15 @@ class PrefsManager(context: Context) {
         get() = prefs.getBoolean(KEY_PRESETS_APPLIED, false)
         set(value) = prefs.edit().putBoolean(KEY_PRESETS_APPLIED, value).apply()
 
+    /**
+     * 已应用到本机的预置名单版本号。
+     * 每次扩充 [AppClassifier] 里的预置名单都要把版本号 +1，
+     * 这样新装的 App 也能被补进列表（旧的「一次性开关」做不到这点）。
+     */
+    var presetVersion: Int
+        get() = prefs.getInt(KEY_PRESET_VERSION, 0)
+        set(value) = prefs.edit().putInt(KEY_PRESET_VERSION, value).apply()
+
     // ---------- 应用归类 ----------
 
     fun getAppRules(): MutableMap<String, AppRule> {
@@ -338,6 +347,7 @@ class PrefsManager(context: Context) {
         private const val KEY_STARS = "stars"
         private const val KEY_FREE_PASSES = "free_passes"
         private const val KEY_PRESETS_APPLIED = "presets_applied"
+        private const val KEY_PRESET_VERSION = "preset_version"
         private const val KEY_APP_RULES = "app_rules"
         private const val KEY_USAGE_DATE = "usage_date"
         private const val KEY_USED_MINUTES = "used_minutes"

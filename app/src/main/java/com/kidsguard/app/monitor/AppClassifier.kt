@@ -29,22 +29,35 @@ class AppClassifier(private val prefs: PrefsManager) {
     }
 
     /**
-     * 首次启动时把预置名单中**已安装**的应用写入配置，之后一律以家长手动修改为准。
-     * 只写入已安装的应用，避免家长在列表里看到一堆没装过的东西而困惑。
+     * 把预置名单中**已安装**的应用补进配置。
+     *
+     * 两个规则：
+     * 1. 只补**已安装**的 —— 避免家长在列表里看到一堆没装过的东西而困惑
+     * 2. 只补**家长从没设置过**的 —— 只要 rules 里已经有这个包，就一律以家长的选择为准，绝不覆盖
+     *
+     * 用版本号 [PRESET_VERSION] 而不是一次性开关：名单每次扩充都会 upgrade 版本号，
+     * 孩子后装的游戏也能在下次打开 App 时被自动补进来。
      */
     fun applyPresetsIfNeeded(context: Context) {
-        if (prefs.presetsApplied) return
         val installed = getLauncherApps(context).map { it.pkg }.toSet()
         val rules = prefs.getAppRules()
 
-        PRESET_RESTRICTED.keys.filter { it in installed }
-            .forEach { rules[it] = AppRule(it, AppCategory.RESTRICTED) }
-        PRESET_LEARNING.keys.filter { it in installed }
-            .forEach { rules[it] = AppRule(it, AppCategory.LEARNING) }
+        val newRestricted = PRESET_RESTRICTED.keys.filter { it in installed && !rules.containsKey(it) }
+        val newLearning = PRESET_LEARNING.keys.filter { it in installed && !rules.containsKey(it) }
+
+        newRestricted.forEach { rules[it] = AppRule(it, AppCategory.RESTRICTED) }
+        newLearning.forEach { rules[it] = AppRule(it, AppCategory.LEARNING) }
         rules[SELF_PACKAGE] = AppRule(SELF_PACKAGE, AppCategory.LEARNING)
 
-        prefs.saveAppRules(rules)
-        prefs.presetsApplied = true
+        if (newRestricted.isNotEmpty() || newLearning.isNotEmpty() ||
+            prefs.presetVersion < PRESET_VERSION
+        ) {
+            if (newRestricted.isNotEmpty() || newLearning.isNotEmpty()) {
+                prefs.saveAppRules(rules)
+            }
+            prefs.presetsApplied = true
+            prefs.presetVersion = PRESET_VERSION
+        }
     }
 
     /** 预置名单里的中文名，用于在列表中显示备注 */
@@ -78,24 +91,41 @@ class AppClassifier(private val prefs: PrefsManager) {
         const val SELF_PACKAGE = "com.kidsguard.app"
 
         /**
+         * 预置名单的版本号。
+         * **每次在下面两个名单里加条目，都必须把这个数字 +1**，
+         * 否则已经装过 App 的手机不会重新扫描，新加的包名不会生效。
+         */
+        const val PRESET_VERSION = 2
+
+        /**
          * 预置的受限候选名单（娱乐类）。
          * 注意：包名可能随版本或渠道变化，这里只是让家长少勾选几次，
          * 最终以「最近使用」列表里家长手动勾选的结果为准。
          */
         private val PRESET_RESTRICTED = mapOf(
+            // ---- 短视频 ----
             "com.ss.android.ugc.aweme" to "抖音",
             "com.ss.android.ugc.aweme.lite" to "抖音极速版",
             "com.smile.gifmaker" to "快手",
             "com.kuaishou.nebula" to "快手极速版",
-            "tv.danmaku.bili" to "哔哩哔哩",
+            "com.ss.android.article.video" to "西瓜视频",
+            // ---- 图文社区 / 资讯 ----
             "com.xingin.xhs" to "小红书",
+            "com.ss.android.article.news" to "今日头条",
+            "com.baidu.tieba" to "百度贴吧",
+            // ---- 长视频 ----
+            "tv.danmaku.bili" to "哔哩哔哩",
             "com.qiyi.video" to "爱奇艺",
             "com.youku.phone" to "优酷",
             "com.tencent.qqlive" to "腾讯视频",
+            "com.sohu.sohuvideo" to "搜狐视频",
+            "com.hunantv.imgotv" to "芒果TV",
+            // ---- 游戏 ----
             "com.tencent.tmgp.sgame" to "王者荣耀",
             "com.tencent.tmgp.pubgmhd" to "和平精英",
             "com.tencent.tmgp.cf" to "穿越火线手游",
             "com.miHoYo.GenshinImpact" to "原神",
+            "com.netease.party" to "蛋仔派对",
             "com.minitech.miniworld" to "迷你世界",
             "com.mojang.minecraftpe" to "我的世界",
             "com.popcap.pvz2" to "植物大战僵尸2",
@@ -110,6 +140,7 @@ class AppClassifier(private val prefs: PrefsManager) {
          */
         private val PRESET_LEARNING = mapOf(
             "com.dingtalk.android" to "钉钉",
+            "com.alibaba.android.rimet" to "钉钉",
             "com.tencent.wemeet.app" to "腾讯会议",
             "com.baidu.homework" to "作业帮"
         )

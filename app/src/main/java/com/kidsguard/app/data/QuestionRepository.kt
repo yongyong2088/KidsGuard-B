@@ -30,14 +30,29 @@ class QuestionRepository(context: Context) {
      * @param grade 年级 1/2/3
      * @param index 题号 0..599
      */
-    fun questionAt(subject: Subject, grade: Int, index: Int): Question = when (subject) {
-        Subject.MATH -> MathGenerator.generate(grade, index)
-        Subject.CHINESE -> ChineseGenerator.generate(grade, index)
-        Subject.ENGLISH -> EnglishGenerator.generate(grade, index)
-        Subject.MUSIC -> musicQuestion(index)
-        Subject.RIDDLE -> riddleQuestion(index)
-        Subject.SPORT -> throw IllegalArgumentException("运动模块是动作打卡，没有题目")
-    }
+    fun questionAt(subject: Subject, grade: Int, index: Int): Question = shuffleOptions(
+        when (subject) {
+            Subject.MATH -> MathGenerator.generate(grade, index)
+            Subject.CHINESE -> ChineseGenerator.generate(grade, index)
+            Subject.ENGLISH -> EnglishGenerator.generate(grade, index)
+            Subject.MUSIC -> musicQuestion(index)
+            Subject.RIDDLE -> riddleQuestion(index)
+            Subject.SPORT -> throw IllegalArgumentException("运动模块是动作打卡，没有题目")
+        }
+    )
+
+    /**
+     * 把四选一的选项再洗一次牌。
+     *
+     * 为什么必须有这一步：所有生成器为了「第 121 题永远是第 121 题」，都用固定种子，
+     * 于是同一道题的正确答案**永远停在第 2 个按钮**——孩子只要背位置就能蒙对。
+     * 这里在出题出口用无种子的 [kotlin.random.Random] 再洗一次，
+     * 保证同一道题每次出现，正确选项的位置都不一样。
+     *
+     * 只动展示顺序，不动答案本身，所以判分逻辑（比对文本）完全不受影响。
+     */
+    private fun shuffleOptions(q: Question): Question =
+        if (q.options.size > 1) q.copy(options = q.options.shuffled()) else q
 
     /** 运动模块取任务 */
     fun sportTask(grade: Int, index: Int): SportTask = SportTaskBank.taskFor(grade, index)
