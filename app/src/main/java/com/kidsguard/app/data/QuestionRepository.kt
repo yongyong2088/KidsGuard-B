@@ -68,10 +68,20 @@ class QuestionRepository(context: Context) {
         if (custom.isNotEmpty() && Random.nextInt(100) < 40) {
             return custom[Random.nextInt(custom.size)]
         }
-        val difficulty = if (stage >= 2) Difficulty.HARD else Difficulty.MEDIUM
-        val index = difficulty.range().let { it.first + Random.nextInt(DIFFICULTY_SPAN) }
-        val subject = pickSubject(prefs, difficulty.idx)
-        return questionAt(subject, prefs.grade, index)
+        val subject = pickSubject(prefs)
+        val grade = prefs.grade
+
+        // 学到哪考到哪：以孩子在练习模式里的进度为中心出题。
+        // 这样弹窗永远不会蹦出还没学到的单元，也不会反复考最前面的重复内容。
+        // 阶段 2（累计超时后的加密阶段）把范围往前推一点、放宽一点，让孩子有「再往前够一够」的感觉。
+        val done = prefs.getProgress(subject, grade).coerceIn(0, QUESTIONS_PER_GRADE - 1)
+        val center = (done + if (stage >= 2) 30 else 0).coerceAtMost(QUESTIONS_PER_GRADE - 1)
+        val radius = if (stage >= 2) 40 else 25
+        val lo = (center - radius).coerceAtLeast(0)
+        val hi = (center + radius).coerceAtMost(QUESTIONS_PER_GRADE - 1)
+        val index = lo + Random.nextInt(hi - lo + 1)
+
+        return questionAt(subject, grade, index)
     }
 
     /**
@@ -79,7 +89,7 @@ class QuestionRepository(context: Context) {
      * 家长可以在家长端指定 math / chinese / english；设为 mixed 则三科轮换。
      * 运动是打卡不是答题，永远不会出现在弹窗里。
      */
-    private fun pickSubject(prefs: PrefsManager, difficulty: Int): Subject {
+    private fun pickSubject(prefs: PrefsManager): Subject {
         val configured = prefs.lockSubject
         if (configured != "mixed") {
             val s = Subject.of(configured)

@@ -17,13 +17,15 @@ import kotlin.random.Random
 object ChineseGenerator {
 
     fun generate(grade: Int, index: Int): Question {
+        val slot = Curriculum.chineseSlots(grade).getOrNull(index)
+            ?: Slot("综合提升", Difficulty.HARD, index % 5)
         val r = Random(seed(grade, index))
-        val type = index % 5
-        return when (grade) {
-            1 -> grade1(Difficulty.of(index), type, r, index)
-            2 -> grade2(Difficulty.of(index), type, r, index)
-            else -> grade3(Difficulty.of(index), type, r, index)
+        val built = when (grade) {
+            1 -> grade1(slot.difficulty, slot.type, r, index)
+            2 -> grade2(slot.difficulty, slot.type, r, index)
+            else -> grade3(slot.difficulty, slot.type, r, index)
         }
+        return built.copy(difficulty = slot.difficulty.idx)
     }
 
     /**

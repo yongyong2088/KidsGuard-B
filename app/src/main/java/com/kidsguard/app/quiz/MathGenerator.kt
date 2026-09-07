@@ -15,15 +15,21 @@ import kotlin.random.Random
 object MathGenerator {
 
     fun generate(grade: Int, index: Int): Question {
-        val diff = Difficulty.of(index)
+        val slot = slotFor(grade, index)
         val rnd = Random(seed(grade, index))
-        val type = index % 5
-        return when (grade) {
-            1 -> grade1(diff, type, rnd, index)
-            2 -> grade2(diff, type, rnd, index)
-            else -> grade3(diff, type, rnd, index)
+        val built = when (grade) {
+            1 -> grade1(slot.difficulty, slot.type, rnd, index)
+            2 -> grade2(slot.difficulty, slot.type, rnd, index)
+            else -> grade3(slot.difficulty, slot.type, rnd, index)
         }
+        // 难度以「单元教学顺序」为准，而不是题号落在哪一段
+        return built.copy(difficulty = slot.difficulty.idx)
     }
+
+    /** 查这题属于哪个单元、什么难度、哪种题型（见 Curriculum.kt 的人教版顺序表） */
+    private fun slotFor(grade: Int, index: Int): Slot =
+        Curriculum.mathSlots(grade).getOrNull(index)
+            ?: Slot("期末综合复习", Difficulty.HARD, index % 5)
 
     /**
      * 生成种子。关键：加了一项「日期」。

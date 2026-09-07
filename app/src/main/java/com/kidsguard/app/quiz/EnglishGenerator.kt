@@ -14,14 +14,17 @@ import kotlin.random.Random
 object EnglishGenerator {
 
     fun generate(grade: Int, index: Int): Question {
+        val slot = Curriculum.englishSlots(grade).getOrNull(index)
+            ?: Slot("Revision", Difficulty.HARD, index % 5)
         val r = Random(seed(grade, index))
-        val type = index % 5
-        val words = wordsFor(grade)
-        return when (grade) {
-            1 -> grade1(Difficulty.of(index), type, r, index, words)
-            2 -> grade2(Difficulty.of(index), type, r, index, words)
-            else -> grade3(Difficulty.of(index), type, r, index, words)
+        // 学到哪个单元就只考那个单元的单词，不再从整个年级词库里乱抽
+        val words = if (slot.groups.isEmpty()) wordsFor(grade) else wordsFor(slot.groups)
+        val built = when (grade) {
+            1 -> grade1(slot.difficulty, slot.type, r, index, words)
+            2 -> grade2(slot.difficulty, slot.type, r, index, words)
+            else -> grade3(slot.difficulty, slot.type, r, index, words)
         }
+        return built.copy(difficulty = slot.difficulty.idx)
     }
 
     /**
@@ -33,12 +36,20 @@ object EnglishGenerator {
         return (g * 77_777L + i * 3_331L + day * 1_234_567L + 7L).toInt()
     }
 
-    /** 各年级可用的词汇范围 */
-    private fun wordsFor(grade: Int): List<Pair<String, String>> = when (grade) {
-        1 -> GROUPS.take(6).flatMap { it.second }
-        2 -> GROUPS.drop(4).take(8).flatMap { it.second }
-        else -> GROUPS.flatMap { it.second }
-    }
+    /** 没指定单元词表时的兜底范围：一年级前 6 组，二年级 4~11 组，三年级全部 */
+    private fun wordsFor(grade: Int): List<Pair<String, String>> = wordsFor(
+        when (grade) {
+            1 -> (0..5).toList()
+            2 -> (4..11).toList()
+            else -> (0..15).toList()
+        }
+    )
+
+    /** 按 GROUPS 的下标取词表；下标越界或为空时退回全量词库 */
+    private fun wordsFor(groups: List<Int>): List<Pair<String, String>> =
+        groups.filter { it in GROUPS.indices }
+            .flatMap { GROUPS[it].second }
+            .ifEmpty { GROUPS.flatMap { it.second } }
 
     // ==================== 一年级 ====================
 
