@@ -188,7 +188,7 @@ class PracticeActivity : AppCompatActivity() {
         fb.setTextColor(getColor(if (correct) R.color.learning else R.color.danger))
 
         // 英语题答对时，若该单词在例句库里：显示例句 + TTS 朗读整个英文例句
-        // 答错不显示例句（避免给答案提示）
+        // 答错不显示例句（避免给答案提示），但会朗读一次 answer 单词让孩子记住发音
         val example = findViewById<TextView>(R.id.tvExample)
         if (correct && subject == Subject.ENGLISH) {
             val ex = EnglishExamples.lookup(q.answer)
@@ -203,6 +203,12 @@ class PracticeActivity : AppCompatActivity() {
                     Toast.makeText(this, R.string.practice_speak_unavailable, Toast.LENGTH_SHORT).show()
                 }
             }
+        } else if (!correct && subject == Subject.ENGLISH && containsEnglish(q.answer)) {
+            // 答错时朗读一次正确单词（不展示例句），让答错也变成学习机会
+            // 不可用时静默跳过（v10 兜底）
+            if (EnglishSpeech.available()) {
+                EnglishSpeech.speak(q.answer)
+            }
         }
 
         if (correct) {
@@ -211,10 +217,16 @@ class PracticeActivity : AppCompatActivity() {
             prefs.addStars(1)
         }
         posInBlock = (posInBlock + 1) % 200
-        // 答对且有例句：延长到 2200ms 让 TTS 读完；其他保持原节奏
+        // 节奏调整：
+        // - 答对 + 有例句：2200ms（让 TTS 读完整个例句）
+        // - 答对 + 无例句：600ms（保持原节奏）
+        // - 答错 + 英语题型：1800ms（让 TTS 读完正确答案单词，给孩子再听一次的机会）
+        // - 答错 + 其他题型：1400ms（保持原节奏）
+        val spokenOnWrong = !correct && subject == Subject.ENGLISH && containsEnglish(q.answer)
         val nextDelay = when {
             correct && example.visibility == View.VISIBLE -> 2200L
             correct -> 600L
+            spokenOnWrong -> 1800L
             else -> 1400L
         }
         fb.postDelayed({ showQuizQuestion() }, nextDelay)
