@@ -9,12 +9,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kidsguard.app.R
+import com.kidsguard.app.data.DIFFICULTY_SPAN
 import com.kidsguard.app.data.Difficulty
 import com.kidsguard.app.data.PrefsManager
 import com.kidsguard.app.data.Question
 import com.kidsguard.app.data.QuestionRepository
 import com.kidsguard.app.data.Subject
 import com.kidsguard.app.data.ThemeManager
+import com.kidsguard.app.quiz.Curriculum
 import kotlin.random.Random
 
 /**
@@ -61,6 +63,13 @@ class PracticeActivity : AppCompatActivity() {
             R.id.btnMedium to Difficulty.MEDIUM,
             R.id.btnHard to Difficulty.HARD
         )
+
+        // 从上次做到哪儿接着往后做，而不是每次进来都从第一题重来。
+        // 这样「一直往下做」就等同于「跟着人教版课本往前学」，难度也自然跟着爬坡。
+        val done = prefs.getProgress(subject, prefs.grade)
+        difficulty = Difficulty.of(done)
+        posInBlock = done % DIFFICULTY_SPAN
+
         tabs.forEach { (id, diff) ->
             findViewById<Button>(id).setOnClickListener {
                 difficulty = diff

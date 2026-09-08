@@ -51,8 +51,15 @@ class QuestionRepository(context: Context) {
      *
      * 只动展示顺序，不动答案本身，所以判分逻辑（比对文本）完全不受影响。
      */
+    /**
+     * 洗牌用的随机源。
+     * 显式用 java.util.Random（按系统时间播种），不依赖默认随机源，
+     * 确保每道题每次出现时正确选项的落点都不一样。
+     */
+    private val shuffleRandom = Random(System.nanoTime())
+
     private fun shuffleOptions(q: Question): Question =
-        if (q.options.size > 1) q.copy(options = q.options.shuffled()) else q
+        if (q.options.size > 1) q.copy(options = q.options.shuffled(shuffleRandom)) else q
 
     /** 运动模块取任务 */
     fun sportTask(grade: Int, index: Int): SportTask = SportTaskBank.taskFor(grade, index)

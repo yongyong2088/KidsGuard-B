@@ -63,6 +63,48 @@ class AppClassifier(private val prefs: PrefsManager) {
     /** 预置名单里的中文名，用于在列表中显示备注 */
     fun presetLabel(pkg: String): String? = PRESET_RESTRICTED[pkg] ?: PRESET_LEARNING[pkg]
 
+    /**
+     * 推荐名单：**不管有没有安装**都列出来。
+     *
+     * 为什么必须有这一页：原来的「最近使用 / 全部应用」两页都只显示已装的应用，
+     * 于是王者荣耀、蛋仔派对这类主流游戏只要孩子还没装，家长就永远找不到、也没法提前拦。
+     * 这里把预置名单全列出来，未安装的标上「（未安装）」，家长可以先归好类，
+     * 日后孩子装上就自动按这个分类生效。
+     */
+    fun presetApps(context: Context): List<AppInfo> {
+        val installed = getLauncherApps(context).map { it.pkg }.toSet()
+        val rules = prefs.getAppRules()
+        return (PRESET_RESTRICTED.toList() + PRESET_LEARNING.toList())
+            .map { (pkg, label) ->
+                val suggested =
+                    if (PRESET_RESTRICTED.containsKey(pkg)) AppCategory.RESTRICTED else AppCategory.LEARNING
+                AppInfo(
+                    pkg = pkg,
+                    label = label + if (pkg in installed) "" else "（未安装）",
+                    category = rules[pkg]?.category ?: suggested
+                )
+            }
+            // 游戏/短视频（受限）排最前，方便家长一眼找到要拦的
+            .sortedWith(
+                compareBy<AppInfo>(
+                    { if (it.category == AppCategory.RESTRICTED) 0 else if (it.category == AppCategory.LEARNING) 1 else 2 },
+                    { it.label }
+                )
+            )
+    }
+
+    /**
+     * 一键把推荐名单里的娱乐类全部标记为受限、学习类标记为学习。
+     * 由家长在「推荐名单」页手动点按钮触发，不是自动执行。
+     */
+    fun markAllPresets() {
+        val rules = prefs.getAppRules()
+        PRESET_RESTRICTED.keys.forEach { rules[it] = AppRule(it, AppCategory.RESTRICTED) }
+        PRESET_LEARNING.keys.forEach { rules[it] = AppRule(it, AppCategory.LEARNING) }
+        rules[SELF_PACKAGE] = AppRule(SELF_PACKAGE, AppCategory.LEARNING)
+        prefs.saveAppRules(rules)
+    }
+
     data class AppInfo(val pkg: String, val label: String, val category: AppCategory)
 
     /**

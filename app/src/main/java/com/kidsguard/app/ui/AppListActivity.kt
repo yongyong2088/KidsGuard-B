@@ -32,7 +32,8 @@ class AppListActivity : AppCompatActivity() {
     private lateinit var classifier: AppClassifier
     private lateinit var adapter: AppAdapter
 
-    private var showRecent = true
+    /** 0 = 最近使用，1 = 全部应用，2 = 推荐名单 */
+    private var mode = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,28 +50,37 @@ class AppListActivity : AppCompatActivity() {
         binding.recycler.layoutManager = LinearLayoutManager(this)
         binding.recycler.adapter = adapter
 
-        binding.btnRecent.setOnClickListener {
-            showRecent = true
-            updateFilterButtons()
-            reload()
-        }
-        binding.btnAll.setOnClickListener {
-            showRecent = false
-            updateFilterButtons()
+        binding.btnRecent.setOnClickListener { switchTo(0) }
+        binding.btnAll.setOnClickListener { switchTo(1) }
+        binding.btnPreset.setOnClickListener { switchTo(2) }
+
+        binding.btnMarkAll.setOnClickListener {
+            classifier.markAllPresets()
+            android.widget.Toast.makeText(this, R.string.apps_mark_all_done, android.widget.Toast.LENGTH_SHORT).show()
             reload()
         }
 
-        updateFilterButtons()
+        switchTo(0)
+    }
+
+    private fun switchTo(next: Int) {
+        mode = next
+        val brand = resources.getColor(R.color.brand, theme)
+        val hint = resources.getColor(R.color.text_hint, theme)
+        binding.btnRecent.setTextColor(if (mode == 0) brand else hint)
+        binding.btnAll.setTextColor(if (mode == 1) brand else hint)
+        binding.btnPreset.setTextColor(if (mode == 2) brand else hint)
+        // 「一键拦截」只在推荐名单页出现
+        binding.btnMarkAll.visibility = if (mode == 2) View.VISIBLE else View.GONE
         reload()
     }
 
-    private fun updateFilterButtons() {
-        binding.btnRecent.setTextColor(resources.getColor(if (showRecent) R.color.brand else R.color.text_hint, theme))
-        binding.btnAll.setTextColor(resources.getColor(if (showRecent) R.color.text_hint else R.color.brand, theme))
-    }
-
     private fun reload() {
-        val list = if (showRecent) getRecentApps() else classifier.getLauncherApps(this)
+        val list = when (mode) {
+            0 -> getRecentApps()
+            1 -> classifier.getLauncherApps(this)
+            else -> classifier.presetApps(this)
+        }
         adapter.submit(list)
         binding.tvEmpty.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
     }

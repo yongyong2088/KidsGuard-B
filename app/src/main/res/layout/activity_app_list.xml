@@ -45,7 +45,26 @@
             android:text="@string/apps_filter_all"
             android:textColor="@color/text_hint" />
 
+        <Button
+            android:id="@+id/btnPreset"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apps_filter_preset"
+            android:textColor="@color/text_hint" />
+
     </LinearLayout>
+
+    <!-- 一键把推荐名单里的游戏/短视频全部设为受限，仅在「推荐名单」页显示 -->
+    <Button
+        android:id="@+id/btnMarkAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="@color/restricted"
+        android:text="@string/apps_mark_all"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"

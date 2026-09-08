@@ -1,19 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 运动：卡通篮球（橙色球体 + 拼缝 + 笑脸） -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp"
     android:height="48dp"
     android:viewportWidth="48"
     android:viewportHeight="48">
-    <!-- 球：外圈 + 拼缝线 -->
-    <circle
-        cx="24"
-        cy="24"
-        r="16"
-        android:fillColor="#00000000"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="3" />
+
+    <!-- 球体 -->
+    <path
+        android:fillColor="#FF8A3D"
+        android:pathData="M9 23a15 15 0 1 0 30 0a15 15 0 1 0 -30 0" />
+
+    <!-- 左侧拼缝 -->
     <path
         android:fillColor="#00000000"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="2.5"
-        android:pathData="M24 8L24 24M24 24L36 31M24 24L12 31M24 24L33 13M24 24L15 13" />
+        android:pathData="M10.6 15.5C16 20.5 16 25.5 10.6 30.5"
+        android:strokeColor="#C2410C"
+        android:strokeWidth="2.2" />
+
+    <!-- 右侧拼缝 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M37.4 15.5C32 20.5 32 25.5 37.4 30.5"
+        android:strokeColor="#C2410C"
+        android:strokeWidth="2.2" />
+
+    <!-- 左眼 -->
+    <path
+        android:fillColor="#3B3B3B"
+        android:pathData="M18.4 21a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0" />
+
+    <!-- 右眼 -->
+    <path
+        android:fillColor="#3B3B3B"
+        android:pathData="M25.2 21a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0" />
+
+    <!-- 微笑 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M20 27q4 3.4 8 0"
+        android:strokeColor="#3B3B3B"
+        android:strokeLineCap="round"
+        android:strokeWidth="2" />
 </vector>

@@ -1,22 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 音乐：卡通音符（粉色符头 + 笑脸 + 符干符尾） -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp"
     android:height="48dp"
     android:viewportWidth="48"
     android:viewportHeight="48">
-    <!-- 八分音符 -->
-    <ellipse
-        cx="17"
-        cy="35"
-        rx="7"
-        ry="5.5"
-        android:fillColor="#FFFFFF" />
-    <rect
-        x="22"
-        y="10"
-        width="3.5"
-        height="25"
-        android:fillColor="#FFFFFF" />
+
+    <!-- 符干 -->
+    <path
+        android:fillColor="#EC4899"
+        android:pathData="M26.5 33.5V9.5h3.6v24z" />
+
+    <!-- 符尾 -->
+    <path
+        android:fillColor="#EC4899"
+        android:pathData="M30.1 9.5C36 11.6 39.6 15 39 19.4C37 15.8 34 13.8 30.1 13.6Z" />
+
+    <!-- 符头 -->
+    <path
+        android:fillColor="#EC4899"
+        android:pathData="M13 33.5a7.5 6.4 0 1 0 15 0a7.5 6.4 0 1 0 -15 0" />
+
+    <!-- 左眼 -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M25.5 10C33 12 36 21 31 27C34 19 30 14 25.5 16Z" />
+        android:pathData="M15.6 32.4a1.9 1.9 0 1 0 3.8 0a1.9 1.9 0 1 0 -3.8 0" />
+
+    <!-- 右眼 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M22.2 32.4a1.9 1.9 0 1 0 3.8 0a1.9 1.9 0 1 0 -3.8 0" />
+
+    <!-- 微笑 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M17.6 36.2q3.4 2.6 6.8 0"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="1.7" />
 </vector>

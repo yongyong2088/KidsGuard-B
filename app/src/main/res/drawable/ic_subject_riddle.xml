@@ -1,22 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 脑筋急转弯：卡通灯泡（琥珀色灯泡 + 笑脸 + 光芒） -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp"
     android:height="48dp"
     android:viewportWidth="48"
     android:viewportHeight="48">
-    <!-- 灯泡：灯泡主体 + 灯座 + 光芒 -->
+
+    <!-- 灯泡玻璃 -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M24 8C16 8 11 14 11 21C11 26 14 29 17 32L17 36L31 36L31 32C34 29 37 26 37 21C37 14 32 8 24 8Z" />
-    <rect
-        x="18"
-        y="38"
-        width="12"
-        height="3"
-        rx="1.5"
-        android:fillColor="#FFFFFF" />
+        android:fillColor="#FFD93D"
+        android:pathData="M11 20a13 13 0 1 0 26 0a13 13 0 1 0 -26 0" />
+
+    <!-- 灯泡颈部 -->
+    <path
+        android:fillColor="#FFD93D"
+        android:pathData="M17.5 28h13v6h-13z" />
+
+    <!-- 灯口螺纹 -->
+    <path
+        android:fillColor="#9CA3AF"
+        android:pathData="M16.5 33.5h15v3.5h-15z" />
+    <path
+        android:fillColor="#9CA3AF"
+        android:pathData="M18.5 37h11v5a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2z" />
+
+    <!-- 左眼 -->
+    <path
+        android:fillColor="#3B3B3B"
+        android:pathData="M19.4 18.6a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0" />
+
+    <!-- 右眼 -->
+    <path
+        android:fillColor="#3B3B3B"
+        android:pathData="M24.2 18.6a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0" />
+
+    <!-- 微笑 -->
     <path
         android:fillColor="#00000000"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="2.5"
-        android:pathData="M24 3L24 7M12 11L15 14M36 11L33 14" />
+        android:pathData="M20.5 24.2q3.5 3 7 0"
+        android:strokeColor="#3B3B3B"
+        android:strokeLineCap="round"
+        android:strokeWidth="2" />
+
+    <!-- 光芒 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24 5.5V2.2M8.6 11L5.8 8.2M39.4 11l2.8 -2.8"
+        android:strokeColor="#FFB800"
+        android:strokeLineCap="round"
+        android:strokeWidth="2.4" />
 </vector>

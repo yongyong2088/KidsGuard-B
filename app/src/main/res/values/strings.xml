@@ -11,6 +11,7 @@
     <string name="main_greeting_evening">晚上好，%1$s</string>
     <string name="main_greeting_sub">今天也要加油学习哦</string>
     <string name="main_profile">%1$s · %2$s</string>
+    <string name="main_profile_today">%1$s · 今日已答 %2$d 题</string>
     <string name="main_modules_label">选一个模块开始吧</string>
     <string name="main_guardian_title">今日娱乐额度</string>
     <string name="main_guardian_free">额度内 · 放心玩</string>

@@ -2,6 +2,7 @@ package com.kidsguard.app.quiz
 
 import com.kidsguard.app.data.Difficulty
 import com.kidsguard.app.data.QUESTIONS_PER_GRADE
+import com.kidsguard.app.data.Subject
 
 /**
  * 人教版教学顺序表。
@@ -163,6 +164,22 @@ object Curriculum {
     fun mathSlots(grade: Int): List<Slot> = MATH_PLAN[grade] ?: MATH_PLAN.getValue(1)
     fun chineseSlots(grade: Int): List<Slot> = CHINESE_PLAN[grade] ?: CHINESE_PLAN.getValue(1)
     fun englishSlots(grade: Int): List<Slot> = ENGLISH_PLAN[grade] ?: ENGLISH_PLAN.getValue(1)
+
+    /**
+     * 某个模块某年级、第 index 题属于哪个单元。
+     * 用于在首页和练习页显示「第几单元 · 学什么」，让家长一眼看出孩子学到哪了。
+     * 音乐和脑筋急转弯不按单元排，返回空串（界面上不显示这一行）。
+     */
+    fun unitOf(subject: Subject, grade: Int, index: Int): String {
+        val slots = when (subject) {
+            Subject.MATH -> mathSlots(grade)
+            Subject.CHINESE -> chineseSlots(grade)
+            Subject.ENGLISH -> englishSlots(grade)
+            else -> return ""
+        }
+        if (slots.isEmpty()) return ""
+        return slots[index.coerceIn(0, slots.lastIndex)].unit
+    }
 
     /**
      * 把单元展开成 600 个题位。

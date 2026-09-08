@@ -1,15 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 语文：卡通打开的书（橙红封面 + 白书页 + 笑脸） -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="48dp"
     android:height="48dp"
     android:viewportWidth="48"
     android:viewportHeight="48">
-    <!-- 翻开的书 -->
+
+    <!-- 封面 -->
+    <path
+        android:fillColor="#E85D4E"
+        android:pathData="M24 12.5C19.3 9.2 13.4 8.4 8 9.6L8 37.4C13.4 36.2 19.3 37 24 40.3C28.7 37 34.6 36.2 40 37.4L40 9.6C34.6 8.4 28.7 9.2 24 12.5Z" />
+
+    <!-- 左书页 -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M10 14C15 10 21 10 24 12C27 10 33 10 38 14L38 38C33 34 27 34 24 36C21 34 15 34 10 38Z" />
+        android:pathData="M22.6 15.4C18.3 12.6 13.5 11.9 9.4 12.9L9.4 34.2C13.5 33.2 18.3 33.9 22.6 36.6Z" />
+
+    <!-- 右书页 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25.4 15.4C29.7 12.6 34.5 11.9 38.6 12.9L38.6 34.2C34.5 33.2 29.7 33.9 25.4 36.6Z" />
+
+    <!-- 左眼 -->
+    <path
+        android:fillColor="#3B3B3B"
+        android:pathData="M14.6 23.2a2.1 2.1 0 1 0 4.2 0a2.1 2.1 0 1 0 -4.2 0" />
+
+    <!-- 右眼 -->
+    <path
+        android:fillColor="#3B3B3B"
+        android:pathData="M29.2 23.2a2.1 2.1 0 1 0 4.2 0a2.1 2.1 0 1 0 -4.2 0" />
+
+    <!-- 微笑 -->
     <path
         android:fillColor="#00000000"
-        android:strokeColor="#FFFFFF"
-        android:strokeWidth="2"
-        android:pathData="M24 12L24 36" />
+        android:pathData="M19.5 29.5q4.5 3.6 9 0"
+        android:strokeColor="#3B3B3B"
+        android:strokeLineCap="round"
+        android:strokeWidth="2" />
 </vector>

@@ -89,10 +89,11 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<TextView>(R.id.tvGreeting).text = greeting
 
+        // 首页只展示年级和今日战果；主题色选择放在设置页，首页不再出现
         val gradeLabel = Grade.of(prefs.grade).label
-        val themeLabel = ThemeManager.label(prefs.theme)
+        prefs.ensureTodayRolled()
         findViewById<TextView>(R.id.tvProfile).text =
-            getString(R.string.main_profile, gradeLabel, themeLabel)
+            getString(R.string.main_profile_today, gradeLabel, prefs.answeredToday)
     }
 
     // ---------- 守护额度卡 ----------
@@ -207,14 +208,30 @@ class MainActivity : AppCompatActivity() {
                 setTypeface(typeface, android.graphics.Typeface.BOLD)
             }
             val done = prefs.getProgress(subject, grade)
-            val prog = TextView(this).apply {
+
+            col.addView(name)
+
+            // 当前学到的人教版单元名，让家长一眼看出进度落在哪一课
+            // 音乐和脑筋急转弯不按单元排，unitOf 返回空串，这一行就不显示
+            val unitName = if (subject.kind == Subject.Kind.QUIZ) {
+                Curriculum.unitOf(subject, grade, done)
+            } else ""
+            if (unitName.isNotBlank()) {
+                col.addView(TextView(this).apply {
+                    text = "正在学：$unitName"
+                    textSize = 12.5f
+                    setTextColor(getColor(R.color.text_hint))
+                    setPadding(0, (3 * density).toInt(), 0, 0)
+                    maxLines = 1
+                })
+            }
+
+            col.addView(TextView(this).apply {
                 text = getString(R.string.main_module_progress, done, QUESTIONS_PER_GRADE)
                 textSize = 13f
                 setTextColor(getColor(subject.colorRes))
-                setPadding(0, (6 * density).toInt(), 0, 0)
-            }
-            col.addView(name)
-            col.addView(prog)
+                setPadding(0, (4 * density).toInt(), 0, 0)
+            })
 
             // 右侧：「去练习」卡通药丸
             val go = TextView(this).apply {
