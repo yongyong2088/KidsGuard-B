@@ -95,6 +95,12 @@
     <string name="wrong_cleared">错题本已清空</string>
     <string name="common_cancel">取消</string>
 
+    <!-- v16 错题复习 -->
+    <string name="practice_review_title">🔁 错题复习</string>
+    <string name="review_progress">复习进度 %1$d / %2$d</string>
+    <string name="review_done">🎉 全部复习完毕！</string>
+    <string name="review_empty">错题本是空的，无需复习</string>
+
     <!-- 应用归类 -->
     <string name="apps_title">应用归类</string>
     <string name="apps_tip">只有「受限」的应用会被弹窗拦截。学习类应用永不弹窗、不计时。</string>

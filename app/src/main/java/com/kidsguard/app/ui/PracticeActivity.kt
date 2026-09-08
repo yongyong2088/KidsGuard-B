@@ -39,6 +39,13 @@ class PracticeActivity : AppCompatActivity() {
     private var current: Question? = null
     private var sportIndex = 0
 
+    /** 错题复习模式：true 表示按错题列表刷题，false 表示普通顺序练习 */
+    private var reviewMode: Boolean = false
+    /** 错题复习模式下的待刷题列表（按 subject/grade/index 三元组） */
+    private var reviewItems: List<PrefsManager.WrongEntry> = emptyList()
+    /** 当前复习题在 reviewItems 中的下标 */
+    private var reviewIdx: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         ThemeManager.apply(this)
         super.onCreate(savedInstanceState)
@@ -48,16 +55,34 @@ class PracticeActivity : AppCompatActivity() {
         repo = QuestionRepository(this)
         subject = Subject.of(intent.getStringExtra(EXTRA_SUBJECT).orEmpty())
 
+        // v16：解析 review 模式参数
+        reviewMode = intent.getStringExtra(EXTRA_MODE) == MODE_REVIEW
+        if (reviewMode) {
+            // 父 Activity 用 StringArray 传 "english|2|42" 形式的三元组（避免 Parcelable 复杂度）
+            reviewItems = intent.getStringArrayExtra(EXTRA_REVIEW_ITEMS).orEmpty()
+                .mapNotNull { decodeReviewItem(it) }
+            reviewIdx = 0
+            // review 模式下 subject 取第一题决定 TTS/音效（错题可能跨科目）
+            if (reviewItems.isNotEmpty()) {
+                subject = Subject.of(reviewItems.first().subject)
+            }
+        }
+
         // 英语 / 数学模块要读单词或题面，先把 TTS 引擎拉起来（异步初始化，不阻塞 UI）
         if (subject == Subject.ENGLISH || subject == Subject.MATH) EnglishSpeech.init(this)
 
         // 答题音效：所有题目类模块（除运动外）都预加载，孩子答对/答错有即时反馈
         if (subject.kind == Subject.Kind.QUIZ) SoundFx.init(this)
 
-        findViewById<TextView>(R.id.tvTitle).text = subject.label
+        // review 模式显示「错题复习」标题
+        val titleText = if (reviewMode) getString(R.string.practice_review_title) else subject.label
+        findViewById<TextView>(R.id.tvTitle).text = titleText
         findViewById<View>(R.id.btnBack).setOnClickListener { finish() }
 
-        if (subject.kind == Subject.Kind.SPORT) {
+        if (reviewMode) {
+            // review 模式不走 sport 分支（错题本不含运动）
+            setupReview()
+        } else if (subject.kind == Subject.Kind.SPORT) {
             setupSport()
         } else {
             setupQuiz()
@@ -110,10 +135,42 @@ class PracticeActivity : AppCompatActivity() {
         }
     }
 
+    // ---------- 错题复习模式 ----------
+
+    private fun setupReview() {
+        // 隐藏难度档（复习不切难度）
+        findViewById<LinearLayout>(R.id.difficultyRow).visibility = View.GONE
+        if (reviewItems.isEmpty()) {
+            Toast.makeText(this, R.string.review_empty, Toast.LENGTH_SHORT).show()
+            finish()
+            return
+        }
+        showQuizQuestion()
+    }
+
+    /**
+     * "english|2|42" → WrongEntry(english, 2, 42)
+     * 解析失败返回 null（被 list.mapNotNull 过滤掉）
+     */
+    private fun decodeReviewItem(s: String): PrefsManager.WrongEntry? {
+        val parts = s.split("|")
+        if (parts.size != 3) return null
+        val g = parts[1].toIntOrNull() ?: return null
+        val i = parts[2].toIntOrNull() ?: return null
+        return PrefsManager.WrongEntry(parts[0], g, i)
+    }
+
     private fun showQuizQuestion() {
         val grade = prefs.grade
-        val index = difficulty.range().first + posInBlock
-        val q = repo.questionAt(subject, grade, index)
+        val q: Question = if (reviewMode) {
+            val entry = reviewItems[reviewIdx]
+            // 复习时每题 subject 可能不同（TTS 触发条件依赖 subject 字段）
+            subject = Subject.of(entry.subject)
+            repo.questionAt(subject, entry.grade, entry.index)
+        } else {
+            val index = difficulty.range().first + posInBlock
+            repo.questionAt(subject, grade, index)
+        }
         current = q
 
         val tvQ = findViewById<TextView>(R.id.tvQuestion)
@@ -253,20 +310,43 @@ class PracticeActivity : AppCompatActivity() {
         // - 答错 + 其他题型：1400ms（保持原节奏）
         val spokenOnWrong = !correct && subject == Subject.ENGLISH && containsEnglish(q.answer)
         val spokenOnMathWrong = !correct && subject == Subject.MATH && isPureNumber(q.answer)
-        val nextDelay = when {
+        var nextDelay = when {
             correct && example.visibility == View.VISIBLE -> 2200L
             correct -> 600L
             spokenOnWrong -> 1800L
             spokenOnMathWrong -> 1800L
             else -> 1400L
         }
+
+        // v16 错题复习模式：答完一题后切到下一题或完成
+        if (reviewMode) {
+            // review 模式跳过普通练习的 posInBlock 自增（按错题列表下标推进）
+            reviewIdx++
+            if (reviewIdx >= reviewItems.size) {
+                nextDelay = 1200L  // 完成时延迟稍长，让"全部复习完毕"Toast 弹出后用户能看到
+                fb.postDelayed({
+                    Toast.makeText(this, R.string.review_done, Toast.LENGTH_LONG).show()
+                    finish()
+                }, nextDelay)
+                return  // 直接返回，不再调 showQuizQuestion
+            }
+            fb.postDelayed({ showQuizQuestion() }, nextDelay)
+            return
+        }
+
+        posInBlock = (posInBlock + 1) % 200
         fb.postDelayed({ showQuizQuestion() }, nextDelay)
     }
 
     private fun updateProgress() {
-        val done = prefs.getProgress(subject, prefs.grade)
-        findViewById<TextView>(R.id.tvProgress).text =
-            getString(R.string.practice_progress, subject.label, done)
+        val tv = findViewById<TextView>(R.id.tvProgress)
+        if (reviewMode) {
+            // 复习模式显示「复习 X / N」
+            tv.text = getString(R.string.review_progress, reviewIdx + 1, reviewItems.size)
+        } else {
+            val done = prefs.getProgress(subject, prefs.grade)
+            tv.text = getString(R.string.practice_progress, subject.label, done)
+        }
     }
 
     // ---------- 运动模式 ----------
@@ -327,5 +407,10 @@ class PracticeActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_SUBJECT = "extra_subject"
+        /** v16 review 模式：值 = MODE_REVIEW 表示按错题列表刷题 */
+        const val EXTRA_MODE = "extra_mode"
+        const val MODE_REVIEW = "review"
+        /** review 模式下要刷的题列表，元素格式 "subject|grade|index" */
+        const val EXTRA_REVIEW_ITEMS = "extra_review_items"
     }
 }

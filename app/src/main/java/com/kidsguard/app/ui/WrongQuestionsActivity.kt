@@ -44,7 +44,7 @@ class WrongQuestionsActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnClear).setOnClickListener { confirmClear() }
         findViewById<Button>(R.id.btnPractice).setOnClickListener {
-            Toast.makeText(this, "复习功能敬请期待（v16+）", Toast.LENGTH_SHORT).show()
+            startReview()
         }
 
         renderList()
@@ -107,5 +107,22 @@ class WrongQuestionsActivity : AppCompatActivity() {
             }
             .setNegativeButton(R.string.common_cancel, null)
             .show()
+    }
+
+    private fun startReview() {
+        val list = prefs.wrongList()
+        if (list.isEmpty()) {
+            Toast.makeText(this, R.string.review_empty, Toast.LENGTH_SHORT).show()
+            return
+        }
+        // 把 WrongEntry 列表序列化成 "sub|g|i" 字符串数组
+        val items = list.map { "${it.subject}|${it.grade}|${it.index}" }.toTypedArray()
+        // subject 取第一题（review 模式 PracticeActivity 会自己切 subject）
+        val firstSub = list.first().subject
+        val intent = Intent(this, PracticeActivity::class.java)
+            .putExtra(PracticeActivity.EXTRA_SUBJECT, firstSub)
+            .putExtra(PracticeActivity.EXTRA_MODE, PracticeActivity.MODE_REVIEW)
+            .putExtra(PracticeActivity.EXTRA_REVIEW_ITEMS, items)
+        startActivity(intent)
     }
 }
