@@ -137,6 +137,11 @@ class PracticeActivity : AppCompatActivity() {
                     Toast.makeText(this, R.string.practice_speak_unavailable, Toast.LENGTH_SHORT).show()
                 }
             }
+            // 自动朗读：题面显示完延迟 350ms 念一遍 answer，让小孩先听再选
+            // 不可用时 speak 内部静默跳过（v10 兜底），按钮仍可手动再听
+            if (EnglishSpeech.available()) {
+                speakBtn.postDelayed({ EnglishSpeech.speak(q.answer) }, 350)
+            }
         } else {
             speakBtn.visibility = View.GONE
         }
