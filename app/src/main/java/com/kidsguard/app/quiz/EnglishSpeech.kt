@@ -80,6 +80,9 @@ object EnglishSpeech {
         tts?.stop()
     }
 
+    /** 是否真的可以朗读（init 完成 + 至少装了英文 Locale）。给 UI 当 fallback 判断用 */
+    fun available(): Boolean = ready && tts != null
+
     /** Activity.onDestroy 调一下，否则引擎泄漏 */
     fun shutdown() {
         synchronized(this) {

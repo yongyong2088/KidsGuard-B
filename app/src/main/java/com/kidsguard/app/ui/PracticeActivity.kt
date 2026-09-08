@@ -130,7 +130,13 @@ class PracticeActivity : AppCompatActivity() {
         val speakable = subject == Subject.ENGLISH && containsEnglish(q.answer)
         if (speakable) {
             speakBtn.visibility = View.VISIBLE
-            speakBtn.setOnClickListener { EnglishSpeech.speak(q.answer) }
+            speakBtn.setOnClickListener {
+                if (EnglishSpeech.available()) {
+                    EnglishSpeech.speak(q.answer)
+                } else {
+                    Toast.makeText(this, R.string.practice_speak_unavailable, Toast.LENGTH_SHORT).show()
+                }
+            }
         } else {
             speakBtn.visibility = View.GONE
         }
@@ -185,7 +191,12 @@ class PracticeActivity : AppCompatActivity() {
                 example.text = getString(R.string.practice_example_tpl, ex.first, ex.second)
                 example.visibility = View.VISIBLE
                 // 朗读整个英文例句，让孩子在语境里再听一次
-                EnglishSpeech.speak(ex.first)
+                // 设备无声时弹一次 Toast，避免孩子以为按钮坏了
+                if (EnglishSpeech.available()) {
+                    EnglishSpeech.speak(ex.first)
+                } else {
+                    Toast.makeText(this, R.string.practice_speak_unavailable, Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
