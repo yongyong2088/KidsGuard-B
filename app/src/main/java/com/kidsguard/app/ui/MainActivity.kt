@@ -20,6 +20,7 @@ import com.kidsguard.app.data.Subject
 import com.kidsguard.app.data.ThemeManager
 import com.kidsguard.app.monitor.AppClassifier
 import com.kidsguard.app.monitor.UsageMonitorService
+import com.kidsguard.app.quiz.Curriculum
 
 /**
  * 学习中心主界面（改版后）。
@@ -46,8 +47,7 @@ class MainActivity : AppCompatActivity() {
         buildModuleCards()
 
         val gear = findViewById<android.widget.ImageButton>(R.id.btnSettings)
-        // 齿轮矢量图是白色，按主题主色着色后才能在浅色底上看清
-        gear.setColorFilter(ThemeManager.brand(this))
+        // 图标已自带卡通配色，不要再着色，否则颜色会被盖掉
         gear.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
