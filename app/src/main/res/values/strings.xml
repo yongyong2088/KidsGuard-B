@@ -165,4 +165,12 @@
     <string name="reward_gift_pin_title">请家长输入密码</string>
     <string name="reward_gift_pin_hint">家长密码</string>
     <string name="reward_star_label">我的星星</string>
+    <string name="reward_custom_label">🎨 家长自定义奖励</string>
+    <string name="reward_btn_add">＋ 添加新奖励</string>
+    <string name="reward_add_title">添加奖励</string>
+    <string name="reward_add_name_hint">奖励名称（如：去游乐园）</string>
+    <string name="reward_add_cost_hint">需要多少星星</string>
+    <string name="reward_btn_delete">删除</string>
+    <string name="reward_delete_confirm">确定删除「%1$s」吗？</string>
+    <string name="reward_cost_invalid">请填写正确的名称和星星数</string>
 </resources>

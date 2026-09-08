@@ -322,6 +322,50 @@ class PrefsManager(context: Context) {
         return true
     }
 
+    // ---------- 家长自定义奖励 ----------
+
+    /** 家长自己定义的奖励清单（存 JSON） */
+    var customRewards: List<CustomReward>
+        get() {
+            val raw = prefs.getString(KEY_CUSTOM_REWARDS, null) ?: return emptyList()
+            return try {
+                val arr = JSONArray(raw)
+                (0 until arr.length).mapNotNull { i ->
+                    val o = arr.getJSONObject(i)
+                    val name = o.optString("name")
+                    if (name.isBlank()) null
+                    else CustomReward(
+                        id = o.optString("id"),
+                        name = name,
+                        cost = o.optInt("cost", 20),
+                        emoji = o.optString("emoji", "\uD83C\uDF81")
+                    )
+                }
+            } catch (e: Exception) {
+                emptyList()
+            }
+        }
+        set(value) {
+            val arr = JSONArray()
+            value.forEach {
+                val o = JSONObject()
+                o.put("id", it.id)
+                o.put("name", it.name)
+                o.put("cost", it.cost)
+                o.put("emoji", it.emoji)
+                arr.put(o)
+            }
+            prefs.edit().putString(KEY_CUSTOM_REWARDS, arr.toString()).apply()
+        }
+
+    fun addCustomReward(reward: CustomReward) {
+        customRewards = customRewards + reward
+    }
+
+    fun removeCustomReward(id: String) {
+        customRewards = customRewards.filter { it.id != id }
+    }
+
     companion object {
         private const val DEFAULT_PIN = "1234"
 
@@ -345,6 +389,7 @@ class PrefsManager(context: Context) {
         private const val KEY_SPORT_TODAY = "sport_today"
         private const val KEY_MONITOR_ENABLED = "monitor_enabled"
         private const val KEY_STARS = "stars"
+        private const val KEY_CUSTOM_REWARDS = "custom_rewards"
         private const val KEY_FREE_PASSES = "free_passes"
         private const val KEY_PRESETS_APPLIED = "presets_applied"
         private const val KEY_PRESET_VERSION = "preset_version"

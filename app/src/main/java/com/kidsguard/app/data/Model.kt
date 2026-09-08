@@ -53,3 +53,17 @@ data class QuizState(
     val correctCount: Int = 0,
     val wrongCount: Int = 0
 )
+
+/**
+ * 家长自定义的奖励。
+ *
+ * 内置的「娱乐时间 / 免一次弹窗」是通用的，但每个家庭真正能激励孩子的奖励不一样
+ * （去游乐园、买本书、多看一集动画……），所以开放给家长自己定义：名字 + 需要多少星星。
+ */
+data class CustomReward(
+    val id: String,
+    val name: String,
+    /** 兑换需要的星星数 */
+    val cost: Int,
+    val emoji: String = "\uD83C\uDF81"
+)

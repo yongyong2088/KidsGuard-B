@@ -263,5 +263,30 @@
                 android:text="@string/reward_btn_exchange" />
         </LinearLayout>
 
+        <!-- 家长自定义奖励（RewardActivity 动态填充） -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/reward_custom_label"
+            android:textColor="@color/text_sub"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/customContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <Button
+            android:id="@+id/btnAddReward"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/reward_btn_add"
+            android:textColor="?attr/kgBrand" />
+
     </LinearLayout>
 </ScrollView>
