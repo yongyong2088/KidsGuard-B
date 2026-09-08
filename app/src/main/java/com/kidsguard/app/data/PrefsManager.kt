@@ -330,7 +330,7 @@ class PrefsManager(context: Context) {
             val raw = prefs.getString(KEY_CUSTOM_REWARDS, null) ?: return emptyList()
             return try {
                 val arr = JSONArray(raw)
-                (0 until arr.length).mapNotNull { i ->
+                (0 until arr.length()).mapNotNull { i ->
                     val o = arr.getJSONObject(i)
                     val name = o.optString("name")
                     if (name.isBlank()) null
