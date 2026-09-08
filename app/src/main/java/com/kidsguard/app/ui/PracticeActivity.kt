@@ -47,8 +47,8 @@ class PracticeActivity : AppCompatActivity() {
         repo = QuestionRepository(this)
         subject = Subject.of(intent.getStringExtra(EXTRA_SUBJECT).orEmpty())
 
-        // 英语模块要读单词，先把 TTS 引擎拉起来（异步初始化，不阻塞 UI）
-        if (subject == Subject.ENGLISH) EnglishSpeech.init(this)
+        // 英语 / 数学模块要读单词或题面，先把 TTS 引擎拉起来（异步初始化，不阻塞 UI）
+        if (subject == Subject.ENGLISH || subject == Subject.MATH) EnglishSpeech.init(this)
 
         findViewById<TextView>(R.id.tvTitle).text = subject.label
         findViewById<View>(R.id.btnBack).setOnClickListener { finish() }
@@ -146,6 +146,14 @@ class PracticeActivity : AppCompatActivity() {
             speakBtn.visibility = View.GONE
         }
 
+        // 数学题型：题面显示完自动用中文 TTS 念一遍（"七加八等于多少"）
+        // 一年级小孩不认字，听到声音比看 "7 + 8 = ?" 友好
+        if (subject == Subject.MATH && EnglishSpeech.available()) {
+            findViewById<View>(R.id.tvQuestion).postDelayed({
+                EnglishSpeech.speakZh(q.text)
+            }, 350)
+        }
+
         if (q.hasOptions) {
             et.visibility = View.GONE
             opts.visibility = View.VISIBLE
@@ -211,6 +219,11 @@ class PracticeActivity : AppCompatActivity() {
             }
         }
 
+        // 数学题：答对 / 答错时如果答案是纯数字，用中文 TTS 朗读答案（让答对更爽、答错也学一次）
+        if (subject == Subject.MATH && isPureNumber(q.answer) && EnglishSpeech.available()) {
+            EnglishSpeech.speakZh(q.answer)
+        }
+
         if (correct) {
             prefs.addProgress(subject, prefs.grade)
             prefs.answeredToday = prefs.answeredToday + 1
@@ -221,12 +234,15 @@ class PracticeActivity : AppCompatActivity() {
         // - 答对 + 有例句：2200ms（让 TTS 读完整个例句）
         // - 答对 + 无例句：600ms（保持原节奏）
         // - 答错 + 英语题型：1800ms（让 TTS 读完正确答案单词，给孩子再听一次的机会）
+        // - 答错 + 数学题型：1800ms（同上，让 TTS 读答案数字）
         // - 答错 + 其他题型：1400ms（保持原节奏）
         val spokenOnWrong = !correct && subject == Subject.ENGLISH && containsEnglish(q.answer)
+        val spokenOnMathWrong = !correct && subject == Subject.MATH && isPureNumber(q.answer)
         val nextDelay = when {
             correct && example.visibility == View.VISIBLE -> 2200L
             correct -> 600L
             spokenOnWrong -> 1800L
+            spokenOnMathWrong -> 1800L
             else -> 1400L
         }
         fb.postDelayed({ showQuizQuestion() }, nextDelay)
@@ -273,6 +289,26 @@ class PracticeActivity : AppCompatActivity() {
 
     /** 判断字符串是否含英文字母（用于决定英语题是否值得朗读） */
     private fun containsEnglish(s: String): Boolean = s.any { it in 'a'..'z' || it in 'A'..'Z' }
+
+    /** 判断字符串是否是纯数字（用于数学题答案朗读：可能含正负号、小数点，这里宽松处理） */
+    private fun isPureNumber(s: String): Boolean {
+        val t = s.trim()
+        if (t.isEmpty()) return false
+        // 允许首字符为 - 或 +，其余为数字或小数点
+        var i = 0
+        if (t[0] == '-' || t[0] == '+') i = 1
+        if (i >= t.length) return false
+        var hasDigit = false
+        var hasDot = false
+        while (i < t.length) {
+            val c = t[i]
+            if (c.isDigit()) hasDigit = true
+            else if (c == '.' && !hasDot) hasDot = true
+            else return false
+            i++
+        }
+        return hasDigit
+    }
 
     companion object {
         const val EXTRA_SUBJECT = "extra_subject"

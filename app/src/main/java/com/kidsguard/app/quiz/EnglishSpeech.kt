@@ -75,6 +75,33 @@ object EnglishSpeech {
         engine.speak(trimmed, TextToSpeech.QUEUE_FLUSH, null, "kg_${System.currentTimeMillis()}")
     }
 
+    /**
+     * 朗读一段中文（数学题型专用：题面是中文 + 数字 + 运算符）。
+     * 与 [speak] 共用同一个 TTS 引擎，但临时切到 CHINESE Locale。
+     * 引擎会按文本语言自动判断是否需要切；切换前不会打断当前朗读。
+     */
+    fun speakZh(text: String) {
+        val trimmed = text.trim()
+        if (trimmed.isEmpty()) return
+        val engine = tts ?: run {
+            appCtx?.let { init(it) }
+            return
+        }
+        if (!ready) {
+            Log.d(TAG, "TTS not ready yet, drop zh: $trimmed")
+            return
+        }
+        // 中文 Locale；不可用时兜底回英文（虽然读起来奇怪，但比静默失败好）
+        val loc = when {
+            engine.isLanguageAvailable(Locale.SIMPLIFIED_CHINESE) >= TextToSpeech.LANG_AVAILABLE -> Locale.SIMPLIFIED_CHINESE
+            engine.isLanguageAvailable(Locale.CHINESE) >= TextToSpeech.LANG_AVAILABLE -> Locale.CHINESE
+            else -> Locale.US
+        }
+        // QUEUE_ADD 让切换前的朗读完再读新的；数字 + 算式不会和前一道题的英文冲突
+        engine.setLanguage(loc)
+        engine.speak(trimmed, TextToSpeech.QUEUE_ADD, null, "kg_zh_${System.currentTimeMillis()}")
+    }
+
     /** 停掉正在读的 */
     fun stop() {
         tts?.stop()
