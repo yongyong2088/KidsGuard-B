@@ -95,6 +95,19 @@
         android:textSize="24sp"
         android:lineSpacingExtra="6dp" />
 
+    <!-- 英语题型专用：听标准发音。仅 ENGLISH 题型 + answer 含英文时才可见 -->
+    <Button
+        android:id="@+id/btnSpeak"
+        style="@style/CartoonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:minWidth="160dp"
+        android:text="@string/practice_speak"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
     <!-- 四选一 -->
     <LinearLayout
         android:id="@+id/optionsContainer"

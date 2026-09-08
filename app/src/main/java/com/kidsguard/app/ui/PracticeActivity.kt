@@ -17,6 +17,7 @@ import com.kidsguard.app.data.QuestionRepository
 import com.kidsguard.app.data.Subject
 import com.kidsguard.app.data.ThemeManager
 import com.kidsguard.app.quiz.Curriculum
+import com.kidsguard.app.quiz.EnglishSpeech
 import kotlin.random.Random
 
 /**
@@ -45,6 +46,9 @@ class PracticeActivity : AppCompatActivity() {
         repo = QuestionRepository(this)
         subject = Subject.of(intent.getStringExtra(EXTRA_SUBJECT).orEmpty())
 
+        // 英语模块要读单词，先把 TTS 引擎拉起来（异步初始化，不阻塞 UI）
+        if (subject == Subject.ENGLISH) EnglishSpeech.init(this)
+
         findViewById<TextView>(R.id.tvTitle).text = subject.label
         findViewById<View>(R.id.btnBack).setOnClickListener { finish() }
 
@@ -53,6 +57,12 @@ class PracticeActivity : AppCompatActivity() {
         } else {
             setupQuiz()
         }
+    }
+
+    override fun onDestroy() {
+        // 释放 TTS 引擎；非英语模块 init 没被调用过，shutdown 内部幂等
+        EnglishSpeech.shutdown()
+        super.onDestroy()
     }
 
     // ---------- 题目模式 ----------
@@ -110,6 +120,16 @@ class PracticeActivity : AppCompatActivity() {
         fb.text = ""
         tip.visibility = View.GONE
         submit.text = getString(R.string.lock_btn_submit)
+
+        // 英语题型：answer 含英文时显示「听发音」按钮（enToCn 的 answer 是中文就不显示）
+        val speakBtn = findViewById<View>(R.id.btnSpeak)
+        val speakable = subject == Subject.ENGLISH && containsEnglish(q.answer)
+        if (speakable) {
+            speakBtn.visibility = View.VISIBLE
+            speakBtn.setOnClickListener { EnglishSpeech.speak(q.answer) }
+        } else {
+            speakBtn.visibility = View.GONE
+        }
 
         if (q.hasOptions) {
             et.visibility = View.GONE
@@ -199,6 +219,9 @@ class PracticeActivity : AppCompatActivity() {
     }
 
     private fun normalize(s: String): String = s.trim().replace(" ", "").lowercase()
+
+    /** 判断字符串是否含英文字母（用于决定英语题是否值得朗读） */
+    private fun containsEnglish(s: String): Boolean = s.any { it in 'a'..'z' || it in 'A'..'Z' }
 
     companion object {
         const val EXTRA_SUBJECT = "extra_subject"

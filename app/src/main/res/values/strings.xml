@@ -103,6 +103,10 @@
     <string name="practice_sport_count">今日已完成 %1$d 次运动</string>
     <string name="practice_sport_cheer">真棒！动一动更聪明</string>
 
+    <!-- 英语题型：点喇叭听标准发音 -->
+    <string name="practice_speak">🔊 听发音</string>
+    <string name="practice_speak_unavailable">该设备暂不支持朗读，请跟孩子一起读</string>
+
     <!-- 通知 -->
     <string name="notify_channel_name">监控服务</string>
     <string name="notify_text">正在守护中 · 今日已用 %1$d 分钟</string>
