@@ -243,5 +243,15 @@
             android:layout_marginTop="22dp"
             android:text="@string/settings_save" />
 
+        <!-- 错题本入口（v15 新增） -->
+        <Button
+            android:id="@+id/btnWrong"
+            style="@style/CartoonButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="?attr/kgBrandLight"
+            android:text="@string/settings_wrong_btn"
+            android:textColor="?attr/kgBrandDark" />
+
     </LinearLayout>
 </ScrollView>

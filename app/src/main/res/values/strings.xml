@@ -81,6 +81,20 @@
     <string name="settings_saved">资料已保存</string>
     <string name="settings_name_empty">请先填写孩子的名字</string>
 
+    <!-- 错题本 -->
+    <string name="settings_wrong_btn">错题本（%1$d 题）</string>
+    <string name="settings_wrong_empty">错题本是空的</string>
+    <string name="wrong_title">📒 错题本</string>
+    <string name="wrong_count">当前共 %1$d 道错题</string>
+    <string name="wrong_empty">还没有错题，继续努力 👍</string>
+    <string name="wrong_practice">🔁 开始复习</string>
+    <string name="wrong_clear">🗑️ 清空错题本</string>
+    <string name="wrong_clear_title">清空错题本？</string>
+    <string name="wrong_clear_message">清空后不可恢复，确定要清空所有错题吗？</string>
+    <string name="wrong_clear_confirm">确认清空</string>
+    <string name="wrong_cleared">错题本已清空</string>
+    <string name="common_cancel">取消</string>
+
     <!-- 应用归类 -->
     <string name="apps_title">应用归类</string>
     <string name="apps_tip">只有「受限」的应用会被弹窗拦截。学习类应用永不弹窗、不计时。</string>

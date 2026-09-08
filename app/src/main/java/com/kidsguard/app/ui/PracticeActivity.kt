@@ -234,6 +234,11 @@ class PracticeActivity : AppCompatActivity() {
             prefs.addProgress(subject, prefs.grade)
             prefs.answeredToday = prefs.answeredToday + 1
             prefs.addStars(1)
+            // 答对错题本里的题 → 移除（鼓励掌握后出库）
+            prefs.removeWrong(subject, prefs.grade, q.index)
+        } else {
+            // 答错时加入错题本（自动查重）
+            prefs.addWrong(subject, prefs.grade, q.index)
         }
         // 答对/答错音效（仅题目类模块，运动模块不播）
         if (subject.kind == Subject.Kind.QUIZ) {

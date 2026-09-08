@@ -129,6 +129,69 @@ class PrefsManager(context: Context) {
 
     private fun keyProgress(subject: Subject, grade: Int) = "prog_${subject.key}_$grade"
 
+    // ========== 错题本 ==========
+
+    /** 错题条目：科目 + 年级 + 题号（足够定位回原题） */
+    data class WrongEntry(val subject: String, val grade: Int, val index: Int)
+
+    private val KEY_WRONG = "wrong_questions"
+    private val WRONG_LIMIT = 100  // 最多保留 100 题，超过按最旧淘汰
+
+    /** 错题条目数 */
+    val wrongCount: Int get() = loadWrong().size
+
+    /** 错题列表（按加入顺序，最旧在前） */
+    fun wrongList(): List<WrongEntry> = loadWrong()
+
+    /** 加入一道错题（同 key 重复加入会被忽略）。返回 true 表示新增，false 表示已存在或列表已满未替换 */
+    fun addWrong(subject: Subject, grade: Int, index: Int) {
+        val list = loadWrong().toMutableList()
+        val key = "${subject.key}|$grade|$index"
+        if (list.any { "${it.subject}|${it.grade}|${it.index}" == key }) return
+        list.add(WrongEntry(subject.key, grade, index))
+        // 超限：丢弃最旧的（保留最近的便于复习）
+        while (list.size > WRONG_LIMIT) list.removeAt(0)
+        saveWrong(list)
+    }
+
+    /** 答对错题时移除（鼓励掌握后出库） */
+    fun removeWrong(subject: Subject, grade: Int, index: Int) {
+        val list = loadWrong().toMutableList()
+        val key = "${subject.key}|$grade|$index"
+        val removed = list.removeAll { "${it.subject}|${it.grade}|${it.index}" == key }
+        if (removed) saveWrong(list)
+    }
+
+    /** 清空错题本（家长在设置页手动触发） */
+    fun clearWrong() {
+        prefs.edit().remove(KEY_WRONG).apply()
+    }
+
+    private fun loadWrong(): List<WrongEntry> {
+        val raw = prefs.getString(KEY_WRONG, null) ?: return emptyList()
+        return try {
+            val arr = JSONArray(raw)
+            buildList {
+                for (i in 0 until arr.length()) {
+                    val o = arr.getJSONObject(i)
+                    add(WrongEntry(o.getString("sub"), o.getInt("g"), o.getInt("i")))
+                }
+            }
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    private fun saveWrong(list: List<WrongEntry>) {
+        val arr = JSONArray()
+        list.forEach { e ->
+            arr.put(JSONObject().apply {
+                put("sub", e.subject); put("g", e.grade); put("i", e.index)
+            })
+        }
+        prefs.edit().putString(KEY_WRONG, arr.toString()).apply()
+    }
+
     /** 今日学习分钟数（跨天清零） */
     var learnedMinutesToday: Int
         get() = prefs.getInt(KEY_LEARNED_MINUTES, 0)

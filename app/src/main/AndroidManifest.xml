@@ -82,6 +82,12 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <!-- 错题本查看（家长入口，受 PIN 保护：实际靠家长模式层层跳转） -->
+        <activity
+            android:name=".ui.WrongQuestionsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- 核心监测服务 -->
         <service
             android:name=".monitor.UsageMonitorService"

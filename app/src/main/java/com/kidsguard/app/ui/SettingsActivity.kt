@@ -68,6 +68,19 @@ class SettingsActivity : AppCompatActivity() {
         highlightTheme()
 
         findViewById<Button>(R.id.btnSave).setOnClickListener { save() }
+        findViewById<Button>(R.id.btnWrong).setOnClickListener {
+            startActivity(Intent(this, WrongQuestionsActivity::class.java))
+        }
+        // 错题数会随答题变化，每次进入设置页都刷新
+        findViewById<Button>(R.id.btnWrong).text =
+            getString(R.string.settings_wrong_btn, prefs.wrongCount)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // 从错题本页返回后，错题数可能变了，刷新按钮文案
+        findViewById<Button>(R.id.btnWrong).text =
+            getString(R.string.settings_wrong_btn, prefs.wrongCount)
     }
 
     private fun highlightGrade() {
