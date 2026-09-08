@@ -31,7 +31,7 @@ class RewardActivity : AppCompatActivity() {
     private lateinit var prefs: PrefsManager
 
     companion object {
-        private const val COST_TIME = 10
+        private const val COST_TIME = 50
         private const val COST_PASS = 15
         private const val COST_GIFT = 30
     }
