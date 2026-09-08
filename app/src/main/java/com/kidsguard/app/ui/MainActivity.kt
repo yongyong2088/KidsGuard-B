@@ -43,6 +43,13 @@ class MainActivity : AppCompatActivity() {
         // 首次启动把预置名单中已安装的应用写进配置
         AppClassifier(prefs).applyPresetsIfNeeded(this)
 
+        // 卡通渐变头图：用主题主色到深色的渐变，让首页第一眼就明亮活泼
+        findViewById<View>(R.id.headerCard).background =
+            android.graphics.drawable.GradientDrawable(
+                android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+                intArrayOf(ThemeManager.brand(this), ThemeManager.brandDark(this))
+            ).apply { cornerRadius = 22 * resources.displayMetrics.density }
+
         bindGuardian()
         buildModuleCards()
 
@@ -154,123 +161,121 @@ class MainActivity : AppCompatActivity() {
         container.removeAllViews()
         val grade = prefs.grade
         val density = resources.displayMetrics.density
-        Subject.all.forEach { subject ->
-            val card = LinearLayout(this).apply {
-                orientation = LinearLayout.VERTICAL
-                val pad = (16 * density).toInt()
-                setPadding(pad, pad, pad, pad)
-                background = android.graphics.drawable.GradientDrawable().apply {
-                    setColor(getColor(R.color.bg_card))
-                    setStroke((4 * density).toInt(), getColor(subject.colorRes))
-                    cornerRadius = 18 * density
-                }
-                val lp = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                ).apply { bottomMargin = (12 * density).toInt() }
-                layoutParams = lp
-                isClickable = true
-                isFocusable = true
-            }
+        val gap = (12 * density).toInt()
+        val mods = Subject.all
 
+        // 两列排布：一屏就能看全六个模块，更像孩子会喜欢的学习 App
+        for (i in mods.indices step 2) {
             val row = LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
-                gravity = Gravity.CENTER_VERTICAL
-            }
-
-            // 卡通图标徽章：彩色圆 + 白色矢量图标
-            val badgeSize = (56 * density).toInt()
-            val badge = FrameLayout(this).apply {
-                layoutParams = LinearLayout.LayoutParams(badgeSize, badgeSize).apply {
-                    marginEnd = (14 * density).toInt()
-                }
-                background = android.graphics.drawable.GradientDrawable().apply {
-                    shape = android.graphics.drawable.GradientDrawable.OVAL
-                    setColor(getColor(subject.colorRes))
-                }
-            }
-            val iconSize = (30 * density).toInt()
-            val icon = ImageView(this).apply {
-                layoutParams = FrameLayout.LayoutParams(iconSize, iconSize).apply { gravity = Gravity.CENTER }
-                setImageResource(subject.iconRes)
-            }
-            badge.addView(icon)
-
-            // 中间：名称 + 进度
-            val col = LinearLayout(this).apply {
-                orientation = LinearLayout.VERTICAL
-                layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT).apply { weight = 1f }
-            }
-            val name = TextView(this).apply {
-                text = subject.label
-                textSize = 18f
-                setTextColor(getColor(R.color.text_main))
-                setTypeface(typeface, android.graphics.Typeface.BOLD)
-            }
-            val done = prefs.getProgress(subject, grade)
-
-            col.addView(name)
-
-            // 当前学到的人教版单元名，让家长一眼看出进度落在哪一课
-            // 音乐和脑筋急转弯不按单元排，unitOf 返回空串，这一行就不显示
-            val unitName = if (subject.kind == Subject.Kind.QUIZ) {
-                Curriculum.unitOf(subject, grade, done)
-            } else ""
-            if (unitName.isNotBlank()) {
-                col.addView(TextView(this).apply {
-                    text = "正在学：$unitName"
-                    textSize = 12.5f
-                    setTextColor(getColor(R.color.text_hint))
-                    setPadding(0, (3 * density).toInt(), 0, 0)
-                    maxLines = 1
-                })
-            }
-
-            col.addView(TextView(this).apply {
-                text = getString(R.string.main_module_progress, done, QUESTIONS_PER_GRADE)
-                textSize = 13f
-                setTextColor(getColor(subject.colorRes))
-                setPadding(0, (4 * density).toInt(), 0, 0)
-            })
-
-            // 右侧：「去练习」卡通药丸
-            val go = TextView(this).apply {
-                text = "去练习 ›"
-                textSize = 14f
-                setTextColor(getColor(subject.colorRes))
-                val h = (8 * density).toInt()
-                val w = (14 * density).toInt()
-                setPadding(w, h, w, h)
-                background = android.graphics.drawable.GradientDrawable().apply {
-                    setColor(getColor(subject.bgRes))
-                    cornerRadius = 16 * density
-                }
-            }
-
-            row.addView(badge)
-            row.addView(col)
-            row.addView(go)
-            card.addView(row)
-
-            // 进度条
-            val bar = ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal).apply {
-                max = QUESTIONS_PER_GRADE
-                progress = done
-                progressTintList = android.content.res.ColorStateList.valueOf(getColor(subject.colorRes))
-                val lp = LinearLayout.LayoutParams(
+                layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
-                ).apply { topMargin = (12 * density).toInt() }
-                layoutParams = lp
+                ).apply { bottomMargin = gap }
             }
-            card.addView(bar)
 
-            card.setOnClickListener {
-                startActivity(Intent(this, PracticeActivity::class.java).apply {
-                    putExtra(PracticeActivity.EXTRA_SUBJECT, subject.key)
-                })
+            val left = moduleCard(mods[i], grade, density)
+            left.layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+            row.addView(left)
+
+            val rightLp = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+                .apply { marginStart = gap }
+            if (i + 1 < mods.size) {
+                val right = moduleCard(mods[i + 1], grade, density)
+                right.layoutParams = rightLp
+                row.addView(right)
+            } else {
+                // 奇数个时补一个等宽占位，保证左卡片不会被拉宽
+                row.addView(View(this).apply { layoutParams = rightLp })
             }
-            container.addView(card)
+            container.addView(row)
         }
+    }
+
+    /** 单个模块卡片：卡通图标 + 名称 + 单元 + 进度条 */
+    private fun moduleCard(subject: Subject, grade: Int, density: Float): LinearLayout {
+        val done = prefs.getProgress(subject, grade)
+        val pad = (12 * density).toInt()
+
+        val card = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            gravity = Gravity.CENTER_HORIZONTAL
+            setPadding(pad, (14 * density).toInt(), pad, pad)
+            background = android.graphics.drawable.GradientDrawable().apply {
+                setColor(getColor(R.color.bg_card))
+                setStroke((2 * density).toInt(), getColor(subject.colorRes))
+                cornerRadius = 18 * density
+            }
+            isClickable = true
+            isFocusable = true
+        }
+
+        // 卡通图标徽章：浅色圆角方块 + 彩色描边，中间放彩色卡通图标
+        val badgeSize = (58 * density).toInt()
+        val badge = FrameLayout(this).apply {
+            layoutParams = LinearLayout.LayoutParams(badgeSize, badgeSize)
+            background = android.graphics.drawable.GradientDrawable().apply {
+                setColor(getColor(subject.bgRes))
+                setStroke((2.5 * density).toInt(), getColor(subject.colorRes))
+                cornerRadius = 17 * density
+            }
+        }
+        val iconSize = (38 * density).toInt()
+        badge.addView(ImageView(this).apply {
+            layoutParams = FrameLayout.LayoutParams(iconSize, iconSize).apply { gravity = Gravity.CENTER }
+            setImageResource(subject.iconRes)
+        })
+        card.addView(badge)
+
+        card.addView(TextView(this).apply {
+            text = subject.label
+            textSize = 15.5f
+            gravity = Gravity.CENTER_HORIZONTAL
+            setTextColor(getColor(R.color.text_main))
+            setTypeface(typeface, android.graphics.Typeface.BOLD)
+            setPadding(0, (9 * density).toInt(), 0, 0)
+        })
+
+        // 当前学到的人教版单元名；音乐/脑筋急转弯没有单元，这一行不显示
+        val unitName = if (subject.kind == Subject.Kind.QUIZ) {
+            Curriculum.unitOf(subject, grade, done)
+        } else ""
+        if (unitName.isNotBlank()) {
+            card.addView(TextView(this).apply {
+                text = unitName
+                textSize = 11f
+                gravity = Gravity.CENTER_HORIZONTAL
+                setTextColor(getColor(R.color.text_hint))
+                setPadding(0, (3 * density).toInt(), 0, 0)
+                maxLines = 1
+                ellipsize = android.text.TextUtils.TruncateAt.END
+            })
+        }
+
+        card.addView(TextView(this).apply {
+            text = "$done/${QUESTIONS_PER_GRADE}"
+            textSize = 12f
+            gravity = Gravity.CENTER_HORIZONTAL
+            setTextColor(getColor(subject.colorRes))
+            setTypeface(typeface, android.graphics.Typeface.BOLD)
+            setPadding(0, (6 * density).toInt(), 0, 0)
+        })
+
+        card.addView(ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal).apply {
+            max = QUESTIONS_PER_GRADE
+            progress = done
+            progressTintList = android.content.res.ColorStateList.valueOf(getColor(subject.colorRes))
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { topMargin = (8 * density).toInt() }
+        })
+
+        card.setOnClickListener {
+            startActivity(Intent(this, PracticeActivity::class.java).apply {
+                putExtra(PracticeActivity.EXTRA_SUBJECT, subject.key)
+            })
+        }
+        return card
     }
 }

@@ -57,6 +57,8 @@ object ThemeManager {
     }
 
     fun brand(context: Context): Int = color(context, R.attr.kgBrand)
+    /** 首页头图渐变用的深色端，比 brand 更深，让卡通头图更有层次 */
+    fun brandDark(context: Context): Int = color(context, R.attr.kgBrandDark)
     fun brandLight(context: Context): Int = color(context, R.attr.kgBrandLight)
     fun pageBg(context: Context): Int = color(context, R.attr.kgPageBg)
     fun cardBg(context: Context): Int = color(context, R.attr.kgCardBg)

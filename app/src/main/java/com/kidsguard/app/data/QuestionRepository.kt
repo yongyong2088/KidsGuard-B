@@ -4,6 +4,8 @@ import android.content.Context
 import com.kidsguard.app.quiz.ChineseGenerator
 import com.kidsguard.app.quiz.EnglishGenerator
 import com.kidsguard.app.quiz.MathGenerator
+import com.kidsguard.app.quiz.MusicBank
+import com.kidsguard.app.quiz.RiddleBank
 import com.kidsguard.app.quiz.SportTaskBank
 import org.json.JSONArray
 import org.json.JSONObject
@@ -170,12 +172,12 @@ class QuestionRepository(context: Context) {
     /**
      * FILE_TODO：这两个模块目前是占位内容（各 40 条），要铺满每年级 600 题需要扩充下面的题库。
      * 脑筋急转弯无法算法生成，只能人工收集；音乐需要音频资源才能做听音题。
-     * 扩充方式：往 MUSIC_BANK / RIDDLE_BANK 里加条目即可，生成逻辑不用动。
+     * 扩充方式：往 MusicBank / RiddleBank 里加条目即可，生成逻辑不用动。
      */
     private fun musicQuestion(index: Int): Question {
         val day = (System.currentTimeMillis() / 86_400_000L).toInt()
         // 按日期轮换题库起点，实现「每天自动换新题」
-        val (text, answer) = MUSIC_BANK[(index + day) % MUSIC_BANK.size]
+        val (text, answer) = MusicBank.items[(index + day) % MusicBank.items.size]
         return Question(
             id = "music_$index",
             text = text,
@@ -183,14 +185,14 @@ class QuestionRepository(context: Context) {
             subject = "music",
             index = index,
             difficulty = Difficulty.of(index).idx,
-            options = options4(answer, MUSIC_BANK.map { it.second }, Random(index + day * 13))
+            options = options4(answer, MusicBank.items.map { it.second }, Random(index + day * 13))
         )
     }
 
     private fun riddleQuestion(index: Int): Question {
         val day = (System.currentTimeMillis() / 86_400_000L).toInt()
         // 按日期轮换题库起点，实现「每天自动换新题」
-        val (text, answer) = RIDDLE_BANK[(index + day) % RIDDLE_BANK.size]
+        val (text, answer) = RiddleBank.items[(index + day) % RiddleBank.items.size]
         return Question(
             id = "riddle_$index",
             text = text,
@@ -198,7 +200,7 @@ class QuestionRepository(context: Context) {
             subject = "riddle",
             index = index,
             difficulty = Difficulty.of(index).idx,
-            options = options4(answer, RIDDLE_BANK.map { it.second }, Random(index + day * 13))
+            options = options4(answer, RiddleBank.items.map { it.second }, Random(index + day * 13))
         )
     }
 
@@ -218,92 +220,5 @@ class QuestionRepository(context: Context) {
     companion object {
         private const val KEY_CUSTOM = "custom_questions"
 
-        private val MUSIC_BANK = listOf(
-            "钢琴一般有多少个琴键？" to "88个",
-            "下面哪个是打击乐器？" to "鼓",
-            "do re mi 一共有几个基本音级？" to "7个",
-            "唱歌时打拍子通常用什么？" to "手",
-            "简谱中 1 唱作什么？" to "do",
-            "下面哪个是弦乐器？" to "小提琴",
-            "《小星星》的第一句是？" to "一闪一闪亮晶晶",
-            "四分音符唱几拍？" to "1拍",
-            "下面哪个是中国民族乐器？" to "二胡",
-            "音乐中声音的大小叫什么？" to "音量",
-            "声音的高低叫什么？" to "音高",
-            "全音符唱几拍？" to "4拍",
-            "下面哪个是铜管乐器？" to "小号",
-            "简谱中 0 表示什么？" to "休止符",
-            "《两只老虎》是哪个国家的儿歌？" to "法国",
-            "笛子是用什么发声的？" to "空气柱振动",
-            "下面哪个乐器用弓拉？" to "二胡",
-            "合唱时大家要保持什么一致？" to "节奏",
-            "音乐中反复记号的作用是？" to "重复演奏",
-            "《生日快乐歌》通常在什么时候唱？" to "过生日时",
-            "五线谱有几条线？" to "5条",
-            "高音谱号又叫什么？" to "G谱号",
-            "下面哪种声音最高？" to "小鸟叫",
-            "拍号 2/4 表示每小节有几拍？" to "2拍",
-            "下面哪个是键盘乐器？" to "电子琴",
-            "音乐课上打节拍的乐器叫什么？" to "节拍器",
-            "《茉莉花》是哪个国家的民歌？" to "中国",
-            "升记号在简谱中写作什么？" to "#",
-            "下面哪个乐器的声音最低沉？" to "大鼓",
-            "唱歌时正确的姿势是？" to "站直放松",
-            "下面属于吹奏乐器的是？" to "口琴",
-            "《欢乐颂》的作曲家是？" to "贝多芬",
-            "音乐中快板表示什么？" to "速度很快",
-            "简谱中数字下面加一条线表示？" to "时值减半",
-            "下面哪个不是乐器？" to "铅笔",
-            "大提琴有几根弦？" to "4根",
-            "歌曲中的「副歌」通常在哪？" to "高潮部分",
-            "指挥的作用是？" to "统一节奏",
-            "下面哪个是木管乐器？" to "长笛",
-            "人声一般分成几个声部？" to "4个"
-        )
-
-        private val RIDDLE_BANK = listOf(
-            "什么东西越洗越脏？" to "水",
-            "什么东西有头无脚？" to "砖头",
-            "什么车寸步难行？" to "风车",
-            "什么书买不到？" to "遗书",
-            "什么水永远用不完？" to "薪水",
-            "什么房子不能住人？" to "蜂房",
-            "什么门永远关不上？" to "球门",
-            "什么伞下雨不能用？" to "降落伞",
-            "什么鱼不能吃？" to "木鱼",
-            "什么牛不吃草？" to "蜗牛",
-            "什么马不会跑？" to "木马",
-            "什么床不能睡觉？" to "车床",
-            "什么球不能踢？" to "地球",
-            "什么灯不能照明？" to "红绿灯",
-            "什么帽不能戴？" to "螺帽",
-            "什么笔不能写字？" to "电笔",
-            "什么河没有水？" to "银河",
-            "什么海没有水？" to "辞海",
-            "什么布剪不断？" to "瀑布",
-            "什么路不能走？" to "电路",
-            "小明把硬币扔进海里会怎样？" to "沉下去",
-            "什么东西你只能用左手拿，不能用右手拿？" to "右手",
-            "一个人在沙滩上走，为什么回头看不到脚印？" to "他在倒着走",
-            "什么东西越切越大？" to "洞",
-            "什么桌子不能吃饭？" to "电脑桌面",
-            "一年之中哪个月最短？" to "二月",
-            "什么鸡没有翅膀？" to "田鸡",
-            "什么虎不吃人？" to "壁虎",
-            "什么羊不吃草？" to "羊毛衫",
-            "世界上什么最大？" to "眼皮",
-            "一斤铁和一斤棉花哪个重？" to "一样重",
-            "什么水果最爱说话？" to "芒果",
-            "什么样的路不能走？" to "思路",
-            "什么人一年只工作一天？" to "圣诞老人",
-            "什么蛋不能吃？" to "混蛋",
-            "什么树永远不落叶？" to "画上的树",
-            "什么水不能喝？" to "墨水",
-            "什么样的锁没有钥匙能打开？" to "密码锁",
-            "什么车最慢？" to "堵车时的车",
-            "什么东西天天从你身边走过你却抓不住？" to "时间",
-            "什么动物最没有方向感？" to "麋鹿",
-            "什么书谁也没看见过？" to "天书"
-        )
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    学习中心主界面（改版后）。
+    学习中心主界面。
     设计要点：
-      - 顶部问候 + 右上角齿轮（进入「我的资料」设置页）
-      - 不再放年级按钮和主题色圆点，这些挪到设置页里登记
-      - 六个模块卡片在 MainActivity 里用代码动态生成（卡通图标 + 彩色徽章）
+      - 顶部是一张渐变卡通头图（渐变色在 MainActivity 里按主题动态生成），带吉祥物
+      - 不放年级按钮和主题色圆点，这些统一在「我的资料」设置页登记
+      - 六个模块在 MainActivity 里动态生成，排成 2 列彩色卡片
       - 不要删除带 id 的控件，否则 Kotlin 会编译不过
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,17 +17,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="18dp"
-        android:paddingEnd="18dp"
-        android:paddingTop="20dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
         android:paddingBottom="28dp">
 
-        <!-- 顶部：问候 + 设置齿轮 -->
+        <!-- 顶部卡通头图：渐变背景由代码设置 -->
         <LinearLayout
+            android:id="@+id/headerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -40,8 +45,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/main_greeting"
-                    android:textColor="?attr/kgBrandDark"
-                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="23sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -49,32 +54,40 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/main_greeting_sub"
-                    android:textColor="@color/text_sub"
+                    android:textColor="#DCEBFA"
                     android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tvProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="?attr/kgBrandLight"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_chip_white"
                     android:paddingStart="12dp"
                     android:paddingEnd="12dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:textColor="?attr/kgBrandDark"
+                    android:textColor="@color/text_main"
                     android:textSize="12sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <!-- 吉祥物 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="🦉"
+                android:textSize="40sp" />
+
             <ImageButton
                 android:id="@+id/btnSettings"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="8dp"
-                android:background="?attr/kgBrandLight"
+                android:background="@drawable/bg_circle_white"
                 android:contentDescription="@string/settings_title"
-                android:padding="11dp"
+                android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_settings" />
         </LinearLayout>
@@ -84,17 +97,17 @@
             android:id="@+id/bannerStars"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="14dp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="?attr/kgCardBg"
+            android:background="@drawable/bg_card_round"
             android:padding="14dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="⭐"
-                android:textSize="26sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tvStarsBar"
@@ -103,14 +116,15 @@
                 android:layout_weight="1"
                 android:layout_marginStart="10dp"
                 android:textColor="?attr/kgBrandDark"
-                android:textSize="15sp" />
+                android:textSize="14.5sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="去奖励小屋 →"
                 android:textColor="?attr/kgBrand"
-                android:textSize="14sp"
+                android:textSize="13.5sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -119,10 +133,10 @@
             android:id="@+id/cardGuardian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:background="?attr/kgCardBg"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_round"
             android:orientation="vertical"
-            android:padding="18dp">
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -149,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textColor="?attr/kgBrand"
-                        android:textSize="30sp"
+                        android:textSize="28sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -167,21 +181,22 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:max="100"
                 android:progress="0"
                 android:progressTint="?attr/kgBrand" />
         </LinearLayout>
 
-        <!-- 六个模块卡片容器（MainActivity 动态填充） -->
+        <!-- 六个模块（MainActivity 动态填充，2 列） -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:text="@string/main_modules_label"
             android:textColor="@color/text_sub"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/modulesContainer"
@@ -194,7 +209,7 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="20dp"
             android:text="@string/main_btn_parent"
             android:textColor="?attr/kgBrand" />
 
