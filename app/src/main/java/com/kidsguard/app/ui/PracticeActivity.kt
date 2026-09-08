@@ -19,6 +19,7 @@ import com.kidsguard.app.data.ThemeManager
 import com.kidsguard.app.quiz.Curriculum
 import com.kidsguard.app.quiz.EnglishExamples
 import com.kidsguard.app.quiz.EnglishSpeech
+import com.kidsguard.app.quiz.SoundFx
 import kotlin.random.Random
 
 /**
@@ -50,6 +51,9 @@ class PracticeActivity : AppCompatActivity() {
         // 英语 / 数学模块要读单词或题面，先把 TTS 引擎拉起来（异步初始化，不阻塞 UI）
         if (subject == Subject.ENGLISH || subject == Subject.MATH) EnglishSpeech.init(this)
 
+        // 答题音效：所有题目类模块（除运动外）都预加载，孩子答对/答错有即时反馈
+        if (subject.kind == Subject.Kind.QUIZ) SoundFx.init(this)
+
         findViewById<TextView>(R.id.tvTitle).text = subject.label
         findViewById<View>(R.id.btnBack).setOnClickListener { finish() }
 
@@ -63,6 +67,8 @@ class PracticeActivity : AppCompatActivity() {
     override fun onDestroy() {
         // 释放 TTS 引擎；非英语模块 init 没被调用过，shutdown 内部幂等
         EnglishSpeech.shutdown()
+        // 释放 SoundPool 资源
+        SoundFx.shutdown()
         super.onDestroy()
     }
 
@@ -228,6 +234,10 @@ class PracticeActivity : AppCompatActivity() {
             prefs.addProgress(subject, prefs.grade)
             prefs.answeredToday = prefs.answeredToday + 1
             prefs.addStars(1)
+        }
+        // 答对/答错音效（仅题目类模块，运动模块不播）
+        if (subject.kind == Subject.Kind.QUIZ) {
+            if (correct) SoundFx.play("correct") else SoundFx.play("wrong")
         }
         posInBlock = (posInBlock + 1) % 200
         // 节奏调整：
