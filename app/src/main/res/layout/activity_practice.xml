@@ -152,6 +152,19 @@
         android:textColor="@color/learning"
         android:textSize="15sp" />
 
+    <!-- 英语题型答对后展示例句（含英文 + 中文翻译）。默认隐藏，仅在答对且该词在例句库里时显示 -->
+    <TextView
+        android:id="@+id/tvExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="14dp"
+        android:background="@color/subj_english_bg"
+        android:textColor="@color/text_main"
+        android:textSize="15sp"
+        android:lineSpacingExtra="4dp"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/btnSubmit"
         style="@style/CartoonButton"

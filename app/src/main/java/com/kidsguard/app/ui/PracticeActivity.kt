@@ -17,6 +17,7 @@ import com.kidsguard.app.data.QuestionRepository
 import com.kidsguard.app.data.Subject
 import com.kidsguard.app.data.ThemeManager
 import com.kidsguard.app.quiz.Curriculum
+import com.kidsguard.app.quiz.EnglishExamples
 import com.kidsguard.app.quiz.EnglishSpeech
 import kotlin.random.Random
 
@@ -118,6 +119,9 @@ class PracticeActivity : AppCompatActivity() {
 
         tvQ.text = q.text
         fb.text = ""
+        val example = findViewById<TextView>(R.id.tvExample)
+        example.text = ""
+        example.visibility = View.GONE
         tip.visibility = View.GONE
         submit.text = getString(R.string.lock_btn_submit)
 
@@ -172,13 +176,32 @@ class PracticeActivity : AppCompatActivity() {
         fb.text = if (correct) getString(R.string.lock_correct) else getString(R.string.lock_wrong, q.answer)
         fb.setTextColor(getColor(if (correct) R.color.learning else R.color.danger))
 
+        // 英语题答对时，若该单词在例句库里：显示例句 + TTS 朗读整个英文例句
+        // 答错不显示例句（避免给答案提示）
+        val example = findViewById<TextView>(R.id.tvExample)
+        if (correct && subject == Subject.ENGLISH) {
+            val ex = EnglishExamples.lookup(q.answer)
+            if (ex != null) {
+                example.text = getString(R.string.practice_example_tpl, ex.first, ex.second)
+                example.visibility = View.VISIBLE
+                // 朗读整个英文例句，让孩子在语境里再听一次
+                EnglishSpeech.speak(ex.first)
+            }
+        }
+
         if (correct) {
             prefs.addProgress(subject, prefs.grade)
             prefs.answeredToday = prefs.answeredToday + 1
             prefs.addStars(1)
         }
         posInBlock = (posInBlock + 1) % 200
-        fb.postDelayed({ showQuizQuestion() }, if (correct) 600 else 1400)
+        // 答对且有例句：延长到 2200ms 让 TTS 读完；其他保持原节奏
+        val nextDelay = when {
+            correct && example.visibility == View.VISIBLE -> 2200L
+            correct -> 600L
+            else -> 1400L
+        }
+        fb.postDelayed({ showQuizQuestion() }, nextDelay)
     }
 
     private fun updateProgress() {

@@ -106,6 +106,8 @@
     <!-- 英语题型：点喇叭听标准发音 -->
     <string name="practice_speak">🔊 听发音</string>
     <string name="practice_speak_unavailable">该设备暂不支持朗读，请跟孩子一起读</string>
+    <!-- 英语题型答对时展示的例句模板：参数 1 = 英文，参数 2 = 中文 -->
+    <string name="practice_example_tpl">例句：%1$s\n%2$s</string>
 
     <!-- 通知 -->
     <string name="notify_channel_name">监控服务</string>
