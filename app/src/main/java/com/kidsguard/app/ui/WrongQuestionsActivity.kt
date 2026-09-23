@@ -120,7 +120,7 @@ class WrongQuestionsActivity : AppCompatActivity() {
         val items = list.map { "${it.subject}|${it.grade}|${it.index}" }.toTypedArray()
         // subject 取第一题（review 模式 PracticeActivity 会自己切 subject）
         val firstSub = list.first().subject
-        val intent = Intent(this, PracticeActivity::class.java)
+        val intent = android.content.Intent(this, PracticeActivity::class.java)
             .putExtra(PracticeActivity.EXTRA_SUBJECT, firstSub)
             .putExtra(PracticeActivity.EXTRA_MODE, PracticeActivity.MODE_REVIEW)
             .putExtra(PracticeActivity.EXTRA_REVIEW_ITEMS, items)
