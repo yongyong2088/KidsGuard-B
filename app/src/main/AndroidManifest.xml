@@ -14,10 +14,41 @@
 
     <!-- Android 11 起查询其他应用需要显式声明，否则应用列表拿不到数据 -->
     <queries>
+        <!-- 列出全部带桌面图标的应用（家长模式「全部应用 / 已安装识别」依赖它） -->
         <intent>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent>
+        <!-- 已知的游戏 / 短视频 / 学习类包名显式声明，保证在任何 ROM 上都能被识别到 -->
+        <package android:name="com.ss.android.ugc.aweme" />
+        <package android:name="com.ss.android.ugc.aweme.lite" />
+        <package android:name="com.smile.gifmaker" />
+        <package android:name="com.kuaishou.nebula" />
+        <package android:name="com.ss.android.article.video" />
+        <package android:name="com.xingin.xhs" />
+        <package android:name="com.ss.android.article.news" />
+        <package android:name="com.baidu.tieba" />
+        <package android:name="tv.danmaku.bili" />
+        <package android:name="com.qiyi.video" />
+        <package android:name="com.youku.phone" />
+        <package android:name="com.tencent.qqlive" />
+        <package android:name="com.sohu.sohuvideo" />
+        <package android:name="com.hunantv.imgotv" />
+        <package android:name="com.tencent.tmgp.sgame" />
+        <package android:name="com.tencent.tmgp.pubgmhd" />
+        <package android:name="com.tencent.tmgp.cf" />
+        <package android:name="com.miHoYo.GenshinImpact" />
+        <package android:name="com.netease.party" />
+        <package android:name="com.minitech.miniworld" />
+        <package android:name="com.mojang.minecraftpe" />
+        <package android:name="com.popcap.pvz2" />
+        <package android:name="com.kiloo.subwaysurf" />
+        <package android:name="com.imangi.templerun" />
+        <package android:name="com.rovio.angrybirds" />
+        <package android:name="com.dingtalk.android" />
+        <package android:name="com.alibaba.android.rimet" />
+        <package android:name="com.tencent.wemeet.app" />
+        <package android:name="com.baidu.homework" />
     </queries>
 
     <application

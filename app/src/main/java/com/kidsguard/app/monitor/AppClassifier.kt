@@ -2,7 +2,6 @@ package com.kidsguard.app.monitor
 
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import com.kidsguard.app.data.AppCategory
 import com.kidsguard.app.data.AppRule
@@ -115,7 +114,10 @@ class AppClassifier(private val prefs: PrefsManager) {
         val pm = context.packageManager
         val intent = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
         val resolved: List<ResolveInfo> = try {
-            pm.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
+            // 注意：不能用 MATCH_DEFAULT_ONLY —— 桌面图标 Activity 通常不声明 CATEGORY_DEFAULT，
+            // 用该标志在多数机型上会返回空列表，导致「全部应用 / 已安装识别」全部失效。
+            // 用 0（不过滤）才能拿到设备上全部带桌面图标的应用。
+            pm.queryIntentActivities(intent, 0)
         } catch (e: Exception) {
             emptyList()
         }

@@ -210,12 +210,14 @@ class MainActivity : AppCompatActivity() {
             isFocusable = true
         }
 
-        // 卡通图标徽章：浅色圆角方块 + 彩色描边，中间放彩色卡通图标
+        // 卡通图标徽章：主题色同系渐变填充（左上深→右下浅），彩色描边，中间保留彩色卡通图标
         val badgeSize = (58 * density).toInt()
         val badge = FrameLayout(this).apply {
             layoutParams = LinearLayout.LayoutParams(badgeSize, badgeSize)
-            background = android.graphics.drawable.GradientDrawable().apply {
-                setColor(getColor(subject.bgRes))
+            background = android.graphics.drawable.GradientDrawable(
+                android.graphics.drawable.GradientDrawable.Orientation.TL_BR,
+                intArrayOf(getColor(subject.colorRes), getColor(subject.bgRes))
+            ).apply {
                 setStroke((2.5 * density).toInt(), getColor(subject.colorRes))
                 cornerRadius = 17 * density
             }
